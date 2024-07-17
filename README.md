@@ -1,7 +1,7 @@
-# Anthonie van Leeuwenhoek
+# Antonie van Leeuwenhoek
 
 ## Radiation Oncology Collaboration Platform 
-[Context]
+Het Radiation Oncology Collaboration Platform is een samenwerking tussen het Antonie van Leeuwenhoek en 
 
 ## Design challenge
 Hoe kunnen Nederlandse en Indonesische radiotherapeuten, met behulp
@@ -10,10 +10,10 @@ delen, opslaan en vinden
 
 ## Resources
 
-[Backlog](...)
-
-[Huisstijl](...)  
+[Design Rationale](...)
 
 [Design](...)  
 
-[API]()
+[Backlog](...)
+
+[API](...)
