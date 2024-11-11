@@ -49,6 +49,7 @@ Als je dit heb gedaan kun je het op je localhost runnen met `npm run dev`.
 Op de website kun je scrollen door de webinars en contourings. Als het uiteindelijk af is kun je de webinars bekijken en vragen in de comments achterlaten. Ook kun je met je collegas de contourings bespreken.
 
 ## Changelog
+### Sprint 14
 Deze sprint hebben we een start gemaakt aan dit project. We hebben gewerkt aan de userstory: [Als gebruiker moet ik presentaties makkelijk kunnen terug vinden.](https://github.com/Ryank2004/Oncollaboration-Sprint-14/issues/9) We hebben ons heel erg gefocust op het maken van de homepage, en het maken van componenten die we op verschillende platsen gaan gebruiken. Hier is een lijst van issues die wij hebben opgelost deze sprint:
 - [Het maken van de Navigatiebalk](https://github.com/Ryank2004/Oncollaboration-Sprint-14/issues/15)
 - [Bouwen van kaartjes voor de contourings](https://github.com/Ryank2004/Oncollaboration-Sprint-14/issues/14)
@@ -65,6 +66,7 @@ Naast deze issues zijn wij ookal begonnen aan:
 
 Er moet nog een hele hoop toegevoegd worden aan de website. Al deze issues staan in ons [projectboard](https://github.com/users/Ryank2004/projects/5).
 
+### Sprint 16
 ## Bronnen
 - [SvelteKit tutorial](https://learn.svelte.dev/tutorial/introducing-sveltekit)
 - [Dynamic component](https://www.youtube.com/watch?v=7h6slC4HcpI)
