@@ -9,16 +9,26 @@
 </div>
 
 <style>
+.slot {
+  padding-bottom: 57px;
+}
+
+@media (min-width: 600px) {
+  .slot {
+    padding-bottom: 77px;
+  }
+}
 
 @media (min-width: 1080px) {
   .slot {
-    margin-top: 64px;
-    }
+    margin-top: 74px;
+    padding-bottom: 0;
+  }
 }
 
 @media (min-width: 1920px) {
   .slot {
-    margin-top: 72px;
-    }
+    margin-top: 82px;
+  }
 }
 </style>
