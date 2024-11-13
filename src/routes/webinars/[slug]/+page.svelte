@@ -1,5 +1,19 @@
 <script>
+  import { postComment } from '$lib/api.js';
+
   export let data; 
+
+  let content = ''
+  let webinarId = data.webinar.id;
+
+  async function handleSubmit() {
+    try {
+      await postComment(content, webinarId);
+      content = ''; // Clear the input field on success
+    } catch (error) {
+      console.error('Error posting comment:', error);
+    }
+  }
 </script>
 
 <main>
@@ -17,9 +31,10 @@
   <section>
     <h3>Q&A</h3>
   
-    <form action="/" method="POST">
-      <label for="comment">Ask a question.</label>
-      <input id="comment" placeholder="Add a comment...">
+    <form on:submit|preventDefault={handleSubmit}>
+      <label>Ask a question.
+        <input name="comment" placeholder="Add a comment..." bind:value={content}>
+      </label>
       <button type="submit">Send</button>
     </form>
   
