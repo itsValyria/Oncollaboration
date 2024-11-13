@@ -30,7 +30,7 @@
         </div>
       {/each}
     </div>
-    <a class="margin" href="/contourings">SEE ALL CONTOURINGS</a>
+    <a href="/contourings">SEE ALL CONTOURINGS</a>
   </section>
 </main>
 
@@ -60,10 +60,6 @@
     padding: 5px 20px;
     border-radius: 5px;
     margin: 1em 0;
-  }
-
-  .margin {
-    margin-bottom: 50px;
   }
 
   .carrousel {
