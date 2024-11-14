@@ -1,3 +1,5 @@
+const baseURL = 'https://fdnd-agency.directus.app/items/'
+
 export async function postComment(content, webinarId) {
   const comments = `${baseURL}/avl_comments`;
 
