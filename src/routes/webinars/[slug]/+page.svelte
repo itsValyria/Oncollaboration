@@ -32,6 +32,12 @@
     margin: var(--margin-center);
   }
 
+  section {
+    width: 90vw;
+    max-width: 500px;
+    margin: var(--margin-center);
+  }
+
   @media screen and (min-width: 600px){
     video {
       width: 50vw;

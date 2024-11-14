@@ -1,7 +1,7 @@
 const baseURL = 'https://fdnd-agency.directus.app/items/'
 
-export async function postComment(content, webinarId) {
-  const comments = `${baseURL}/avl_comments`;
+export async function postComment(content, webinar_id, contouring_id, user_id) {
+  const comments = `${baseURL}avl_comments`;
 
   const response = await fetch(comments, {
     method: 'POST',
@@ -10,7 +10,9 @@ export async function postComment(content, webinarId) {
     },
     body: JSON.stringify({
       content: content,
-      webinar_id: webinarId
+      webinar_id: webinar_id,
+      contouring_id: contouring_id,
+      user_id: user_id
     })
   });
 
