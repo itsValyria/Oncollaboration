@@ -1,29 +1,35 @@
 <script>
   import { page } from '$app/stores';
-
   let content = '';
   let slug;
 
   $: if (page) slug = $page.params.slug;
-  let webinar_id = 6;
-  let user_id = 1;
-  let contouring_id = '';
+  export let webinar_id = '';
+  export let user_id = 1;
+  export let contouring_id = '';
 
   export let comments = [];
 
   // async function handleSubmit() {
-  //   try {
-  //     await postComment(content, webinarId);
-  //     content = ''; // Clear the input field on success
-  //   } catch (error) {
-  //     console.error('Error posting comment:', error);
-  //   }
+
+  //     const response = await fetch(`${baseURL}avl_comments`, {
+  //       method: 'POST',
+  //       headers: {
+  //         'Content-Type': 'application/json'
+  //       },
+  //       body: JSON.stringify({
+  //         content: content,
+  //         webinar_id: webinar_id,
+  //         user_id: user_id
+  //       })
+  //     });
+ 
   // }
 </script>
 
 <h3>Q&A</h3>
-  
-<form action={`/webinars/${slug}`} method="POST">
+  <!-- on:submit|preventDefault={handleSubmit} -->
+<form action={`/webinars/${slug}?/comment`} method="POST">
   <label for="comment">Ask a question.</label>
   <input id="comment" name="comment" placeholder="Add a comment..." bind:value={content}>
   <input type="hidden" name="webinar_id" value={webinar_id}>
@@ -48,16 +54,16 @@
               <img src="https://fdnd-agency.directus.app/assets/{comment.user_id.profile_picture.id}" alt="{comment.user_id.profile_picture.title}">
               <p>{comment.user_id.fullname}</p>
             {/if}
-
+        
             {#if comment.time_posted === null}
               <span>hours ago</span>
             {:else}  
               <span>{comment.time_posted}</span>
             {/if}
           </section>
-
+        
           <p class="content">{comment.content}</p>
-
+        
           <div class="container-response">
             likes and replies
           </div>
@@ -139,6 +145,10 @@
     width: 100%;
     border-radius: var(--border-radius-small);
     text-transform: uppercase;
+  }
+
+  button:active {
+    background-color: blueviolet;
   }
 
   .comments {

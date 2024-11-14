@@ -17,7 +17,7 @@
   
   <section>
     <QandA 
-      webinarId = {data.webinar.id}
+      webinar_id = {data.webinar.id}
       comments = {data.comments} />
   </section>
 </main>

@@ -18,7 +18,7 @@ export async function load({params}) {
 
 /** @satisfies {import('./$types').Actions} */
 export const actions = {
-  default: async ({request}) => {
+  comment: async ({request}) => {
     const data = await request.formData();
     const content = data.get('comment');
     const webinar_id = data.get('webinar_id');
@@ -39,10 +39,8 @@ export const actions = {
 
       const result = await response.json();
 
-      // Return a success response
       return json({ success: true, data: result }, { status: 201 });
     } catch (error) {
-      // Handle any errors
       return json({ success: false, error: error.message }, { status: 500 });
     }
   }
