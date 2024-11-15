@@ -32,8 +32,8 @@
 <form action={`/webinars/${slug}?/comment`} method="POST">
   <label for="comment">Ask a question.</label>
   <input id="comment" name="comment" placeholder="Add a comment..." bind:value={content}>
-  <input type="hidden" name="webinar_id" value={webinar_id}>
   <input type="hidden" name="user_id" value={user_id}>
+  <input type="hidden" name="webinar_id" value={webinar_id}>
   <input type="hidden" name="contouring_id" value={contouring_id}>
   <button type="submit">Send</button>
 </form>
