@@ -19,6 +19,7 @@ export async function load({params}) {
 export const actions = {
   comment: async ({ request }) => {
 		const data = await request.formData();
+    const timestamp = new Date().toISOString();
     const content = data.get('comment');
     const user_id = data.get('user_id');
     const contouring_id = data.get('contouring_id');
@@ -29,6 +30,7 @@ export const actions = {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
+        time_posted: timestamp,
         content: content,
         user_id: user_id,
         contouring_id: contouring_id
