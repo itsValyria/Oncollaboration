@@ -1,14 +1,28 @@
 <script>
+  import { QandA } from "$lib/index.js";
   export let data; 
 </script>
 
+<main>
+  <h1>{data.contouring.title}</h1>
 
-<h1>{data.contouring.title}</h1>
-
-<img src="https://fdnd-agency.directus.app/assets/{data.contouring.image_scan.id}" alt="CT-Scans" width="384" height="384" />
+  <img src="https://fdnd-agency.directus.app/assets/{data.contouring.image_scan.id}" alt="CT-Scans" width="384" height="384" />
+  
+  <section>
+    <QandA 
+      contouring_id = {data.contouring.id}
+      comments = {data.comments} />
+  </section>
+</main>
 
 <style>
   img {
     width: 80vw;
+  }
+
+  section {
+    width: 90vw;
+    max-width: 500px;
+    margin: var(--margin-center);
   }
 </style>
