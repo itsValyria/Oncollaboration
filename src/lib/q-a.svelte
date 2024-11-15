@@ -1,9 +1,9 @@
 <script>
   import { page } from '$app/stores';
-  let content = '';
-  let slug;
 
-  $: if (page) slug = $page.params.slug;
+  let content = '';
+  let slug = $page.url.pathname;
+  
   export let webinar_id = '';
   export let user_id = 1;
   export let contouring_id = '';
@@ -29,7 +29,7 @@
 
 <h3>Q&A</h3>
   <!-- on:submit|preventDefault={handleSubmit} -->
-<form action={`/webinars/${slug}?/comment`} method="POST">
+<form action={`${slug}?/comment`} method="POST">
   <label for="comment">Ask a question.</label>
   <input id="comment" name="comment" placeholder="Add a comment..." bind:value={content}>
   <input type="hidden" name="user_id" value={user_id}>
