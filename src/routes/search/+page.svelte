@@ -8,7 +8,7 @@
   <Search></Search>
   <p>Results for: <strong>"{data.query}"</strong></p>
   
-  {#if data.webinars.length || data.contourings.length}
+  {#if data.webinars.length > 0}
     <h2>Matching Webinars</h2>
     <div class="carrousel">
       {#each data.webinars as webinar}
@@ -16,11 +16,10 @@
           <WebinarOverview {...webinar} />
         </div>
       {/each}
-      {#if !data.webinars.length}
-        <p>No matching webinars found.</p>
-      {/if}
     </div>
+  {/if}
 
+  {#if data.contourings.length > 0}
     <h2>Matching Contourings</h2>
     <div class="carrousel">
       {#each data.contourings as contouring}
@@ -28,11 +27,10 @@
           <ContouringOverview {...contouring} />
         </div>
       {/each}
-      {#if !data.contourings.length}
-        <p>No matching contourings found.</p>
-      {/if}
     </div>
-  {:else}
+  {/if}
+
+  {#if data.webinars.length === 0 && data.contourings.length === 0}
     <p>No results found.</p>
   {/if}
 </main>
