@@ -4,8 +4,8 @@
 </script>
 
 <main>
-  <Search></Search>
   <h1>Search Results</h1>
+  <Search></Search>
   <p>Results for: <strong>"{data.query}"</strong></p>
   
   {#if data.webinars.length || data.contourings.length}
