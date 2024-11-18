@@ -1,3 +1,14 @@
+<script>
+  import { goto } from '$app/navigation';
+  let searchQuery = '';
+
+  // Redirect to the /search page with the URL-encoded search query
+  function handleSearch() {
+  goto(`/search?query=${encodeURIComponent(searchQuery)}`);
+}
+</script>
+
+
 <form on:submit|preventDefault={handleSearch}>
   <input 
     type="text" 
@@ -13,19 +24,9 @@
   </button>
 </form>
 
-<script>
-  import { goto } from '$app/navigation';
-  let searchQuery = '';
-
-  function handleSearch() {
-    // Redirect to the search results page with the query
-    goto(`/search?query=${encodeURIComponent(searchQuery)}`);
-  }
-</script>
-
 <style>
   form {
-    margin: 1rem auto;
+    margin: 1rem 0;
     display: flex;
     width: 80vw;
   }
