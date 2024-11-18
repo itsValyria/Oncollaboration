@@ -1,34 +1,56 @@
 <script>
-  import {Navigation} from "$lib/index.js";
+  import { Navigation } from "$lib/index.js";
+  import { navigating } from '$app/stores';
 </script>
 
-<Navigation />
+{#if $navigating} 
+  <Navigation />
+  <main>
+    <span>Loading...</span>
+  </main>
+{:else} 
+  <Navigation />
+  <div class="slot">
+    <slot />
+  </div>
+{/if}
 
-<div class="slot">
-  <slot />
-</div>
 
 <style>
-.slot {
-  padding-bottom: 57px;
-}
-
-@media (min-width: 600px) {
-  .slot {
-    padding-bottom: 77px;
+  main {
+    display: flex;
+    width: 100vw;
+    height: 90vh;
   }
-}
 
-@media (min-width: 1080px) {
-  .slot {
-    margin-top: 74px;
-    padding-bottom: 0;
+  span {
+    display: block;
+    font-size: var(--font-size-6);
+    font-weight: bold;
+    width: fit-content;
+    margin: auto;
   }
-}
 
-@media (min-width: 1920px) {
   .slot {
-    margin-top: 82px;
+    padding-bottom: 57px;
   }
-}
+
+  @media (min-width: 600px) {
+    .slot {
+      padding-bottom: 77px;
+    }
+  }
+
+  @media (min-width: 1080px) {
+    .slot {
+      margin-top: 74px;
+      padding-bottom: 0;
+    }
+  }
+
+  @media (min-width: 1920px) {
+    .slot {
+      margin-top: 82px;
+    }
+  }
 </style>
