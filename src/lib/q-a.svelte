@@ -1,7 +1,6 @@
 <script>
   import { page } from '$app/stores';
-  // import { invalidateAll } from '$app/navigation';
-	// import { applyAction, deserialize } from '$app/forms';
+  import { enhance } from '$app/forms';
 
   let content = '';
   let slug = $page.url.pathname;
@@ -11,30 +10,10 @@
   export let contouring_id = '';
 
   export let comments = [];
-
-  async function handleSubmit(event) {    
-    const response = await fetch(`https://fdnd-agency.directus.app/items/avl_comments`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        content: content,
-        webinar_id: webinar_id,
-        contouring_id: contouring_id,
-        user_id: user_id
-      })
-    });
-    
-    console.log(response);
-    
-    event.preventDefault()
-    return { success: true };   
-  }
 </script>
 
 <h3>Q&A</h3>
-<form action="{slug}?/comment" method="POST" on:submit={handleSubmit}>
+<form  action="{slug}?/comment" method="POST" use:enhance>
   <label for="comment">Ask a question.</label>
   <input id="comment" name="comment" placeholder="Add a comment..." bind:value={content}>
   <input type="hidden" name="user_id" value={user_id}>
