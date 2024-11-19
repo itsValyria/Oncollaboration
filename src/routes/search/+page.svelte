@@ -1,7 +1,6 @@
 <script>
   export let data;
-  import { ContouringOverview, Search, WebinarOverview } from "$lib/index.js";
-  import SearchResults from "../../lib/search-results.svelte";
+  import { Search, SearchResults } from "$lib/index.js";
 </script>
 
 <main>
