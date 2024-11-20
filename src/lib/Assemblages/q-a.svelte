@@ -1,5 +1,5 @@
 <script>
-  import { Comment } from '$lib/index.js';
+  import { Comment, Loader } from '$lib/index.js';
   import { page } from '$app/stores';
   import { enhance } from '$app/forms';
 
@@ -11,16 +11,32 @@
   export let contouring_id = '';
 
   export let comments = [];
+
+  let loading = false;
+  const addComment = () => {
+    loading = true;
+
+    return async ({ update }) => {
+      await update();
+      loading = false;
+    };
+  };
 </script>
 
 <h3>Q&A</h3>
-<form  action="{slug}?/comment" method="POST" use:enhance>
+<form  action="{slug}?/comment" method="POST" use:enhance={addComment}>
   <label for="comment">Ask a question.</label>
-  <input id="comment" name="comment" placeholder="Add a comment..." bind:value={content}>
+  <input id="comment" name="comment" placeholder="Add a comment..." required bind:value={content}>
   <input type="hidden" name="user_id" value={user_id}>
   <input type="hidden" name="webinar_id" value={webinar_id}>
   <input type="hidden" name="contouring_id" value={contouring_id}>
-  <button type="submit">Send</button>
+  <button type="submit">
+    {#if loading}
+      <Loader />
+    {:else}
+      Send
+    {/if}
+    </button>
 </form>
 
 <section class="comments">
@@ -87,10 +103,6 @@
     width: 100%;
     border-radius: var(--border-radius-small);
     text-transform: uppercase;
-  }
-
-  button:active {
-    background-color: blueviolet;
   }
 
   @media only screen and (min-width: 600px) {
