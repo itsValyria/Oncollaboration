@@ -30,6 +30,7 @@
 <style>
   article {
     margin-inline: .5rem;
+    width: 100%;
     max-width: var(--card-max-width);
     height: 100%;
   }

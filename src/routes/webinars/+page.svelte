@@ -27,7 +27,12 @@
   ul {
     display: flex;
     flex-wrap: wrap;
-    margin-top: 2em;
-    margin-left: auto;
+    gap: 20px;
+    margin: 2em 1em 0 1em;
+    justify-content: center;
+  }
+
+  li {
+    max-width: var(--card-max-width);
   }
 </style>
