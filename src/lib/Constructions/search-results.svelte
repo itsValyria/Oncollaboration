@@ -48,15 +48,20 @@
   }
 
   .carrousel > div {
-    flex: 0 0 auto;
+    flex: 0 0 calc(100% - 20%);
     scroll-snap-align: start;
   }
 
-  @media screen and (min-width: 1599px) {
+  @media screen and (min-width: 500px) {
+    .carrousel > div {
+      flex: 0 0 auto;
+    }
+  }
+
+  @media screen and (min-width: 1098px) {
     .carrousel {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 2rem;
     }
   }
 </style>
