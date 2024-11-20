@@ -46,12 +46,9 @@
   {:else} 
     {#each comments as comment}
       {#if comment.parent_id === null}
-        <Comment replyClass = ""
-        comment = {comment}/>
-      {:else}
-        <Comment replyClass = "reply"
-        comment = {comment}/>
-      {/if}    
+      <Comment
+      comment = {comment}/>  
+      {/if} 
     {/each}
   {/if}
 </section>

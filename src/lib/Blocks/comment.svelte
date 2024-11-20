@@ -1,31 +1,40 @@
 <script>
   export let comment;
-  export let replyClass;
+  export let replyClass = '';
 </script>
 
-<div class="container-comment {replyClass}">
-  <section class="head-comment">
-    {#if comment.user_id === null}
-      <img src="/images/profilepic.png" alt="error">
-      <p>Name Surname</p>
-    {:else}
-      <img src="https://fdnd-agency.directus.app/assets/{comment.user_id.profile_picture.id}" alt="{comment.user_id.profile_picture.title}">
-      <p>{comment.user_id.fullname}</p>
-    {/if}
+  <div class="container-comment {replyClass}">
+    <section class="head-comment">
+      {#if comment.user_id === null}
+        <img src="/images/profilepic.png" alt="error">
+        <h4>Name Surname</h4>
+      {:else}
+        <img src="https://fdnd-agency.directus.app/assets/{comment.user_id.profile_picture.id}" alt="{comment.user_id.profile_picture.title}">
+        <h4>{comment.user_id.fullname}</h4>
+      {/if}
 
-    {#if comment.time_posted === null}
-      <span>hours ago</span>
-    {:else}  
-      <span>{comment.time_posted}</span>
-    {/if}
-  </section>
+      {#if comment.time_posted === null}
+        <span>hours ago</span>
+      {:else}  
+        <span>{comment.time_posted}</span>
+      {/if}
+    </section>
 
-  <p class="content">{comment.content}</p>
+    <p class="content">{comment.content}</p>
 
-  <div class="container-response">
-    likes and replies
+    <div class="container-response">
+      likes and replies
+    </div>
   </div>
-</div>
+
+{#if comment.replies.length !== 0}
+  {#each comment.replies as reply }
+    <svelte:self 
+    replyClass="reply"
+    comment={reply}/>
+  {/each}
+{/if}
+
 
 
 <style>
@@ -57,7 +66,8 @@
       grid-row: 1/3;
     }
 
-    & p {
+    & h4 {
+      font-family: var(--font);
       font-weight: bold;
       font-size: var(--font-size-1);
       grid-column: 2;

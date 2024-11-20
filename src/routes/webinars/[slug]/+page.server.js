@@ -9,7 +9,7 @@ export async function load({params}) {
 
   const commentsURL = `${baseURL}avl_comments?fields=*.*.*.*&filter[webinar_id][_eq]=${webinar.data[0].id}`  
   const comments = await fetchJson(commentsURL)
-
+  
   return {
     webinar: webinar.data[0],
     comments: comments.data
