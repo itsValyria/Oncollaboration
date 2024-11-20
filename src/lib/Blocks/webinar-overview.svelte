@@ -73,6 +73,7 @@
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 1;
+    line-clamp: 1;
     word-break: break-all;
     font-size: var(--font-size-0);
     overflow: hidden;
@@ -122,6 +123,7 @@
 
     article h3 {
       -webkit-line-clamp: 2;
+      line-clamp: 2;
       font-size: var(--font-size-4);
     }
 
