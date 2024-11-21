@@ -16,12 +16,12 @@
         <p class="category">{categories.name}</p>
     </div>
   </a>
+  <a href="/">Watch this webinar</a>
 </article>
 
 <style>
   article {
     margin-inline: .5rem;
-    max-width: var(--card-max-width);
     height: 100%;
   }
 
