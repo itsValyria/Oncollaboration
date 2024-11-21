@@ -1,5 +1,5 @@
 <script>
-  import {Search, Filter, WebinarOverview} from "$lib/index.js";
+  import {Search, Filter, WebinarOverview, FeaturedWebinar} from "$lib/index.js";
   export let data;
 </script>
 
@@ -9,6 +9,12 @@
   <Search />
 
   <Filter />
+
+  <section>
+    {#each data.FeaturedWebinars as featuredWebinar}
+      <FeaturedWebinar {...featuredWebinar}/>
+    {/each}
+  </section>
 
   <ul>
     {#each data.webinars as webinar}
