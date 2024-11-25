@@ -35,7 +35,7 @@
 
   button {
     margin: .2rem;
-    padding: var(--padding-label);
+    padding: var(--padding-button);
     /* text-transform: uppercase; */
     background-color: var(--background-category-color);
     border: none;
@@ -58,10 +58,11 @@
     form {
       flex-wrap: wrap;
       justify-content: center;
+      -webkit-mask: 0;
     }
 
     button {
-      margin-inline: .5rem;
+      margin-inline: 5px 8px;
       padding: 8px 16px;
     }
   }
