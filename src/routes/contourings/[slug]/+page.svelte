@@ -6,11 +6,10 @@
 <main>
   <h1>{data.contouring.title}</h1>
 
-  <img src="https://fdnd-agency.directus.app/assets/{data.contouring.image_scan.id}" alt="CT-Scans" width="384" height="384" />
+  <img src="https://fdnd-agency.directus.app/assets/{data.contouring.image_scan}" alt="CT-Scans" width="384" height="384" />
   
   <section>
     <QandA 
-      contouring_id = {data.contouring.id}
       comments = {data.comments} />
   </section>
 </main>

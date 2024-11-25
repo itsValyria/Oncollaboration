@@ -5,7 +5,7 @@
 
 <main>
   <video controls width="250">
-    <source src="https://fdnd-agency.directus.app/assets/{data.webinar.video.id}">
+    <source src="https://fdnd-agency.directus.app/assets/{data.webinar.video}">
     <track kind="captions">
   </video>
   
@@ -17,7 +17,6 @@
   
   <div class='q-a'>
     <QandA 
-      webinar_id = {data.webinar.id}
       comments = {data.comments} />
   </div>
 </main>
