@@ -3,31 +3,44 @@ import fetchJson from "$lib/fetch-json";
 const baseURL = 'https://fdnd-agency.directus.app/items/';
 
 export async function load({ url }) {
-  // Converts the query string retrieved from the URL to lowercase
   const query = url.searchParams.get('query')?.toLowerCase() || '';
+  const category = url.searchParams.get('category')?.toLowerCase() || 'all';
   
-  // Define API endpoint URLs to fetch webinars en countourings data
-  const webinar = `${baseURL}avl_webinars?fields=*.*.*&sort[]=-date`;
-  const contouring = `${baseURL}avl_contourings?fields=*.*.*`;
+  const webinarsURL = `${baseURL}avl_webinars?fields=*.*.*&sort[]=-date`;
+  const contouringsURL = `${baseURL}avl_contourings?fields=*.*.*`;
+  // const categoriesURL = `${baseURL}avl_categories?fields=*.*.*`;
   
-  // Fetch the data from their API endpoints
-  const webinars = await fetchJson(webinar);
-  const contourings = await fetchJson(contouring);
+  const webinars = await fetchJson(webinarsURL);
+  const contourings = await fetchJson(contouringsURL);
+  // const categories= await fetchJson(categoriesURL);
 
-  // Filter webinars based on the query input
-  const filteredWebinars = webinars.data.filter(webinar =>
+  // Filter data op basis van de query
+  let filteredWebinars = webinars.data.filter((webinar) =>
     webinar.title.toLowerCase().includes(query)
   );
-
-  // Filter contourings based on the query input
-  const filteredContourings = contourings.data.filter(contouring =>
+  let filteredContourings = contourings.data.filter((contouring) =>
     contouring.title.toLowerCase().includes(query)
   );
 
-  // Returning the query back to the front-end along with the filtered webinars and contourings
+  // Filter data op basis van de categorie
+  if (category !== 'all') {
+    filteredWebinars = filteredWebinars.filter((webinar) =>
+      webinar.categories?.some((cat) =>
+        cat.avl_categories_id?.name?.toLowerCase() === category
+      )
+    );
+    filteredContourings = filteredContourings.filter((contouring) =>
+      contouring.categories?.some((cat) =>
+        cat.avl_categories_id?.name?.toLowerCase() === category
+      )
+    );
+  }
+
   return {
     webinars: filteredWebinars,
     contourings: filteredContourings,
-    query
-  };
+    // categories: categories.data,
+    query,
+    category,
+  }; 
 }
