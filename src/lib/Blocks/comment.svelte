@@ -14,9 +14,9 @@
       {/if}
 
       {#if comment.time_posted === null}
-        <span>hours ago</span>
+        <time>hours ago</time>
       {:else}  
-        <span>{comment.time_posted}</span>
+        <time>{comment.time_posted}</time>
       {/if}
     </section>
 
@@ -75,7 +75,7 @@
       grid-row: 1;
     }
 
-    & span {
+    & time {
       font-weight: 300;
       font-size: var(--font-size-0);
       color: gray;
