@@ -19,7 +19,7 @@
   };
 </script>
 
-<section>
+<section class="qanda-container">
   <h2>Q&A</h2>
   <form  action="{slug}?/comment" method="POST" use:enhance={addComment}>
     <label for="comment">Ask a question.</label>
@@ -50,6 +50,10 @@
 </section>
 
 <style>
+  .qanda-container {
+    container-type: inline-size;
+  }
+
   h2 {
     font-size: var(--font-size-4);
   }
@@ -99,7 +103,7 @@
     text-transform: uppercase;
   }
 
-  @media only screen and (min-width: 600px) {
+  @container (min-width: 400px) {
     input {
       width: 70%;
       border-start-end-radius: 0;
@@ -112,7 +116,9 @@
       border-start-start-radius: 0;
       border-end-start-radius: 0;
     }
+  }
 
+  @media (hover: hover){
     .comments {
       height: 200px;
       overflow-y: scroll;
