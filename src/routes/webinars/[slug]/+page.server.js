@@ -18,12 +18,15 @@ export async function load({params}) {
 
 /** @satisfies {import('./$types').Actions} */
 export const actions = {
-	comment: async ({ request }) => {
+	comment: async ({ request, params }) => {
 		const data = await request.formData();
     const timestamp = new Date().toISOString();
     const content = data.get('comment');
-    const user_id = data.get('user_id');
-    const webinar_id = data.get('webinar_id');
+
+    const webinarData = await fetchJson(`${baseURL}avl_webinars?fields=id&filter[slug][_eq]=${params.slug}`)
+    
+    const user_id = 1;
+    const webinar_id = webinarData.data[0].id;
 
     const response = await fetchJson(`${baseURL}avl_comments`, {
       method: 'POST',

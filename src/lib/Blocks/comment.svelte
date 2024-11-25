@@ -3,8 +3,8 @@
   export let replyClass = '';
 </script>
 
-  <div class="container-comment {replyClass}">
-    <section class="head-comment">
+  <li class="comment-container {replyClass}">
+    <section class="comment-head">
       {#if comment.user_id === null}
         <img src="/images/profilepic.png" alt="error">
         <h4>Name Surname</h4>
@@ -20,12 +20,12 @@
       {/if}
     </section>
 
-    <p class="content">{comment.content}</p>
+    <p class="comment-content">{comment.content}</p>
 
-    <div class="container-response">
+    <div class="comment-response">
       likes and replies
     </div>
-  </div>
+  </li>
 
 {#if comment.replies.length !== 0}
   {#each comment.replies as reply }
@@ -38,8 +38,9 @@
 
 
 <style>
-  .container-comment {
+  .comment-container {
     margin-block: 1rem;
+    list-style: none;
   }
 
   .reply {
@@ -51,7 +52,7 @@
     size: 3rem;
   }
 
-  .head-comment {
+  .comment-head {
     display: grid;
     grid: auto-flow / 50px 80%;
     column-gap: .5rem;
@@ -83,7 +84,7 @@
     }
   }
 
-  .content, .container-response {
+  .comment-content, .comment-response {
     margin-left: calc(50px + .5rem);
   }
 </style>

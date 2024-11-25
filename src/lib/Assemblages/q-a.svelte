@@ -5,10 +5,6 @@
 
   let content = '';
   let slug = $page.url.pathname;
-  
-  export let webinar_id = '';
-  export let user_id = 1;
-  export let contouring_id = '';
 
   export let comments = [];
 
@@ -23,42 +19,42 @@
   };
 </script>
 
-<h3>Q&A</h3>
-<form  action="{slug}?/comment" method="POST" use:enhance={addComment}>
-  <label for="comment">Ask a question.</label>
-  <input id="comment" name="comment" placeholder="Add a comment..." required bind:value={content}>
-  <input type="hidden" name="user_id" value={user_id}>
-  <input type="hidden" name="webinar_id" value={webinar_id}>
-  <input type="hidden" name="contouring_id" value={contouring_id}>
-  <button type="submit">
-    {#if loading}
-      <Loader />
-    {:else}
-      Send
+<section>
+  <h2>Q&A</h2>
+  <form  action="{slug}?/comment" method="POST" use:enhance={addComment}>
+    <label for="comment">Ask a question.</label>
+    <input id="comment" name="comment" placeholder="Add a comment..." required bind:value={content}>
+    <button type="submit">
+      {#if loading}
+        <Loader />
+      {:else}
+        Send
+      {/if}
+      </button>
+  </form>
+  
+  <section class="comments">
+    <h3>Comments</h3>
+    {#if comments.length === 0}
+      <p>Be the first to comment.</p>
+    {:else} 
+    <ol>
+      {#each comments as comment}
+        {#if comment.parent_id === null}
+        <Comment {comment}/>  
+        {/if} 
+      {/each}
+    </ol>
     {/if}
-    </button>
-</form>
-
-<section class="comments">
-  <h4>Comments</h4>
-  {#if comments.length === 0}
-    <p>Be the first to comment.</p>
-  {:else} 
-    {#each comments as comment}
-      {#if comment.parent_id === null}
-      <Comment
-      comment = {comment}/>  
-      {/if} 
-    {/each}
-  {/if}
+  </section>
 </section>
 
 <style>
-  h3 {
+  h2 {
     font-size: var(--font-size-4);
   }
 
-  h4 {
+  h3 {
     font-size: var(--font-size-2);
   }
 
@@ -79,8 +75,9 @@
 
   input {
     padding: var(--padding-label);
+    font-size: var(--font-size-1);
     height: 34px;
-    border: none;
+    border: transparent;
     width: 100%;
     border-radius: var(--border-radius-small);
   }
@@ -94,7 +91,7 @@
     padding: var(--padding-label);
     background-color: var(--primary-color);
     color: var(--alt-text-color);
-    border: none;
+    border: transparent;
     cursor: pointer;
     height: 34px;
     width: 100%;
@@ -121,7 +118,7 @@
       overflow-y: scroll;
     }
 
-    .comments h4 {
+    .comments h3 {
       position: sticky;
       top: 0;
       width: 100%;

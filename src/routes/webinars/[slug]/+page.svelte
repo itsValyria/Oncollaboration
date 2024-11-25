@@ -15,11 +15,11 @@
     {@html data.webinar.description}
   </div>
   
-  <section>
+  <div class='q-a'>
     <QandA 
       webinar_id = {data.webinar.id}
       comments = {data.comments} />
-  </section>
+  </div>
 </main>
 
 <style>
@@ -32,7 +32,7 @@
     margin: var(--margin-center);
   }
 
-  section {
+  .q-a {
     width: 90vw;
     max-width: 500px;
     margin: var(--margin-center);
