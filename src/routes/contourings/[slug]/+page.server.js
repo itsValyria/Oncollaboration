@@ -17,12 +17,15 @@ export async function load({params}) {
 
 /** @satisfies {import('./$types').Actions} */
 export const actions = {
-  comment: async ({ request }) => {
+  comment: async ({ request, params }) => {
 		const data = await request.formData();
     const timestamp = new Date().toISOString();
     const content = data.get('comment');
-    const user_id = data.get('user_id');
-    const contouring_id = data.get('contouring_id');
+
+    const contouringData = await fetchJson(`${baseURL}avl_contourings?fields=id&filter[slug][_eq]=${params.slug}`)
+
+    const user_id = 1;
+    const contouring_id = contouringData.data[0].id;
 
     const response = await fetchJson(`${baseURL}avl_comments`, {
       method: 'POST',
