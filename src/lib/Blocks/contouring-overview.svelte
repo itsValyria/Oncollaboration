@@ -45,7 +45,7 @@
   }
 
   img {
-    height: auto;
+    height: 16rem;
     width: 100%;
     border-radius: var(--border-radius-big);
   }
@@ -79,6 +79,12 @@
 
     p {
       font-size: var( --font-size-2);
+    }
+  }
+  
+  @media screen and (min-width: 1599px) {
+    img {
+      height: 100%;    
     }
   }
 </style>
