@@ -9,7 +9,7 @@
 <article>
   <a href="/contourings/{slug}">
     <div>
-      <img src="https://fdnd-agency.directus.app/assets/{image_scan.id}" alt="CT-Scans" width="384" height="384" />
+      <img src="https://fdnd-agency.directus.app/assets/{image_scan.id}?format=webp" loading="lazy" alt="CT-Scans" width="384" height="384" />
       {#each categories as category}
         <span>{category.avl_categories_id.name}</span>
       {/each} 
@@ -45,7 +45,7 @@
   }
 
   img {
-    height: auto;
+    height: 16rem;
     width: 100%;
     border-radius: var(--border-radius-big);
   }
@@ -79,6 +79,12 @@
 
     p {
       font-size: var( --font-size-2);
+    }
+  }
+  
+  @media screen and (min-width: 1599px) {
+    img {
+      height: 100%;    
     }
   }
 </style>

@@ -7,10 +7,14 @@
   export let categories = [];
 </script>
 
+<svelte:head>
+  <link rel="preload" as="image" href="https://fdnd-agency.directus.app/assets/{thumbnail}?format=webp" />
+</svelte:head>
+
 <article>
   <a href="/webinars/{slug}">
     <div class="container-image">
-      <img src="https://fdnd-agency.directus.app/assets/{thumbnail.id}" alt="thumbnail">
+      <img src="https://fdnd-agency.directus.app/assets/{thumbnail.id}?format=webp" alt="{thumbnail.title}" width="384px" height="384px">
       <p class="duration">{duration}</p>
     </div>
     <h3>{title}</h3>
@@ -30,6 +34,7 @@
 <style>
   article {
     margin-inline: .5rem;
+    width: 100%;
     max-width: var(--card-max-width);
     height: 100%;
   }
@@ -72,6 +77,7 @@
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 1;
+    line-clamp: 1;
     word-break: break-all;
     font-size: var(--font-size-0);
     overflow: hidden;
@@ -121,6 +127,7 @@
 
     article h3 {
       -webkit-line-clamp: 2;
+      line-clamp: 2;
       font-size: var(--font-size-4);
     }
 
