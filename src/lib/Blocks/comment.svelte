@@ -4,7 +4,6 @@
   import {Like, Liked, LoaderSpin, LoaderDots} from '$lib/index.js';
 
   export let comment;
-  export let replyClass = '';
 
   let content = '';
   let slug = $page.url.pathname;
@@ -32,7 +31,7 @@
   }
 </script>
 
-  <li class="comment-container {replyClass}">
+  <li class="comment-container">
     <section class="comment-head">
       {#if comment.user_id === null}
         <img src="/images/profilepic.png" alt="error">
@@ -85,8 +84,8 @@
         </svg>
         <span>reply</span>
       </label>
-      
-      <form action="{slug}?/reply" method="POST" class="form-reply">
+
+      <form action="{slug}?/reply" method="POST" class="form-reply" use:enhance={replyComment}>
         <input id="reply" name="reply" placeholder="reply..." required bind:value={content}>
         <input type="hidden" name="comment-id" value="{comment.id}">
         <button type="submit">
@@ -103,11 +102,15 @@
   </li>
 
 {#if comment.replies.length !== 0}
-  {#each comment.replies as reply }
-    <svelte:self 
-    replyClass="reply"
-    comment={reply}/>
-  {/each}
+  <div class="reply">
+    <hr/>
+    <ul>
+      {#each comment.replies as reply (reply.id) }
+        <svelte:self 
+        comment={reply}/>
+      {/each}
+    </ul>
+  </div>
 {/if}
 
 
@@ -122,11 +125,6 @@
 
   .reply {
     margin-left: 50px;
-  }
-
-  .reply::before {
-    content: "L";
-    size: 3rem;
   }
 
   .comment-head {
