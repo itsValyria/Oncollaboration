@@ -6,7 +6,7 @@ export async function load({params}) {
   const contouringURL = `${baseURL}avl_contourings?fields=image_scan,title,id,user_id.profile_picture.id,user_id.profile_picture.title,user_id.fullname,user_id.entitle,used_literature.directus_files_id,categories.avl_categories_id.name&filter[slug][_eq]=${params.slug}`
   const contouring = await fetchJson(contouringURL)
 
-  const commentsURL = `${baseURL}avl_comments?fields=time_posted,content,parent_id,likes,user_id.profile_picture.id,user_id.profile_picture.title,user_id.fullname,replies.*.*.*&filter[contouring_id][_eq]=${contouring.data[0].id}`
+  const commentsURL = `${baseURL}avl_comments?fields=time_posted,content,parent_id,likes,id,user_id.profile_picture.id,user_id.profile_picture.title,user_id.fullname,replies.*.*.*&filter[contouring_id][_eq]=${contouring.data[0].id}`
   const comments = await fetchJson(commentsURL)
   
   return {
@@ -41,5 +41,25 @@ export const actions = {
     });
 
     return { success: true };
-	}
+	},
+
+  like: async ({ request }) => {
+    const data = await request.formData();
+    const likes = parseInt(data.get('like'), 10);
+    const ID = data.get('comment-id');
+    
+    console.log(data);
+    
+    const response = await fetchJson(`${baseURL}avl_comments/${ID}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        likes: likes + 1,
+      })
+    });
+    
+    return { success: true };
+  }
 }
