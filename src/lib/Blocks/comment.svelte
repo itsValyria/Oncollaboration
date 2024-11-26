@@ -102,7 +102,7 @@
   </li>
 
 {#if comment.replies.length !== 0}
-  <div class="reply">
+  <div class="replies">
     <hr/>
     <ul>
       {#each comment.replies as reply (reply.id) }
@@ -113,8 +113,6 @@
   </div>
 {/if}
 
-
-
 <style>
   .comment-container {
     margin-block: 1rem;
@@ -123,8 +121,8 @@
     container-name: comment;
   }
 
-  .reply {
-    margin-left: 50px;
+  .replies {
+    margin-left: 40px;
   }
 
   .comment-head {
@@ -252,6 +250,10 @@
   }
 
   @container comment (min-width: 350px) {
+    .replies {
+      margin-left: 50px;
+    }
+
     .comment-head {
       grid: auto-flow / 50px 80%;
     }
