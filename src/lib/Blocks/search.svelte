@@ -23,10 +23,6 @@
     border-end-start-radius: var(--border-radius-small);
   }
 
-  ::placeholder {
-    color: var(--text-color);
-  }
-
   button {
     padding: var(--padding-label);
     width: 15%;

@@ -8,6 +8,6 @@ import Comment from "./Blocks/comment.svelte";
 import LoaderDots from "./Bricks/loader-dots.svelte";
 import LoaderSpin from "./Bricks/loader-spin.svelte";
 import Like from "./Bricks/like.svelte";
-import Liked from "./Bricks/liked.svelte"
+import Liked from "./Bricks/liked.svelte";
 
 export {ContouringOverview, Search, Filter, WebinarOverview, Navigation, QandA, Comment, LoaderDots, LoaderSpin, Like, Liked}
