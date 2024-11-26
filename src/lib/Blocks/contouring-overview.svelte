@@ -9,7 +9,7 @@
 <article>
   <a href="/contourings/{slug}">
     <div>
-      <img src="https://fdnd-agency.directus.app/assets/{image_scan.id}" loading="lazy" alt="CT-Scans" width="384" height="384" />
+      <img src="https://fdnd-agency.directus.app/assets/{image_scan.id}?format=webp" loading="lazy" alt="CT-Scans" width="384" height="384" />
       {#each categories as category}
         <span>{category.avl_categories_id.name}</span>
       {/each} 
