@@ -41,6 +41,7 @@
   .comment-container {
     margin-block: 1rem;
     list-style: none;
+    container-type: inline-size;
   }
 
   .reply {
@@ -54,13 +55,13 @@
 
   .comment-head {
     display: grid;
-    grid: auto-flow / 50px 80%;
+    grid: auto-flow / 40px 80%;
     column-gap: .5rem;
     align-items: center;
 
     & img {
-      width: 50px;
-      height: 50px;
+      width: 40px;
+      height: 40px;
       border-radius: 50px;
       object-fit: cover;
       grid-column: 1;
@@ -78,13 +79,39 @@
     & time {
       font-weight: 300;
       font-size: var(--font-size-0);
-      color: gray;
+      color: #4b4141;
       grid-column: 2;
       grid-row: 2;
     }
   }
 
   .comment-content, .comment-response {
-    margin-left: calc(50px + .5rem);
+    margin-left: calc(40px + .5rem);
+  }
+
+  .comment-content {
+    font-size: var(--font-size-2);
+    padding-block: .5rem;
+  }
+
+  @container (min-width: 350px) {
+    .comment-head {
+      grid: auto-flow / 50px 80%;
+    }
+
+    .comment-head img {
+      width: 50px;
+      height: 50px;
+    }
+
+    .comment-content, .comment-response {
+      margin-left: calc(50px + .5rem);
+    }
+  }
+
+  @media (hover: hover){
+    .comment-content{
+      padding-block: .7rem;
+    }
   }
 </style>
