@@ -15,7 +15,7 @@
       <a href="/">Cookiestatement</a>
     </li>
   </ul>
-  <img src="images/AVL-Logo-white.svg" alt="Antoni van Leeuwenhoek">
+  <img src="/images/AVL-Logo-white.svg" alt="Antoni van Leeuwenhoek">
 </footer>
 
 <style>
