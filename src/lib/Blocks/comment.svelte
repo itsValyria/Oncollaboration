@@ -1,12 +1,11 @@
 <script>
   import { page } from '$app/stores';
   import { enhance } from '$app/forms';
-  import {Like, Liked, LoaderSpin} from '$lib/index.js';
+  import {Like, Liked, LoaderSpin, LoaderDots} from '$lib/index.js';
 
   export let comment;
   export let replyClass = '';
-  
-  let likes = comment?.likes || 0;
+
   let slug = $page.url.pathname;
 
   let loading = false;
@@ -42,7 +41,7 @@
     <p class="comment-content">{comment.content}</p>
 
     <div class="comment-response">
-      <form action="{slug}?/like" method="POST" id="like" use:enhance={likeComment}>
+      <form action="{slug}?/like" method="POST" class="like" use:enhance={likeComment}>
         <input type="hidden" name="comment-id" value="{comment.id}">
         <button type="submit" id="like" aria-label="Like this comment">
             {#if loading}
@@ -50,7 +49,7 @@
               <LoaderSpin />
             </div>
             {:else}
-              <svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <svg width="20" height="19" viewBox="0 0 20 19" xmlns="http://www.w3.org/2000/svg">
                 {#if liked}
                   <Liked />    
                 {:else}
@@ -144,24 +143,25 @@
     height: 20px;
   }
   
-  #like {
+  .like {
     display: flex;
     gap: var(--gap);
     align-items: center;
   }
 
-  #like button {
+  .like button {
     border: transparent;
     background: none;
     cursor: pointer;
-    height: fit-content;
+    height: 18px;
   }
 
-  #like svg {
+  .like svg {
     fill: var(--primary-color)
   }
 
-  #like span {
+  .like span {
+    font-size: var(--font-size-1);
     font-weight: bold;
   }
 
