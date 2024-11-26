@@ -219,6 +219,11 @@
     flex-wrap: wrap;
     width: 100%;
 
+    opacity: 0;
+    height: 0;
+    z-index: -1;
+    transition-duration: .5s;
+
     & input {
       padding: var(--padding-label);
       font-size: var(--font-size-1);
@@ -247,6 +252,13 @@
       margin: auto;
     }
     
+  }
+
+  .form-reply:focus-within {
+    opacity: 1;
+    z-index: 1;
+    height: fit-content;
+    transition-duration: .5s;
   }
 
   @container comment (min-width: 350px) {
