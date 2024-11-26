@@ -9,7 +9,7 @@
 
   .loader {
     margin: auto;
-    width: 15px;
+    width: inherit;
     aspect-ratio: 1;
     border-radius: 50%;
     animation: l5 1s infinite linear alternate;

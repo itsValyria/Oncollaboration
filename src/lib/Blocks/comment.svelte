@@ -1,7 +1,7 @@
 <script>
   import { page } from '$app/stores';
   import { enhance } from '$app/forms';
-  import {Like, Liked, Loader} from '$lib/index.js';
+  import {Like, Liked, LoaderSpin} from '$lib/index.js';
 
   export let comment;
   export let replyClass = '';
@@ -10,8 +10,10 @@
   let slug = $page.url.pathname;
 
   let loading = false;
+  let liked = false;
   const likeComment = () => {
     loading = true;
+    liked = true;
 
     return async ({ update }) => {
       await update();
@@ -44,17 +46,21 @@
         <input type="hidden" name="like" value="{likes}">
         <input type="hidden" name="comment-id" value="{comment.id}">
         <button type="submit" id="like" aria-label="Like this comment">
-          {#if loading}
-            <svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-              <Liked />
-            </svg>
-          {:else}
-            <svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-              <Like/>
-            </svg>   
-          {/if}
+            {#if loading}
+            <div class="loader">
+              <LoaderSpin />
+            </div>
+            {:else}
+              <svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                {#if liked}
+                  <Liked />    
+                {:else}
+                  <Like />
+                {/if}  
+              </svg> 
+            {/if}
         </button>
-        
+
         <span class="like-count">
           {#if comment.likes != null}
             {comment.likes}
@@ -134,6 +140,11 @@
     padding-block: var(--gap);
   }
 
+  .loader {
+    width: 20px;
+    height: 20px;
+  }
+  
   #like {
     display: flex;
     gap: var(--gap);

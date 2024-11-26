@@ -1,5 +1,5 @@
 <script>
-  import { Comment, Loader } from '$lib/index.js';
+  import { Comment, LoaderDots } from '$lib/index.js';
   import { page } from '$app/stores';
   import { enhance } from '$app/forms';
 
@@ -26,7 +26,9 @@
     <input id="comment" name="comment" placeholder="Add a comment..." required bind:value={content}>
     <button type="submit">
       {#if loading}
-        <Loader />
+      <div class="loader">
+        <LoaderDots />
+      </div>
       {:else}
         Send
       {/if}
@@ -102,6 +104,11 @@
     width: 100%;
     border-radius: var(--border-radius-small);
     text-transform: uppercase;
+  }
+
+  .loader {
+    width: 15px;
+    margin: auto;
   }
 
   @container (min-width: 400px) {

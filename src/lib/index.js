@@ -5,8 +5,9 @@ import WebinarOverview from "./Blocks/webinar-overview.svelte";
 import Navigation from "./Constructions/navigation.svelte";
 import QandA from "./Assemblages/q-a.svelte";
 import Comment from "./Blocks/comment.svelte";
-import Loader from "./Bricks/loading.svelte";
+import LoaderDots from "./Bricks/loader-dots.svelte";
+import LoaderSpin from "./Bricks/loader-spin.svelte";
 import Like from "./Bricks/like.svelte";
 import Liked from "./Bricks/liked.svelte"
 
-export {ContouringOverview, Search, Filter, WebinarOverview, Navigation, QandA, Comment, Loader, Like, Liked}
+export {ContouringOverview, Search, Filter, WebinarOverview, Navigation, QandA, Comment, LoaderDots, LoaderSpin, Like, Liked}
