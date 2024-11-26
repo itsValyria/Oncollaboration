@@ -43,7 +43,6 @@
 
     <div class="comment-response">
       <form action="{slug}?/like" method="POST" id="like" use:enhance={likeComment}>
-        <input type="hidden" name="like" value="{likes}">
         <input type="hidden" name="comment-id" value="{comment.id}">
         <button type="submit" id="like" aria-label="Like this comment">
             {#if loading}

@@ -45,8 +45,9 @@ export const actions = {
 
   like: async ({ request }) => {
     const data = await request.formData();
-    const likes = parseInt(data.get('like'), 10);
     const ID = data.get('comment-id');
+    const likesData = await fetchJson(`${baseURL}avl_comments/${ID}?fields=likes`);
+    const likes = likesData.data.likes;
     
     const response = await fetchJson(`${baseURL}avl_comments/${ID}`, {
       method: 'PATCH',
