@@ -1,5 +1,6 @@
 <script>
   import { Navigation } from "$lib/index.js";
+  import Footer from '$lib/constructions/footer.svelte';
   import { navigating } from '$app/stores';
 </script>
 
@@ -14,6 +15,7 @@
     <slot />
   </div>
 {/if}
+<Footer />
 
 
 <style>
