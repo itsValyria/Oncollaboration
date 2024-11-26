@@ -78,7 +78,7 @@
            likes</span>
       </form>
 
-      <label for="reply">
+      <label for="reply-{comment.id}" class="reply">
         <svg width="20" height="19" viewBox="0 0 20 19" xmlns="http://www.w3.org/2000/svg">
           <path d="M8.49589 10.9232H9.95228V8.01036H12.8652V6.55397H9.95228V3.6411H8.49589V6.55397H5.58301V8.01036H8.49589V10.9232ZM0 18V1.7552C0 1.26474 0.169918 0.849589 0.509753 0.509753C0.849589 0.169918 1.26474 0 1.7552 0H16.693C17.1834 0 17.5986 0.169918 17.9384 0.509753C18.2783 0.849589 18.4482 1.26474 18.4482 1.7552V12.8091C18.4482 13.2996 18.2783 13.7147 17.9384 14.0546C17.5986 14.3944 17.1834 14.5643 16.693 14.5643H3.43569L0 18ZM2.81578 13.1079H16.693C16.7677 13.1079 16.8361 13.0768 16.8984 13.0146C16.9606 12.9523 16.9918 12.8838 16.9918 12.8091V1.7552C16.9918 1.6805 16.9606 1.61203 16.8984 1.54977C16.8361 1.48753 16.7677 1.45641 16.693 1.45641H1.7552C1.6805 1.45641 1.61203 1.48753 1.54977 1.54977C1.48753 1.61203 1.45641 1.6805 1.45641 1.7552V14.4523L2.81578 13.1079Z"/>
         </svg>
@@ -86,7 +86,7 @@
       </label>
 
       <form action="{slug}?/reply" method="POST" class="form-reply" use:enhance={replyComment}>
-        <input id="reply" name="reply" placeholder="reply..." required bind:value={content}>
+        <input id="reply-{comment.id}" name="reply" placeholder="reply..." required bind:value={content}>
         <input type="hidden" name="comment-id" value="{comment.id}">
         <button type="submit">
           {#if loadingSend}
@@ -200,7 +200,7 @@
     }
   }
 
-  label[for="reply"]{
+  label.reply{
     display: flex;
     gap: var(--gap);
     align-items: center;
