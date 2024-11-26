@@ -6,6 +6,7 @@
   export let comment;
   export let replyClass = '';
 
+  let content = '';
   let slug = $page.url.pathname;
 
   let loading = false;
@@ -67,7 +68,21 @@
           {/if}  
            likes</span>
       </form>
-      reply
+      
+      <form action="{slug}?/reply" method="POST" class="reply">
+        <label for="reply">reply</label>
+        <input id="reply" name="reply" placeholder="reply..." required bind:value={content}>
+        <input type="hidden" name="comment-id" value="{comment.id}">
+        <button type="submit">
+          {#if loading}
+          <div class="loader">
+            <LoaderDots />
+          </div>
+          {:else}
+            Send
+          {/if}
+          </button>
+      </form>
     </div>
   </li>
 
