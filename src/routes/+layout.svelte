@@ -1,6 +1,5 @@
 <script>
-  import { Navigation } from "$lib/index.js";
-  import Footer from '$lib/constructions/footer.svelte';
+  import { Navigation, Footer } from "$lib/index.js";
   import { navigating } from '$app/stores';
 </script>
 

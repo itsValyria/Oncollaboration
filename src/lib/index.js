@@ -4,6 +4,7 @@ import Filter from "./Blocks/filter.svelte";
 import WebinarOverview from "./Blocks/webinar-overview.svelte";
 import Navigation from "./Constructions/navigation.svelte";
 import SearchResults from "./Constructions/search-results.svelte";
+import Footer from "./Constructions/footer.svelte";
 
 
-export {ContouringOverview, Search, Filter, WebinarOverview, Navigation, SearchResults}
+export {ContouringOverview, Search, Filter, WebinarOverview, Navigation, SearchResults, Footer}
