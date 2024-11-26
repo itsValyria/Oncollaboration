@@ -59,7 +59,7 @@
   }
 
   h3 {
-    font-size: var(--font-size-2);
+    font-size: var(--font-size-3);
   }
 
   form {
@@ -71,7 +71,7 @@
 
   label {
     font-family: var(--heading-font);
-    font-size: var(--font-size-2);
+    font-size: var(--font-size-3);
     font-weight: bold;
     margin-bottom: .5rem;
     width: 100%;
@@ -97,6 +97,7 @@
     color: var(--alt-text-color);
     border: transparent;
     cursor: pointer;
+    font-size: var(--font-size-1);
     height: 34px;
     width: 100%;
     border-radius: var(--border-radius-small);
