@@ -19,7 +19,7 @@
   };
 </script>
 
-<section class="qanda-container">
+<section>
   <h2>Q&A</h2>
   <form  action="{slug}?/comment" method="POST" use:enhance={addComment}>
     <label for="comment">Ask a question.</label>
@@ -122,7 +122,7 @@
 
   @media (hover: hover){
     .comments {
-      height: 200px;
+      height: 500px;
       overflow-y: scroll;
     }
 
