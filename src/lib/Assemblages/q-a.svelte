@@ -32,7 +32,7 @@
       {:else}
         Send
       {/if}
-      </button>
+    </button>
   </form>
   
   <section class="comments">
@@ -52,10 +52,6 @@
 </section>
 
 <style>
-  .qanda-container {
-    container-type: inline-size;
-  }
-
   h2 {
     font-size: var(--font-size-4);
   }
@@ -69,6 +65,8 @@
     display: flex;
     flex-wrap: wrap;
     width: 100%;
+    container-type: inline-size;
+    container-name: form;
   }
 
   label {
@@ -86,10 +84,6 @@
     border: transparent;
     width: 100%;
     border-radius: var(--border-radius-small);
-  }
-
-  ::placeholder {
-    color: var(--text-color);
   }
 
   button {
@@ -111,7 +105,7 @@
     margin: auto;
   }
 
-  @container (min-width: 400px) {
+  @container form (min-width: 400px) {
     input {
       width: 70%;
       border-start-end-radius: 0;
