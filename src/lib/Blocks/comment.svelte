@@ -1,6 +1,23 @@
 <script>
+  import { page } from '$app/stores';
+  import { enhance } from '$app/forms';
+  import {Like, Liked, Loader} from '$lib/index.js';
+
   export let comment;
   export let replyClass = '';
+  
+  let likes = comment?.likes || 0;
+  let slug = $page.url.pathname;
+
+  let loading = false;
+  const likeComment = () => {
+    loading = true;
+
+    return async ({ update }) => {
+      await update();
+      loading = false;
+    };
+  };
 </script>
 
   <li class="comment-container {replyClass}">
@@ -23,7 +40,30 @@
     <p class="comment-content">{comment.content}</p>
 
     <div class="comment-response">
-      likes and replies
+      <form action="{slug}?/like" method="POST" id="like" use:enhance={likeComment}>
+        <input type="hidden" name="like" value="{likes}">
+        <input type="hidden" name="comment-id" value="{comment.id}">
+        <button type="submit" id="like" aria-label="Like this comment">
+          {#if loading}
+            <svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <Liked />
+            </svg>
+          {:else}
+            <svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <Like/>
+            </svg>   
+          {/if}
+        </button>
+        
+        <span class="like-count">
+          {#if comment.likes != null}
+            {comment.likes}
+          {:else} 
+            0
+          {/if}  
+           likes</span>
+      </form>
+      reply
     </div>
   </li>
 
@@ -56,7 +96,7 @@
   .comment-head {
     display: grid;
     grid: auto-flow / 40px 80%;
-    column-gap: .5rem;
+    column-gap: var(--gap);
     align-items: center;
 
     & img {
@@ -86,12 +126,33 @@
   }
 
   .comment-content, .comment-response {
-    margin-left: calc(40px + .5rem);
+    margin-left: calc(40px + var(--gap));
   }
 
   .comment-content {
     font-size: var(--font-size-2);
-    padding-block: .5rem;
+    padding-block: var(--gap);
+  }
+
+  #like {
+    display: flex;
+    gap: var(--gap);
+    align-items: center;
+  }
+
+  #like button {
+    border: transparent;
+    background: none;
+    cursor: pointer;
+    height: fit-content;
+  }
+
+  #like svg {
+    fill: var(--primary-color)
+  }
+
+  #like span {
+    font-weight: bold;
   }
 
   @container (min-width: 350px) {
@@ -105,7 +166,7 @@
     }
 
     .comment-content, .comment-response {
-      margin-left: calc(50px + .5rem);
+      margin-left: calc(50px + var(--gap));
     }
   }
 

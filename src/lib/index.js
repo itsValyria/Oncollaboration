@@ -6,5 +6,7 @@ import Navigation from "./Constructions/navigation.svelte";
 import QandA from "./Assemblages/q-a.svelte";
 import Comment from "./Blocks/comment.svelte";
 import Loader from "./Bricks/loading.svelte";
+import Like from "./Bricks/like.svelte";
+import Liked from "./Bricks/liked.svelte"
 
-export {ContouringOverview, Search, Filter, WebinarOverview, Navigation, QandA, Comment, Loader}
+export {ContouringOverview, Search, Filter, WebinarOverview, Navigation, QandA, Comment, Loader, Like, Liked}
