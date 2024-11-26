@@ -40,13 +40,13 @@
     {#if comments.length === 0}
       <p>Be the first to comment.</p>
     {:else} 
-    <ol>
+    <ul>
       {#each comments as comment}
         {#if comment.parent_id === null}
-        <Comment {comment}/>  
+        <li><Comment {comment}/></li>
         {/if} 
       {/each}
-    </ol>
+    </ul>
     {/if}
   </section>
 </section>

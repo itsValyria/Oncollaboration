@@ -31,13 +31,13 @@
   }
 </script>
 
-  <li class="comment-container">
+  <div class="comment-container">
     <section class="comment-head">
       {#if comment.user_id === null}
-        <img src="/images/profilepic.png" alt="error">
+        <img src="/images/profilepic.png" alt="error" width="40" height="40">
         <h4>Name Surname</h4>
       {:else}
-        <img src="https://fdnd-agency.directus.app/assets/{comment.user_id.profile_picture.id}" alt="{comment.user_id.profile_picture.title}">
+        <img src="https://fdnd-agency.directus.app/assets/{comment.user_id.profile_picture.id}" alt="{comment.user_id.profile_picture.title}" width="40" height="40">
         <h4>{comment.user_id.fullname}</h4>
       {/if}
 
@@ -86,7 +86,7 @@
       </label>
 
       <form action="{slug}?/reply" method="POST" class="form-reply" use:enhance={replyComment}>
-        <input id="reply-{comment.id}" name="reply" placeholder="reply..." required bind:value={content}>
+        <input id="reply-{comment.id}" name="reply" placeholder="Type your reply" required bind:value={content}>
         <input type="hidden" name="comment-id" value="{comment.id}">
         <button type="submit">
           {#if loadingSend}
@@ -99,15 +99,17 @@
         </button>
       </form>
     </div>
-  </li>
+  </div>
 
 {#if comment.replies.length !== 0}
   <div class="replies">
     <hr/>
     <ul>
       {#each comment.replies as reply (reply.id) }
-        <svelte:self 
-        comment={reply}/>
+        <li>
+          <svelte:self 
+          comment={reply}/>
+        </li>
       {/each}
     </ul>
   </div>
