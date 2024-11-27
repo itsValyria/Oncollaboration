@@ -35,12 +35,7 @@
 </main>
 
 <style>
-  main {
-    margin-top: 1.2em;
-    margin-right: 1em;
-    margin-left: 1em;
-  }
-
+  
   h1 {
     font-size: var(--font-size-4);
   }

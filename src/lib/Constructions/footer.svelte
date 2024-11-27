@@ -26,6 +26,8 @@
   @media screen and (min-width: 1080px) {
     footer {
       display: flex;
+      position: sticky;
+      bottom: 0;
       align-items: center;
       justify-content: space-between;
       background-color: var(--primary-color);

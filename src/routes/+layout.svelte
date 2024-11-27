@@ -3,55 +3,58 @@
   import { navigating } from '$app/stores';
 </script>
 
-{#if $navigating} 
+{#if $navigating}
   <Navigation />
   <main>
     <span>Loading...</span>
   </main>
-{:else} 
+{:else}
   <Navigation />
-  <div class="slot">
+  <div class="content">
     <slot />
   </div>
 {/if}
-<Footer />
-
+<footer>
+  <Footer />
+</footer>
 
 <style>
-  main {
-    display: flex;
-    width: 100vw;
-    height: 90vh;
+  main, .content {
+    flex: 1;
+    margin-right: 1em;
+    margin-left: 1em;
+  }
+
+  footer {
+    height: 115px;
+    background-color: #f0f0f0;
   }
 
   span {
     display: block;
     font-size: var(--font-size-6);
     font-weight: bold;
-    width: fit-content;
     margin: auto;
   }
 
-  .slot {
-    padding-bottom: 57px;
-  }
-
-  @media screen and (min-width: 600px) {
-    .slot {
-      padding-bottom: 77px;
+  @media (min-width: 600px) {
+    .content {
+      margin-bottom: 77px;
     }
   }
 
-  @media screen and (min-width: 1080px) {
-    .slot {
+  @media (min-width: 1080px) {
+    .content {
       margin-top: 74px;
       padding-bottom: 0;
     }
   }
 
-  @media screen and (min-width: 1920px) {
-    .slot {
+  @media (min-width: 1920px) {
+    .content {
       margin-top: 82px;
     }
   }
+
+
 </style>

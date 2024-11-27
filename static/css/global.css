@@ -53,6 +53,10 @@ html {
 body {
   font-family: var(--font);
   background-color: var(--body-color);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
 }
 
 ul li {
