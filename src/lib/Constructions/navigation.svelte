@@ -51,6 +51,7 @@
       font-size: var(--font-size-00);
       color: rgba(116, 116, 116, 1);
       padding: .7em .5em 0; 
+      text-decoration: none;
     }
   
     li a.active {

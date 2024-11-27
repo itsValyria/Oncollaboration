@@ -49,6 +49,7 @@
     footer a {
       font-weight: normal;
       color: white;
+      text-decoration: none;
     }
 
     footer a:hover {
