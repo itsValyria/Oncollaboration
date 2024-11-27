@@ -31,6 +31,7 @@
     overflow-x: auto;
     width: 99vw;
     -webkit-mask: linear-gradient(90deg,#0000,#000 5% 95%,#0000);
+    mask: linear-gradient(90deg,#0000,#000 5% 95%,#0000);;
   }
 
   button {
@@ -54,11 +55,12 @@
     border-radius: var(--border-radius-small);
   }
 
-  @media only screen and (min-width:600px) {
+  @media screen and (min-width:600px) {
     form {
       flex-wrap: wrap;
       justify-content: center;
       -webkit-mask: 0;
+      mask: 0;
     }
 
     button {

@@ -65,7 +65,7 @@
       height: 24px;
     }
   
-    @media (min-width: 600px) {
+    @media screen and (min-width: 600px) {
       li a {
         font-size: var(--font-size-1);
       }
@@ -76,7 +76,7 @@
       }
     }
   
-    @media (min-width: 1080px) {
+    @media screen and (min-width: 1080px) {
   
       nav {
         bottom: auto;
@@ -110,7 +110,7 @@
       }
     }
   
-    @media (min-width: 1920px) {
+    @media screen and (min-width: 1920px) {
   
       li a {
         font-size: var(--font-size-3);

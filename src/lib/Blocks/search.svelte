@@ -53,7 +53,7 @@
     fill: var(--alt-text-color);
   }
 
-  @media only screen and (min-width: 400px) {
+  @media screen and (min-width: 400px) {
     input {
       width: 90%;
     }
@@ -63,7 +63,7 @@
     }
   }
 
-  @media only screen and (min-width: 1080px) {
+  @media screen and (min-width: 1080px) {
     form {
       flex-direction: row-reverse;
     }

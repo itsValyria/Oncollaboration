@@ -116,7 +116,7 @@
     margin-left: 0;
   }
   
-  @media only screen and (min-width: 600px) {
+  @media screen and (min-width: 600px) {
     article {
       margin-inline: 1rem;
     }
