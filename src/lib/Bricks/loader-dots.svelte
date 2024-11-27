@@ -1,4 +1,4 @@
-<div class="loader">
+<div class="load">
   <p>loading</p>
 </div>
 
@@ -7,7 +7,7 @@
     display: none;
   }
 
-  .loader {
+  .load {
     margin: auto;
     width: inherit;
     aspect-ratio: 1;

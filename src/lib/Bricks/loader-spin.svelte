@@ -1,4 +1,4 @@
-<div class="loader">
+<div class="load">
   <p>
     loading
   </p>
@@ -9,7 +9,7 @@
     display: none;
   }
   
-  .loader {
+  .load {
     width: inherit;
     height: inherit;
     padding: 8px;
