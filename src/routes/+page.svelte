@@ -56,6 +56,7 @@
     color: white;
     background-color: var(--primary-color);
     font-size: var(--font-size-0);
+    text-decoration: none;
     font-weight: 700;
     padding: 5px 20px;
     border-radius: 5px;
