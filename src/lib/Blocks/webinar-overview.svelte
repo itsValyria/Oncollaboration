@@ -7,9 +7,9 @@
   export let categories = [];
 </script>
 
-<svelte:head>
+<!-- <svelte:head>
   <link rel="preload" as="image" href="https://fdnd-agency.directus.app/assets/{thumbnail}?width=384&format=avif" width="384px" height="384px"/>
-</svelte:head>
+</svelte:head> -->
 
 <article>
   <a href="/webinars/{slug}">
