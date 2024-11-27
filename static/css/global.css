@@ -6,11 +6,12 @@
 
 @font-face {
   font-family: "rundschrift";
-  src: url(/fonts/vag_rundschrift_d.ttf)
+  font-display: optional;
+  src: url(/fonts/vag_rundschrift_d.woff2) format('woff2');
 }
 
 :root {
-  --font: "Open Sans", sans-serif;
+  --font: sans-serif;
   --heading-font: "rundschrift", sans-serif;
 
   --font-size-00: .5rem;
