@@ -8,13 +8,13 @@
 </script>
 
 <svelte:head>
-  <link rel="preload" as="image" href="https://fdnd-agency.directus.app/assets/{thumbnail}?format=webp" />
+  <link rel="preload" as="image" href="https://fdnd-agency.directus.app/assets/{thumbnail}?format=avif" />
 </svelte:head>
 
 <article>
   <a href="/webinars/{slug}">
     <div class="container-image">
-      <img src="https://fdnd-agency.directus.app/assets/{thumbnail.id}?format=webp" alt="{thumbnail.title}" width="384px" height="384px">
+      <img src="https://fdnd-agency.directus.app/assets/{thumbnail.id}?format=avif" alt="{thumbnail.title}" width="384px" height="384px">
       <p class="duration">{duration}</p>
     </div>
     <h3>{title}</h3>
