@@ -28,7 +28,7 @@
       {:else}
         <p>No categories available</p>
       {/if}
-      <a href="/">Watch this webinar</a>
+      <a href="/webinars/?featured=true">Watch this webinar</a>
     </div>
   </article>
 </section>
