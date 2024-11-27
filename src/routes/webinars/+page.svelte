@@ -10,11 +10,9 @@
 
   <Filter />
 
-  <section>
-    {#each data.FeaturedWebinars as featuredWebinar}
-      <FeaturedWebinar {...featuredWebinar}/>
-    {/each}
-  </section>
+  {#each data.FeaturedWebinars as featuredWebinar}
+    <FeaturedWebinar {...featuredWebinar}/>
+  {/each}
 
   <ul>
     {#each data.webinars as webinar}

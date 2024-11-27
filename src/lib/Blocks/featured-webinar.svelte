@@ -2,100 +2,159 @@
   export let thumbnail = "";
   export let duration = "";
   export let title = "";
-  export let categories = [];
+  export let description = "";
+  export let categories = "";
 </script>
 
-<article>
-  <a href="/">
-    <div class="container-image">
-      <img src="https://fdnd-agency.directus.app/assets/{thumbnail.id}" alt="thumbnail" width="412" height="322">
-      <p class="duration">{duration}</p>
+
+<section>
+  <h1>Featured Webinar</h1>
+  <article>
+    <a href="/`webinars?featured=true`">
+      <div class="container-image">
+        <img src="https://fdnd-agency.directus.app/assets/{thumbnail.id}" alt="" width="412" height="322">
+        <span class="duration">{duration}</span>
+      </div>
+      <div class="featured-webinar-info">
+        <h2>{title}</h2>
+        <p>{@html description}</p>
+      </div>
+    </a>
+    <div class="bottom-featured-card">
+      {#if categories.length > 0}
+        {#each categories as category}
+          <p class="category">{category.avl_categories_id.name}</p>
+        {/each}
+      {:else}
+        <p>No categories available</p>
+      {/if}
+      <a href="/">Watch this webinar</a>
     </div>
-    <h3>{title}</h3>
-    <div class="categories">
-        <p class="category">{categories.name}</p>
-    </div>
-  </a>
-  <a href="/">Watch this webinar</a>
-</article>
+  </article>
+</section>
 
 <style>
-  article {
-    margin-inline: .5rem;
-    height: 100%;
+
+  section{
+    container-type: inline-size;
+    padding: 15px;
   }
 
-  article a {
-    color: var(--text-color);
-    text-decoration: none;
-    height: 100%;
+   article {
+    display: grid;
+    grid-template-areas: 
+    "a a"
+    "b b"
+    "c c"
+    "d d"
   }
 
-  article p {
-    font-size: var(--font-size-00);
+  @container (width > 1000px) {
+    article{
+    grid-template-areas: 
+    "a a"
+    "a a"
+    "c c";
+    background-color: blue;
+    }
+
   }
 
-  article .container-image {
+  h1{
+    margin-bottom: .5em;
+  }
+
+  .container-image {
     position: relative;
-  }  
+    grid-area: a;
+  }
 
-  article .container-image img {
+  span {
+    position: absolute;
+    color: var(--alt-text-color);
+    padding: var(--padding-label);
+    font-size: var(--font-size-1);
+    border-radius: var(--border-radius-small);
+    background-color: black;
+    bottom: 10px;
+    right: 10px;
+  }
+
+  img {
+    height: auto;
     width: 100%;
-    height: 100%;
-    object-fit: contain;
     border-radius: var(--border-radius-big);
   }
 
-  article .container-image .duration {
-    position: absolute;
-    background-color: #1F000B;
-    color: var(--alt-text-color);
-    padding: var(--padding-label);
-    bottom: 10px;
-    right: 10px;
-    border-radius: var(--border-radius-small);
-    z-index: 1;
+
+  .featured-webinar-info{
+    grid-area: b;
   }
 
-  article h3 {
+  .featured-webinar-info h2{
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
     word-break: break-all;
-    font-size: var(--font-size-0);
+    font-size: var(--font-size-3);
     overflow: hidden;
     text-overflow: ellipsis;
-  }
-  article .categories {
-    display: flex;
-    margin-top: auto;
+    margin-top: .5em;
   }
 
-  article .categories .category {
-    display: none;
-    margin-inline-end: .5rem;
+  .featured-webinar-info p{
+   overflow: hidden;
+   text-overflow: ellipsis;
+   display: -webkit-box;
+   -webkit-line-clamp: 2; /* number of lines to show */
+   -webkit-box-orient: vertical;
+   margin-top: .5em;
+   font-size: var(--font-size-1);
+  }
+
+  .bottom-featured-card{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    grid-area: c;
+    margin-top: .5em;
+  }
+
+  .bottom-featured-card p{
     padding: var(--padding-label);
     width: fit-content;
     background-color: var(--background-category-color);
-    border-radius: var(--border-radius-small);
+    border-radius: var(--border-radius-big);
+    text-transform: uppercase;
+    font-weight: 700;
   }
 
-  article:first-of-type {
-    margin-left: 0;
+  .bottom-featured-card a{
+    padding: var(--padding-label);
+    width: fit-content;
+    background-color: var(--primary-color);
+    color: white;
+    transition: .2s;
+    border-radius: var(--border-radius-big);
+    text-transform: uppercase;
   }
-  
-  @media only screen and (min-width: 600px) {
-    article {
-      margin-inline: 1rem;
+
+  .bottom-featured-card a:hover{
+    scale: 1.1;
+  }
+
+  @media screen and (min-width: 600px) {
+    span {
+      opacity: 1;
+      visibility: visible;
     }
 
-    article p {
-      font-size: var(--font-size-2);
-    }
-
-    article h3 {
+    h3 {
       font-size: var(--font-size-4);
     }
 
-    article .categories .category {
-      display: block;
+    p {
+      font-size: var( --font-size-2);
     }
   }
 </style>
