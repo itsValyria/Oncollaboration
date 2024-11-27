@@ -6,8 +6,8 @@ export async function load({ url }) {
   const query = url.searchParams.get('query')?.toLowerCase() || '';
   const category = url.searchParams.get('category')?.toLowerCase() || 'all';
   
-  const webinarsURL = `${baseURL}avl_webinars?fields=*.*.*&sort[]=-date`;
-  const contouringsURL = `${baseURL}avl_contourings?fields=*.*.*`;
+  const webinarsURL = `${baseURL}avl_webinars?fields=slug,thumbnail.id,thumbnail.title,duration,title,speakers.avl_speakers_id.fullname,categories.avl_categories_id.name&sort[]=-date`;
+  const contouringsURL = `${baseURL}avl_contourings?fields=slug,image_scan.id,title,user_id.fullname,categories.avl_categories_id.name`;
   // const categoriesURL = `${baseURL}avl_categories?fields=*.*.*`;
   
   const webinars = await fetchJson(webinarsURL);
