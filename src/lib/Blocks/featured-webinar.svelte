@@ -1,5 +1,6 @@
 <script>
   export let thumbnail = "";
+  export let slug = "";
   export let duration = "";
   export let title = "";
   export let description = "";
@@ -10,7 +11,7 @@
 <section>
   <h1>Featured Webinar</h1>
   <article>
-    <a href="/`webinars?featured=true`">
+    <a href="/webinars/{slug}">
       <div class="container-image">
         <img src="https://fdnd-agency.directus.app/assets/{thumbnail.id}" alt="" width="412" height="322">
         <span class="duration">{duration}</span>
@@ -28,7 +29,7 @@
       {:else}
         <p>No categories available</p>
       {/if}
-      <a href="/webinars/?featured=true">Watch this webinar</a>
+      <a href="/webinars/{slug}">Watch this webinar</a>
     </div>
   </article>
 </section>
