@@ -30,7 +30,7 @@
       justify-content: space-between;
       background-color: var(--primary-color);
       padding: 2rem 4rem;
-      color: white;
+      color: var(--alt-text-color);
     }
 
     footer ul {
@@ -48,7 +48,7 @@
 
     footer a {
       font-weight: normal;
-      color: white;
+      color: var(--alt-text-color);
       text-decoration: none;
     }
 

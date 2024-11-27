@@ -26,7 +26,7 @@
 
   span {
     display: block;
-    font-size: var(--font-size-6);
+    font-size: var(--font-size-4xl);
     font-weight: bold;
     width: fit-content;
     margin: auto;

@@ -35,8 +35,8 @@
     padding: var(--padding-label);
     width: 85%;
     border: none;
-    border-start-start-radius: var(--border-radius-small);
-    border-end-start-radius: var(--border-radius-small);
+    border-start-start-radius: var(--border-radius-sm);
+    border-end-start-radius: var(--border-radius-sm);
   }
 
   button {
@@ -44,8 +44,8 @@
     width: 15%;
     background-color: var(--primary-color);
     border: none;
-    border-start-end-radius: var(--border-radius-small);
-    border-end-end-radius: var(--border-radius-small);
+    border-start-end-radius: var(--border-radius-sm);
+    border-end-end-radius: var(--border-radius-sm);
     cursor: pointer;
   }
 
@@ -72,15 +72,15 @@
       width: 95%;
       border-start-start-radius: 0;
       border-end-start-radius: 0;
-      border-start-end-radius: var(--border-radius-small);
-      border-end-end-radius: var(--border-radius-small);
+      border-start-end-radius: var(--border-radius-sm);
+      border-end-end-radius: var(--border-radius-sm);
     }
 
     button {
       width: 5%;
-      background-color: white;
-      border-start-start-radius: var(--border-radius-small);
-      border-end-start-radius: var(--border-radius-small);
+      background-color: var(--background-color-alt);
+      border-start-start-radius: var(--border-radius-sm);
+      border-end-start-radius: var(--border-radius-sm);
       border-start-end-radius: 0;
       border-end-end-radius: 0;
     }

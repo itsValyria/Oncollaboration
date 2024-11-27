@@ -26,7 +26,7 @@
   }
 
   section h2 {
-    font-size: var(--font-size-3);
+    font-size: var(--font-size-xl);
   }
 
   section p {
@@ -35,37 +35,37 @@
 
   section a {
     display: inline-flex;
-    color: white;
+    color: var(--alt-text-color);
     background-color: var(--primary-color);
-    font-size: var(--font-size-0);
+    font-size: var(--font-size-sm);
     font-weight: 700;
     padding: 5px 20px;
-    border-radius: 5px;
+    border-radius: var(--border-radius-sm);
     margin: 3em;
     text-transform: uppercase;
   }
 
   @media screen and (min-width: 767px) {
     section h2 {
-      font-size: var(--font-size-4);
+      font-size: var(--font-size-2xl);
     }
     
     section p {
-      font-size: var(--font-size-3);
+      font-size: var(--font-size-xl);
     }
 
     section a {
-      font-size: var(--font-size-2);
+      font-size: var(--font-size-lg);
     }
   }
 
   @media screen and (min-width: 1080px) {
     section h2 {
-      font-size: var(--font-size-6);
+      font-size: var(--font-size-4xl);
     }
     
     section p {
-      font-size: var(--font-size-4);
+      font-size: var(--font-size-2xl);
     }
   }
 </style>

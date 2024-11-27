@@ -42,24 +42,24 @@
   }
 
   h1 {
-    font-size: var(--font-size-4);
+    font-size: var(--font-size-2xl);
   }
 
   h2 {
-    font-size: var(--font-size-2);
+    font-size: var(--font-size-lg);
     margin-bottom: 0.5em;
     margin-top: 0.8em;
   }
 
   a {
     display: inline-flex;
-    color: white;
+    color: var(--alt-text-color);
     background-color: var(--primary-color);
-    font-size: var(--font-size-0);
+    font-size: var(--font-size-sm);
     text-decoration: none;
     font-weight: 700;
-    padding: 5px 20px;
-    border-radius: 5px;
+    padding: var(--padding-button);
+    border-radius: var(--border-radius-sm);
     margin: 1em 0;
   }
 
@@ -76,7 +76,7 @@
 
   .kaart:focus-within {
     outline: var(--focus);
-    border-radius: var(--border-radius-small);
+    border-radius: var(--border-radius-sm);
   }
 
   .kaart {
@@ -95,7 +95,7 @@
 
   .contouringkaart:focus-within {
     outline: var(--focus);
-    border-radius: var(--border-radius-small);
+    border-radius: var(--border-radius-sm);
   }
 
   .carrousel::-webkit-scrollbar {
@@ -114,15 +114,15 @@
 
   @media screen and (min-width: 600px) {
     h1 {
-      font-size: var(--font-size-6);
+      font-size: var(--font-size-4xl);
     }
 
     h2 {
-      font-size: var(--font-size-5);
+      font-size: var(--font-size-3xl);
     }
 
     a {
-      font-size: var(--font-size-2);
+      font-size: var(--font-size-lg);
     }
   }
 

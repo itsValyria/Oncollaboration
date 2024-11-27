@@ -1,5 +1,5 @@
 <script>
-    export let data; // Ontvang de gegevens vanuit de server
+    export let data;
     import { Filter, SearchResults, Search } from "$lib/index.js";
   </script>
   

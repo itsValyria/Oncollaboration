@@ -37,22 +37,22 @@
   button {
     margin: .2rem;
     padding: var(--padding-button);
-    /* text-transform: uppercase; */
+    text-transform: uppercase;
     background-color: var(--background-category-color);
     border: none;
-    border-radius: var(--border-radius-small);
+    border-radius: var(--border-radius-sm);
     flex-shrink: 0;
     cursor: pointer;
-    color: inherit; /* behoud de tekstkleur */
+    color: inherit;
   }
 
   .selected {
     background-color: var(--primary-color);
-    color: white;
+    color: var(--alt-text-color);
   }
   button:focus {
     outline: var(--focus);
-    border-radius: var(--border-radius-small);
+    border-radius: var(--border-radius-sm);
   }
 
   @media screen and (min-width:600px) {

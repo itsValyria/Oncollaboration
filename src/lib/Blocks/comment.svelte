@@ -145,14 +145,14 @@
     & h4 {
       font-family: var(--font);
       font-weight: bold;
-      font-size: var(--font-size-1);
+      font-size: var(--font-size-md);
       grid-column: 2;
       grid-row: 1;
     }
 
     & time {
       font-weight: 300;
-      font-size: var(--font-size-0);
+      font-size: var(--font-size-sm);
       color: #4b4141;
       grid-column: 2;
       grid-row: 2;
@@ -164,7 +164,7 @@
   }
 
   .comment-content {
-    font-size: var(--font-size-2);
+    font-size: var(--font-size-lg);
     padding-block: var(--gap);
   }
   
@@ -197,7 +197,7 @@
     }
 
     & span {
-      font-size: var(--font-size-1);
+      font-size: var(--font-size-md);
       font-weight: bold;
     }
   }
@@ -228,11 +228,11 @@
 
     & input {
       padding: var(--padding-label);
-      font-size: var(--font-size-1);
+      font-size: var(--font-size-md);
       height: 34px;
       border: transparent;
       width: 100%;
-      border-radius: var(--border-radius-small);
+      border-radius: var(--border-radius-sm);
     }
 
     & button {
@@ -242,10 +242,10 @@
       color: var(--alt-text-color);
       border: transparent;
       cursor: pointer;
-      font-size: var(--font-size-1);
+      font-size: var(--font-size-md);
       height: 34px;
       width: 100%;
-      border-radius: var(--border-radius-small);
+      border-radius: var(--border-radius-sm);
       text-transform: uppercase;
     }
 

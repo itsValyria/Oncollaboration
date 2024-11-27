@@ -28,13 +28,13 @@
 
   video {
     width: 90vw;
-    margin: var(--margin-center);
+    margin: 0 auto;
   }
 
   .q-a {
     width: 90vw;
     max-width: 500px;
-    margin: var(--margin-center);
+    margin: 0 auto;
   }
 
   @media screen and (min-width: 600px){

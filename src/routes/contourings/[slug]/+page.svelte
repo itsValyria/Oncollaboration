@@ -22,6 +22,6 @@
   section {
     width: 90vw;
     max-width: 500px;
-    margin: var(--margin-center);
+    margin: 0 auto;
   }
 </style>
