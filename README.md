@@ -67,6 +67,13 @@ Naast deze issues zijn wij ookal begonnen aan:
 Er moet nog een hele hoop toegevoegd worden aan de website. Al deze issues staan in ons [projectboard](https://github.com/users/Ryank2004/projects/5).
 
 ### Sprint 16
+Deze sprint heeft iedereen zich gefocused op een component om die goed werkend, toegankelijk en responsive te maken. Ook hebben we gewerkt aan kleine veerbeter puntjes van onze website. Hier is een lijst van alle issues die wij hebben opgelost deze sprint"
+- [Filteren op categorie functie](https://github.com/fdnd-agency/avl/issues/26)
+- [Q&A form voor de contourings en webinars.](https://github.com/fdnd-agency/avl/issues/34)
+- [Footer voor desktop](https://github.com/fdnd-agency/avl/issues/33)
+- [Fetch urls met alleen die fields die we echt nodig hebben](https://github.com/fdnd-agency/avl/issues/43)
+- []()
+
 ## Bronnen
 - [SvelteKit tutorial](https://learn.svelte.dev/tutorial/introducing-sveltekit)
 - [Dynamic component](https://www.youtube.com/watch?v=7h6slC4HcpI)
