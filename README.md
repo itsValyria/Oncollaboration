@@ -1,7 +1,3 @@
-> _Fork_ deze leertaak en ga aan de slag. 
-Onderstaande outline ga je gedurende deze taak in jouw eigen GitHub omgeving uitwerken. 
-De instructie vind je in: [INSTRUCTIONS](https://github.com/fdnd-task/lose-your-head-the-client-case/blob/main/docs/INSTRUCTIONS.md)
-
 # Oncollaboration
 Oncollaboration is een platform waar radiologen uit Indonesie en Nederland bij elkaar samen kunnen komen om nieuwe ontwikkelingen te bespreken.
 
