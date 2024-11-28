@@ -7,20 +7,24 @@
   export let categories = "";
 </script>
 
-
 <section>
   <h1>Featured Webinar</h1>
   <article>
-    <a href="/webinars/{slug}">
-      <div class="container-image">
-        <img src="https://fdnd-agency.directus.app/assets/{thumbnail.id}" alt="" width="412" height="322">
+    <!-- Image Section -->
+    <div class="container-image">
+      <a href="/webinars/{slug}">
+        <img src="https://fdnd-agency.directus.app/assets/{thumbnail.id}?width=412&fit=cover&format=avif" alt="{title}" width="412px" height="322px" />
         <span class="duration">{duration}</span>
-      </div>
-      <div class="featured-webinar-info">
+      </a>
+    </div>
+
+    <div class="featured-webinar-info">
+      <a href="/webinars/{slug}">
         <h2>{title}</h2>
         <p>{@html description}</p>
-      </div>
-    </a>
+      </a>
+    </div>
+
     <div class="bottom-featured-card">
       {#if categories.length > 0}
         {#each categories as category}
@@ -29,8 +33,12 @@
       {:else}
         <p>No categories available</p>
       {/if}
-      <a href="/webinars/{slug}">Watch this webinar</a>
-    </div>
+    
+
+      <div class="action-link">
+        <a href="/webinars/{slug}">Watch webinar</a>
+      </div>
+   </div>
   </article>
 </section>
 
@@ -38,124 +46,135 @@
 
   section{
     container-type: inline-size;
+    container-name: main-container;
     padding: 15px;
   }
+  article {
+  display: grid;
+  grid-template-areas:
+    "a"
+    "b"
+    "c"; /* Default mobile layout: stacked */
+  gap: 1em;
+  grid-template-columns: 1fr;
+}
 
-   article {
-    display: grid;
-    grid-template-areas: 
-    "a a"
-    "b b"
-    "c c"
-    "d d"
+@container main-container (min-width: 821px) {
+  article {
+    grid-template-areas:
+      "a b"
+      "a c"
+      "a d";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto ;
   }
 
-  @container (width > 1000px) {
-    article{
-    grid-template-areas: 
-    "a a"
-    "a a"
-    "c c";
-    background-color: blue;
-    }
-
-  }
-
-  h1{
-    margin-bottom: .5em;
-  }
-
-  .container-image {
-    position: relative;
-    grid-area: a;
-  }
-
-  span {
-    position: absolute;
-    color: var(--alt-text-color);
-    padding: var(--padding-label);
-    font-size: var(--font-size-1);
-    border-radius: var(--border-radius-small);
-    background-color: black;
-    bottom: 10px;
-    right: 10px;
-  }
-
-  img {
-    height: auto;
-    width: 100%;
-    border-radius: var(--border-radius-big);
-  }
-
-
-  .featured-webinar-info{
-    grid-area: b;
-  }
-
-  .featured-webinar-info h2{
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 1;
-    word-break: break-all;
-    font-size: var(--font-size-3);
-    overflow: hidden;
-    text-overflow: ellipsis;
-    margin-top: .5em;
-  }
-
-  .featured-webinar-info p{
-   overflow: hidden;
-   text-overflow: ellipsis;
-   display: -webkit-box;
-   -webkit-line-clamp: 2; /* number of lines to show */
-   -webkit-box-orient: vertical;
-   margin-top: .5em;
-   font-size: var(--font-size-1);
-  }
-
-  .bottom-featured-card{
+  .bottom-featured-card {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    grid-area: c;
-    margin-top: .5em;
+    flex-direction: column;
+    justify-self: start;
+  }
+}
+@container main-container (600px < width <820px) {
+  article {
+    grid-template-areas:
+      "a b"
+      "a c"
+      "a d";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto ;
   }
 
-  .bottom-featured-card p{
-    padding: var(--padding-label);
-    width: fit-content;
-    background-color: var(--background-category-color);
-    border-radius: var(--border-radius-big);
-    text-transform: uppercase;
-    font-weight: 700;
+  .bottom-featured-card {
+    display: flex;
+    flex-direction: column;
+    justify-self: start;
+    gap: 4rem;
   }
 
-  .bottom-featured-card a{
-    padding: var(--padding-label);
-    width: fit-content;
-    background-color: var(--primary-color);
-    color: white;
-    transition: .2s;
-    border-radius: var(--border-radius-big);
-    text-transform: uppercase;
-  }
+  .container-image img {
+  width: 100%;
+  min-width: 422px;
+  height: auto;
+  border-radius: var(--border-radius-big);
+}
+}
 
-  .bottom-featured-card a:hover{
-    scale: 1.1;
-  }
+.container-image {
+  grid-area: a;
+  position: relative;
+}
 
-  @media screen and (min-width: 600px) {
-    span {
-      opacity: 1;
-      visibility: visible;
-    }
+.container-image img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--border-radius-big);
+}
 
-    h3 {
-      font-size: var(--font-size-4);
-    }
+.container-image span {
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+  color: var(--alt-text-color);
+  background-color: black;
+  padding: var(--padding-label);
+  border-radius: var(--border-radius-small);
+  font-size: var(--font-size-1);
+  z-index: 1000;
+}
 
-    p {
-      font-size: var( --font-size-2);
-    }
-  }
+.featured-webinar-info {
+  grid-area: b;
+}
+
+.featured-webinar-info h2 {
+  margin: 0.5em 0;
+  font-size: var(--font-size-3);
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.featured-webinar-info p {
+  margin: 0.5em 0;
+  font-size: var(--font-size-1);
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.bottom-featured-card {
+  grid-area: c;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.bottom-featured-card p {
+  background-color: var(--background-category-color);
+  border-radius: var(--border-radius-big);
+  padding: 5px;
+  text-transform: uppercase;
+  font-weight: bold;
+  grid-area: cc;
+}
+
+.action-link a {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 5px;
+  border-radius: var(--border-radius-big);
+  text-transform: uppercase;
+  transition: 0.2s;
+  grid-area: d;
+}
+
+.action-link a:hover {
+  transform: scale(1.1);
+}
+
 </style>
