@@ -67,12 +67,18 @@ Naast deze issues zijn wij ookal begonnen aan:
 Er moet nog een hele hoop toegevoegd worden aan de website. Al deze issues staan in ons [projectboard](https://github.com/users/Ryank2004/projects/5).
 
 ### Sprint 16
-Deze sprint heeft iedereen zich gefocused op een component om die goed werkend, toegankelijk en responsive te maken. Ook hebben we gewerkt aan kleine veerbeter puntjes van onze website. Hier is een lijst van alle issues die wij hebben opgelost deze sprint"
+We zijn overgestapt van repo en projectboard zodat we onze code via een pullrequest op de fdnd avl repo kunnen zetten. Deze sprint heeft iedereen zich gefocused op een component om die goed werkend, toegankelijk en responsive te maken. Ook hebben we gewerkt aan kleine veerbeter puntjes van onze website. Hier is een lijst van alle issues die wij hebben opgelost deze sprint:
+- [Search functie bouwen](https://github.com/fdnd-agency/avl/issues/25)
 - [Filteren op categorie functie](https://github.com/fdnd-agency/avl/issues/26)
 - [Q&A form voor de contourings en webinars.](https://github.com/fdnd-agency/avl/issues/34)
 - [Footer voor desktop](https://github.com/fdnd-agency/avl/issues/33)
+- [Featured article bouwen de desktop homepage](https://github.com/fdnd-agency/avl/issues/16)
 - [Fetch urls met alleen die fields die we echt nodig hebben](https://github.com/fdnd-agency/avl/issues/43)
-- []()
+- [Error page bouwen](https://github.com/fdnd-agency/avl/issues/27)
+- [Featured article design](https://github.com/fdnd-agency/avl/issues/20)
+
+We hebben ons [projectboard](https://github.com/orgs/fdnd-agency/projects/35) bijgewerkt met alles wat nog gedaan moet worden. 
+
 
 ## Bronnen
 - [SvelteKit tutorial](https://learn.svelte.dev/tutorial/introducing-sveltekit)
