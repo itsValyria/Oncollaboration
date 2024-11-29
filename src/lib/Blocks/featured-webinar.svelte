@@ -10,7 +10,6 @@
 <section>
   <h1>Featured Webinar</h1>
   <article>
-    <!-- Image Section -->
     <div class="container-image">
       <a href="/webinars/{slug}">
         <img src="https://fdnd-agency.directus.app/assets/{thumbnail.id}?width=412&fit=cover&format=avif" alt="{title}" width="412px" height="322px" />
@@ -54,50 +53,36 @@
   grid-template-areas:
     "a"
     "b"
-    "c"; /* Default mobile layout: stacked */
+    "c"; 
   gap: 1em;
   grid-template-columns: 1fr;
 }
-
-@container main-container (min-width: 821px) {
+@container main-container (min-width: 800px) {
   article {
     grid-template-areas:
       "a b"
       "a c"
-      "a d";
+      "a .";
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto auto ;
+    grid-template-rows: auto auto auto;
+  }
+  
+  .bottom-featured-card p {
+    grid-area: aa;
   }
 
-  .bottom-featured-card {
-    display: flex;
-    flex-direction: column;
-    justify-self: start;
-  }
-}
-@container main-container (600px < width <820px) {
-  article {
-    grid-template-areas:
-      "a b"
-      "a c"
-      "a d";
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto auto ;
-  }
-
-  .bottom-featured-card {
-    display: flex;
-    flex-direction: column;
-    justify-self: start;
-    gap: 4rem;
+  .bottom-featured-card a {
+    grid-area: bb;
+    font-size: 20px;
+    text-decoration: none;
   }
 
   .container-image img {
-  width: 100%;
-  min-width: 422px;
-  height: auto;
-  border-radius: var(--border-radius-big);
-}
+    width: 100%;
+    min-width: 422px;
+    height: auto;
+    border-radius: var(--border-radius-big);
+  }
 }
 
 .container-image {
@@ -160,9 +145,11 @@
   padding: 5px;
   text-transform: uppercase;
   font-weight: bold;
-  grid-area: cc;
 }
 
+.action-link{
+  grid-area: d;
+}
 .action-link a {
   background-color: var(--primary-color);
   color: white;
