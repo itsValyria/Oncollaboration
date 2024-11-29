@@ -7,10 +7,14 @@
   export let categories = [];
 </script>
 
+<svelte:head>
+  <link rel="preload" as="image" href="https://fdnd-agency.directus.app/assets/{thumbnail}?format=avif" />
+</svelte:head>
+
 <article>
   <a href="/webinars/{slug}">
     <div class="container-image">
-      <img src="https://fdnd-agency.directus.app/assets/{thumbnail.id}" alt="thumbnail">
+      <img src="https://fdnd-agency.directus.app/assets/{thumbnail.id}?width=384&fit=cover&format=avif" alt="{thumbnail.title}" width="384px" height="384px"/>
       <p class="duration">{duration}</p>
     </div>
     <h3>{title}</h3>
@@ -30,6 +34,7 @@
 <style>
   article {
     margin-inline: .5rem;
+    width: 100%;
     max-width: var(--card-max-width);
     height: 100%;
   }
@@ -43,7 +48,7 @@
   }
 
   article p {
-    font-size: var(--font-size-00);
+    font-size: var(--font-size-xs);
   }
 
   article .container-image {
@@ -54,7 +59,7 @@
     width: 100%;
     height: 100%;
     object-fit: contain;
-    border-radius: var(--border-radius-big);
+    border-radius: var(--border-radius-md);
   }
 
   article .container-image .duration {
@@ -64,7 +69,7 @@
     padding: var(--padding-label);
     bottom: 10px;
     right: 10px;
-    border-radius: var(--border-radius-small);
+    border-radius: var(--border-radius-sm);
     z-index: 1;
   }
 
@@ -72,8 +77,9 @@
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 1;
+    line-clamp: 1;
     word-break: break-all;
-    font-size: var(--font-size-0);
+    font-size: var(--font-size-sm);
     overflow: hidden;
     text-overflow: ellipsis;
   }
@@ -103,25 +109,26 @@
     padding: var(--padding-label);
     width: fit-content;
     background-color: var(--background-category-color);
-    border-radius: var(--border-radius-small);
+    border-radius: var(--border-radius-sm);
   }
 
   article:first-of-type {
     margin-left: 0;
   }
   
-  @media only screen and (min-width: 600px) {
+  @media screen and (min-width: 600px) {
     article {
       margin-inline: 1rem;
     }
 
     article p {
-      font-size: var(--font-size-2);
+      font-size: var(--font-size-lg);
     }
 
     article h3 {
       -webkit-line-clamp: 2;
-      font-size: var(--font-size-4);
+      line-clamp: 2;
+      font-size: var(--font-size-2xl);
     }
 
     article .categories .category {

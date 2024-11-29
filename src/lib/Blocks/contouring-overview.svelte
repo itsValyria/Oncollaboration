@@ -9,7 +9,7 @@
 <article>
   <a href="/contourings/{slug}">
     <div>
-      <img src="https://fdnd-agency.directus.app/assets/{image_scan.id}" alt="CT-Scans" width="384" height="384" />
+      <img src="https://fdnd-agency.directus.app/assets/{image_scan.id}?width=384&fit=cover&format=avif" alt="{title}" width="384px" height="384px"/>
       {#each categories as category}
         <span>{category.avl_categories_id.name}</span>
       {/each} 
@@ -32,12 +32,12 @@
   span {
     position: absolute;
     color: var(--text-color);
-    font-size: var(--font-size-2);
+    font-size: var(--font-size-lg);
     font-weight: 700;
-    border-radius: var(--border-radius-small);
+    border-radius: var(--border-radius-sm);
     padding: 5px;
     gap: 10px;
-    background-color: white;
+    background-color: var(--alt-text-color);
     bottom: 10px;
     right: 10px;
     opacity: 0;
@@ -45,9 +45,9 @@
   }
 
   img {
-    height: auto;
+    height: 16rem;
     width: 100%;
-    border-radius: var(--border-radius-big);
+    border-radius: var(--border-radius-md);
   }
 
   h3,
@@ -60,11 +60,11 @@
   }
 
   h3 {
-    font-size: var(--font-size-0);
+    font-size: var(--font-size-sm);
   }
 
   p {
-    font-size: var(--font-size-00);
+    font-size: var(--font-size-xs);
   }
 
   @media screen and (min-width: 600px) {
@@ -74,11 +74,17 @@
     }
 
     h3 {
-      font-size: var(--font-size-4);
+      font-size: var(--font-size-2xl);
     }
 
     p {
-      font-size: var( --font-size-2);
+      font-size: var( --font-size-lg);
+    }
+  }
+  
+  @media screen and (min-width: 1599px) {
+    img {
+      height: 100%;    
     }
   }
 </style>

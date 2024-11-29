@@ -30,13 +30,13 @@
   <style>
     nav {
       position: fixed;
-      background-color: white;
+      background-color: var(--background-color-alt);
       bottom: 0;
       width: 100%;
       padding: 0 1em .5em;
       z-index: 1000;
       box-shadow: 0px -4px 17px 0px rgba(0,0,0,0.3);
-      background-color: white;
+      background-color: var(--background-color-alt);
     }
   
     ul {
@@ -48,9 +48,10 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      font-size: var(--font-size-00);
+      font-size: var(--font-size-xs);
       color: rgba(116, 116, 116, 1);
       padding: .7em .5em 0; 
+      text-decoration: none;
     }
   
     li a.active {
@@ -64,9 +65,9 @@
       height: 24px;
     }
   
-    @media (min-width: 600px) {
+    @media screen and (min-width: 600px) {
       li a {
-        font-size: var(--font-size-1);
+        font-size: var(--font-size-md);
       }
   
       .icon {
@@ -75,7 +76,7 @@
       }
     }
   
-    @media (min-width: 1080px) {
+    @media screen and (min-width: 1080px) {
   
       nav {
         bottom: auto;
@@ -109,10 +110,10 @@
       }
     }
   
-    @media (min-width: 1920px) {
+    @media screen and (min-width: 1920px) {
   
       li a {
-        font-size: var(--font-size-3);
+        font-size: var(--font-size-xl);
       }
     }
   </style>

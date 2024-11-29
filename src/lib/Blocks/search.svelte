@@ -1,16 +1,32 @@
-<form>
-  <input type="text" placeholder="Search" id="search" name="search">
-  <button type="submit">
+<script>
+  import { goto } from '$app/navigation';
+  let searchQuery = '';
+
+  // Redirect to the /search page with the URL-encoded search query
+  function handleSearch() {
+  goto(`/search?query=${encodeURIComponent(searchQuery)}`);
+}
+</script>
+
+
+<form on:submit|preventDefault={handleSearch}>
+  <input 
+    type="text" 
+    placeholder="Search" 
+    id="search" 
+    name="search" 
+    bind:value={searchQuery} 
+  />
+  <button type="submit" name="search" id="search" aria-label="Search">
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
       <path fill="currentColor" fill-rule="evenodd" d="M10 2a8 8 0 1 0 4.906 14.32l5.387 5.387a1 1 0 0 0 1.414-1.414l-5.387-5.387A8 8 0 0 0 10 2m-6 8a6 6 0 1 1 12 0 6 6 0 0 1-12 0" clip-rule="evenodd"></path>
     </svg>
   </button>
 </form>
 
-
 <style>
   form {
-    margin: 1rem auto;
+    margin: 1rem 0;
     display: flex;
     width: 80vw;
   }
@@ -19,12 +35,8 @@
     padding: var(--padding-label);
     width: 85%;
     border: none;
-    border-start-start-radius: var(--border-radius-small);
-    border-end-start-radius: var(--border-radius-small);
-  }
-
-  ::placeholder {
-    color: var(--text-color);
+    border-start-start-radius: var(--border-radius-sm);
+    border-end-start-radius: var(--border-radius-sm);
   }
 
   button {
@@ -32,8 +44,8 @@
     width: 15%;
     background-color: var(--primary-color);
     border: none;
-    border-start-end-radius: var(--border-radius-small);
-    border-end-end-radius: var(--border-radius-small);
+    border-start-end-radius: var(--border-radius-sm);
+    border-end-end-radius: var(--border-radius-sm);
     cursor: pointer;
   }
 
@@ -41,7 +53,7 @@
     fill: var(--alt-text-color);
   }
 
-  @media only screen and (min-width: 400px) {
+  @media screen and (min-width: 400px) {
     input {
       width: 90%;
     }
@@ -51,7 +63,7 @@
     }
   }
 
-  @media only screen and (min-width: 1080px) {
+  @media screen and (min-width: 1080px) {
     form {
       flex-direction: row-reverse;
     }
@@ -60,15 +72,15 @@
       width: 95%;
       border-start-start-radius: 0;
       border-end-start-radius: 0;
-      border-start-end-radius: var(--border-radius-small);
-      border-end-end-radius: var(--border-radius-small);
+      border-start-end-radius: var(--border-radius-sm);
+      border-end-end-radius: var(--border-radius-sm);
     }
 
     button {
       width: 5%;
-      background-color: white;
-      border-start-start-radius: var(--border-radius-small);
-      border-end-start-radius: var(--border-radius-small);
+      background-color: var(--background-color-alt);
+      border-start-start-radius: var(--border-radius-sm);
+      border-end-start-radius: var(--border-radius-sm);
       border-start-end-radius: 0;
       border-end-end-radius: 0;
     }

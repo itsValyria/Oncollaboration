@@ -6,41 +6,47 @@
 
 @font-face {
   font-family: "rundschrift";
-  src: url(/fonts/vag_rundschrift_d.ttf)
+  src: url(/fonts/vag_rundschrift_d.woff2) format("woff2");
 }
 
 :root {
-  --font: "Open Sans", sans-serif;
+  --font: sans-serif;
   --heading-font: "rundschrift", sans-serif;
 
-  --font-size-00: .5rem;
-  --font-size-0: .75rem;
-  --font-size-1: 1rem;
-  --font-size-2: 1.125rem;
-  --font-size-3: 1.25rem;
-  --font-size-4: 1.875rem; 
-  --font-size-5: 2rem;
-  --font-size-6: 2.5rem;
-  --font-size-7: 3rem;
-  --font-size-8: 3.5rem;
+  /* ---------- Font sizes ---------- */
+  --font-size-xs: 0.5rem;
+  --font-size-sm: 0.75rem;
+  --font-size-md: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.875rem;
+  --font-size-3xl: 2rem;
+  --font-size-4xl: 2.5rem;
+  --font-size-5xl: 3rem;
+  --font-size-6xl: 3.5rem;
 
-  --text-color: #000000;
-  --alt-text-color: #ffffff;
+  /* ---------- Colors: Text ---------- */
+  --text-color: #000;
+  --alt-text-color: #fff;
+
+  /* ---------- Colors: General ---------- */
   --primary-color: #6a0025;
-  --background-color: #F0E5E9;
-  --background-category-color: #D2B2BD;
-  --body-color: rgba(240, 229, 233, 1);
+  --background-color: #f0e5e9;
+  --background-color-alt: #fff;
+  --background-category-color: #d2b2bd;
 
-
+  /* ---------- Paddings ---------- */
+  --padding-button: 8px 16px;
   --padding-label: 4px;
-  --margin-center: 0 auto;
 
-  --border-radius-small: 5px;
-  --border-radius-big: 10px;
+  /* ---------- Border radius ---------- */
+  --border-radius-sm: 6px;
+  --border-radius-md: 12px;
   --border-nav: 3px solid var(--primary-color);
 
+  /* ---------- Misc ---------- */
+  --gap: .5rem;
   --card-max-width: 384px;
-
   --focus: solid 2px blue;
 }
 
@@ -50,28 +56,31 @@ html {
 
 body {
   font-family: var(--font);
-  background-color: var(--body-color);
+  background-color: var(--background-color);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
 }
 
 ul li {
   list-style: none;
 }
 
-a {
-  text-decoration: none;
-  color: var(--text-color);
-}
-
-h1,h2,h3,h4,h5,h6 {
+h1, h2, h3, h4, h5, h6 {
   font-family: var(--heading-font);
   font-weight: 400;
 }
 
 :focus {
   outline: var(--focus);
-  border-radius: var(--border-radius-small);
+  border-radius: var(--border-radius-sm);
 }
 
-:focus:not(:focus-visible){
+:focus:not(:focus-visible) {
   outline: 0;
+}
+
+::placeholder {
+  color: var(--text-color);
 }
