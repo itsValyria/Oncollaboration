@@ -65,8 +65,7 @@
       "a c"
       "a c";
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto 1fr .2fr;
-    gap: .5rem;
+    grid-template-rows: auto 1fr 1fr;
   }
 
   .bottom-featured-card {
@@ -86,7 +85,7 @@
       "a c"
       "a c";
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto auto ;
+    grid-template-rows: auto auto auto;
   }
 
   .bottom-featured-card {
@@ -154,7 +153,7 @@
 .bottom-featured-card {
   grid-area: c;
   display: flex;
-  align-items: center;
+  align-items: start;
   justify-content: space-between;
 }
 
@@ -164,7 +163,6 @@
   padding: 5px;
   text-transform: uppercase;
   font-weight: bold;
-  grid-area: cc;
 }
 
 .action-link a {
