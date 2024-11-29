@@ -58,51 +58,6 @@
   grid-template-columns: 1fr;
 }
 
-@container main-container (min-width: 821px) {
-  article {
-    grid-template-areas:
-      "a b"
-      "a c"
-      "a c";
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto 1fr 1fr;
-  }
-
-  .bottom-featured-card {
-    display: flex;
-    flex-direction: column;
-    justify-self: start;
-  }
-
-  .action-link a{
-    font-size: 22px;
-  }
-}
-@container main-container (600px < width <820px) {
-  article {
-    grid-template-areas:
-      "a b"
-      "a c"
-      "a c";
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto auto;
-  }
-
-  .bottom-featured-card {
-    display: flex;
-    flex-direction: column;
-    justify-self: start;
-    gap: 4rem;
-  }
-
-  .container-image img {
-  width: 100%;
-  min-width: 422px;
-  height: auto;
-  border-radius: var(--border-radius-big);
-}
-}
-
 .container-image {
   grid-area: a;
   position: relative;
@@ -153,7 +108,7 @@
 .bottom-featured-card {
   grid-area: c;
   display: flex;
-  align-items: start;
+  align-items: center;
   justify-content: space-between;
 }
 
@@ -177,6 +132,52 @@
 
 .action-link a:hover {
   transform: scale(1.1);
+}
+
+@container main-container (min-width: 821px) {
+  article {
+    grid-template-areas:
+      "a b"
+      "a c"
+      "a c";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr 1fr;
+  }
+
+  .bottom-featured-card {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-self: start;
+  }
+
+  .action-link a{
+    font-size: 22px;
+  }
+}
+@container main-container (600px < width <820px) {
+  article {
+    grid-template-areas:
+      "a b"
+      "a c"
+      "a c";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto;
+  }
+
+  .bottom-featured-card {
+    display: flex;
+    flex-direction: column;
+    justify-self: start;
+    gap: 4rem;
+  }
+
+  .container-image img {
+  width: 100%;
+  min-width: 422px;
+  height: auto;
+  border-radius: var(--border-radius-big);
+  }
 }
 
 </style>
