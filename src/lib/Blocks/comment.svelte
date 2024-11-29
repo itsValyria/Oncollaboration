@@ -281,22 +281,6 @@
       margin-left: calc(50px + var(--gap));
     }
   }
-
-
-  @container form-reply (max-width: 40px){
-    .repling input {
-      width: 70%;
-      border-start-end-radius: 0;
-      border-end-end-radius: 0;
-    }
-
-    .repling button {
-      margin-top: 0;
-      width: 30%;
-      border-start-start-radius: 0;
-      border-end-start-radius: 0;
-    }
-  }
   
   @media (hover: hover){
     .comment-content{
