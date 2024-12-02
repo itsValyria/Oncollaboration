@@ -34,7 +34,7 @@
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
-    width: 95vw;
+    width: 90vw;
   }
 
   li {

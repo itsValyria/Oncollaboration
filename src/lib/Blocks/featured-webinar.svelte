@@ -46,7 +46,7 @@
     container-type: inline-size;
     container-name: main-container;
     padding-block: 1em;
-    width: 95vw;
+    width: 90vw;
   }
 
   article {
