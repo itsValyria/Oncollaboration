@@ -10,6 +10,7 @@
 
   <Filter />
 
+  <h2>All contourings</h2>
   <ul>
     {#each data.contourings as contouring}
     <li>
@@ -24,10 +25,14 @@
     width: 100vw;
   }
 
+  h2 {
+    margin: 1em 0 0 1em;
+  }
+
   ul {
     display: flex;
     flex-wrap: wrap;
-    margin-top: 2em;
-    margin-left: auto;
+    gap: 20px;
+    margin: 2em 1em 0 1em;
   }
 </style>
