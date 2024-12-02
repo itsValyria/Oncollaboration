@@ -45,7 +45,8 @@
   section{
     container-type: inline-size;
     container-name: main-container;
-    padding: 1em;
+    padding-block: 1em;
+    width: 95vw;
   }
 
   article {
@@ -62,6 +63,7 @@
     color: var(--text-color);
     text-decoration: none;
   }
+
   .container-image {
     grid-area: a;
     position: relative;
@@ -161,6 +163,7 @@
       font-size: 22px;
     }
   }
+
   @container main-container (600px < width <820px) {
     article {
       grid-template-areas:
@@ -183,6 +186,13 @@
       min-width: 422px;
       height: auto;
       border-radius: var(--border-radius-md);
+    }
+  }
+
+  @media only screen and (min-width: 600px){
+    section {
+      padding: 1em;
+      width: 100vw;
     }
   }
 </style>

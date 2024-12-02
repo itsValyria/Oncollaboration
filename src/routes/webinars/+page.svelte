@@ -29,20 +29,26 @@
     width: 100vw;
   }
 
-  h2 {
-    margin-left: 1em;
-    margin-top: 2em;
-  }
-
   ul {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-    margin: 2em 1em 0 1em;
     justify-content: center;
+    width: 95vw;
   }
 
   li {
     max-width: var(--card-max-width);
+  }
+
+  @media only screen and (min-width: 600px) {
+    h2 {
+      margin-left: 1em;
+      margin-top: 2em;
+    }
+
+    ul {
+      margin: 2em 1em 0 1em;
+    }
   }
 </style>
