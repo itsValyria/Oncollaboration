@@ -8,7 +8,7 @@
 </script>
 
 <section>
-  <h1>Featured Webinar</h1>
+  <h2>Featured Webinar</h2>
   <article>
     <div class="container-image">
       <a href="/webinars/{slug}">
@@ -19,7 +19,7 @@
 
     <div class="featured-webinar-info">
       <a href="/webinars/{slug}">
-        <h2>{title}</h2>
+        <h3>{title}</h3>
         <p>{@html description}</p>
       </a>
     </div>
@@ -42,142 +42,142 @@
 </section>
 
 <style>
-
   section{
     container-type: inline-size;
     container-name: main-container;
     padding: 15px;
   }
   article {
-  display: grid;
-  grid-template-areas:
-    "a"
-    "b"
-    "c";
-  gap: .5em;
-  grid-template-columns: 1fr;
-}
-
-.container-image {
-  grid-area: a;
-  position: relative;
-}
-
-.container-image img {
-  width: 100%;
-  height: auto;
-  border-radius: var(--border-radius-big);
-}
-
-.container-image span {
-  position: absolute;
-  bottom: 5%;
-  right: 5%;
-  color: var(--alt-text-color);
-  background-color: black;
-  padding: var(--padding-label);
-  border-radius: var(--border-radius-small);
-  font-size: var(--font-size-1);
-  z-index: 1000;
-}
-
-.featured-webinar-info {
-  grid-area: b;
-}
-
-.featured-webinar-info h2 {
-  margin: 0.5em 0;
-  font-size: var(--font-size-3);
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 1;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.featured-webinar-info p {
-  margin: 0.5em 0;
-  font-size: var(--font-size-1);
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.bottom-featured-card {
-  grid-area: c;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.bottom-featured-card p {
-  background-color: var(--background-category-color);
-  border-radius: var(--border-radius-big);
-  padding: 5px;
-  text-transform: uppercase;
-  font-weight: bold;
-}
-
-.action-link a {
-  background-color: var(--primary-color);
-  color: white;
-  padding: 5px;
-  border-radius: var(--border-radius-big);
-  text-transform: uppercase;
-  transition: 0.2s;
-  grid-area: d;
-}
-
-.action-link a:hover {
-  transform: scale(1.1);
-}
-
-@container main-container (min-width: 821px) {
-  article {
+    display: grid;
     grid-template-areas:
-      "a b"
-      "a c"
-      "a c";
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto 1fr 1fr;
+      "a"
+      "b"
+      "c";
+    gap: .5em;
+    grid-template-columns: 1fr;
   }
 
-  .bottom-featured-card {
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    justify-self: start;
-  }
-
-  .action-link a{
-    font-size: 22px;
-  }
-}
-@container main-container (600px < width <820px) {
-  article {
-    grid-template-areas:
-      "a b"
-      "a c"
-      "a c";
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto auto;
-  }
-
-  .bottom-featured-card {
-    display: flex;
-    flex-direction: column;
-    justify-self: start;
-    gap: 4rem;
+  .container-image {
+    grid-area: a;
+    position: relative;
   }
 
   .container-image img {
-  width: 100%;
-  min-width: 422px;
-  height: auto;
-  border-radius: var(--border-radius-big);
+    width: 100%;
+    height: auto;
+    border-radius: var(--border-radius-big);
   }
-}
 
+  .container-image span {
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+    color: var(--alt-text-color);
+    background-color: black;
+    padding: var(--padding-label);
+    border-radius: var(--border-radius-small);
+    font-size: var(--font-size-1);
+    z-index: 1000;
+  }
+
+  .featured-webinar-info {
+    grid-area: b;
+  }
+
+  .featured-webinar-info h3 {
+    margin: 0.5em 0;
+    font-size: var(--font-size-3);
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .featured-webinar-info p {
+    margin: 0.5em 0;
+    font-size: var(--font-size-1);
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .bottom-featured-card {
+    grid-area: c;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .bottom-featured-card p {
+    background-color: var(--background-category-color);
+    border-radius: var(--border-radius-big);
+    padding: 5px;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+
+  .action-link a {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 5px;
+    border-radius: var(--border-radius-big);
+    text-transform: uppercase;
+    transition: 0.2s;
+    grid-area: d;
+  }
+
+  .action-link a:hover {
+    transform: scale(1.1);
+  }
+
+  @container main-container (min-width: 821px) {
+    article {
+      grid-template-areas:
+        "a b"
+        "a c"
+        "a c";
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto 1fr 1fr;
+    }
+
+    .bottom-featured-card {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      justify-self: start;
+    }
+
+    .action-link a{
+      font-size: 22px;
+    }
+  }
+  @container main-container (600px < width <820px) {
+    article {
+      grid-template-areas:
+        "a b"
+        "a c"
+        "a c";
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto auto;
+    }
+
+    .bottom-featured-card {
+      display: flex;
+      flex-direction: column;
+      justify-self: start;
+      gap: 4rem;
+    }
+
+    .container-image img {
+      width: 100%;
+      min-width: 422px;
+      height: auto;
+      border-radius: var(--border-radius-big);
+    }
+  }
 </style>
