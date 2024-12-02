@@ -58,6 +58,10 @@
     grid-template-columns: 1fr;
   }
 
+  a {
+    color: var(--text-color);
+    text-decoration: none;
+  }
   .container-image {
     grid-area: a;
     position: relative;
