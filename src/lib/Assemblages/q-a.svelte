@@ -53,11 +53,11 @@
 
 <style>
   h2 {
-    font-size: var(--font-size-4);
+    font-size: var(--font-size-2xl);
   }
 
   h3 {
-    font-size: var(--font-size-3);
+    font-size: var(--font-size-xl);
   }
 
   form {
@@ -71,7 +71,7 @@
 
   label {
     font-family: var(--heading-font);
-    font-size: var(--font-size-3);
+    font-size: var(--font-size-xl);
     font-weight: bold;
     margin-bottom: .5rem;
     width: 100%;
@@ -79,11 +79,11 @@
 
   input {
     padding: var(--padding-label);
-    font-size: var(--font-size-1);
+    font-size: var(--font-size-md);
     height: 34px;
     border: transparent;
     width: 100%;
-    border-radius: var(--border-radius-small);
+    border-radius: var(--border-radius-sm);
   }
 
   button {
@@ -93,10 +93,10 @@
     color: var(--alt-text-color);
     border: transparent;
     cursor: pointer;
-    font-size: var(--font-size-1);
+    font-size: var(--font-size-md);
     height: 34px;
     width: 100%;
-    border-radius: var(--border-radius-small);
+    border-radius: var(--border-radius-sm);
     text-transform: uppercase;
   }
 
