@@ -42,6 +42,7 @@
     right: 10px;
     opacity: 0;
     visibility: hidden;
+    text-transform: capitalize;
   }
 
   img {

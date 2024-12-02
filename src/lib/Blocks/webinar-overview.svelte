@@ -110,6 +110,7 @@
     width: fit-content;
     background-color: var(--background-category-color);
     border-radius: var(--border-radius-sm);
+    text-transform: capitalize;
   }
 
   article:first-of-type {
