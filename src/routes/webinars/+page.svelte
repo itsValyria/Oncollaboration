@@ -14,6 +14,7 @@
     <FeaturedWebinar {...featuredWebinar}/>
   {/each}
 
+  <h2>All webinars</h2>
   <ul>
     {#each data.webinars as webinar}
     <li>
@@ -26,6 +27,11 @@
 <style>
   main {
     width: 100vw;
+  }
+
+  h2 {
+    margin-left: 1em;
+    margin-top: 2em;
   }
 
   ul {
