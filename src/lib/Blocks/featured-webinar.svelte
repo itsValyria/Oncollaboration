@@ -45,8 +45,9 @@
   section{
     container-type: inline-size;
     container-name: main-container;
-    padding: 15px;
+    padding: 1em;
   }
+
   article {
     display: grid;
     grid-template-areas:
@@ -65,7 +66,7 @@
   .container-image img {
     width: 100%;
     height: auto;
-    border-radius: var(--border-radius-big);
+    border-radius: var(--border-radius-md);
   }
 
   .container-image span {
@@ -73,10 +74,10 @@
     bottom: 5%;
     right: 5%;
     color: var(--alt-text-color);
-    background-color: black;
+    background-color: var(--text-color);
     padding: var(--padding-label);
-    border-radius: var(--border-radius-small);
-    font-size: var(--font-size-1);
+    border-radius: var(--border-radius-sm);
+    font-size: var(--font-size-md);
     z-index: 1000;
   }
 
@@ -86,7 +87,7 @@
 
   .featured-webinar-info h3 {
     margin: 0.5em 0;
-    font-size: var(--font-size-3);
+    font-size: var(--font-size-xl);
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 1;
@@ -97,7 +98,7 @@
 
   .featured-webinar-info p {
     margin: 0.5em 0;
-    font-size: var(--font-size-1);
+    font-size: var(--font-size-md);
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
@@ -115,7 +116,7 @@
 
   .bottom-featured-card p {
     background-color: var(--background-category-color);
-    border-radius: var(--border-radius-big);
+    border-radius: var(--border-radius-sm);
     padding: 5px;
     text-transform: uppercase;
     font-weight: bold;
@@ -125,7 +126,7 @@
     background-color: var(--primary-color);
     color: white;
     padding: 5px;
-    border-radius: var(--border-radius-big);
+    border-radius: var(--border-radius-sm);
     text-transform: uppercase;
     transition: 0.2s;
     grid-area: d;
@@ -177,7 +178,7 @@
       width: 100%;
       min-width: 422px;
       height: auto;
-      border-radius: var(--border-radius-big);
+      border-radius: var(--border-radius-md);
     }
   }
 </style>
