@@ -46,7 +46,7 @@
     container-type: inline-size;
     container-name: main-container;
     padding-block: 1em;
-    width: 90vw;
+    width: 90%;
   }
 
   article {
@@ -192,7 +192,7 @@
   @media only screen and (min-width: 600px){
     section {
       padding: 1em;
-      width: 100vw;
+      width: 100%;
     }
   }
 </style>

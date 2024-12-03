@@ -29,7 +29,7 @@
   form {
     display: flex;
     overflow-x: auto;
-    width: 99vw;
+    width: 99%;
     -webkit-mask: linear-gradient(90deg,#0000,#000 5% 95%,#0000);
     mask: linear-gradient(90deg,#0000,#000 5% 95%,#0000);;
   }

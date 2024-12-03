@@ -26,7 +26,7 @@
 
 <style>
   main {
-    width: 100vw;
+    width: 100%;
   }
 
   ul {
@@ -34,7 +34,7 @@
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
-    width: 90vw;
+    width: 90%;
   }
 
   li {
