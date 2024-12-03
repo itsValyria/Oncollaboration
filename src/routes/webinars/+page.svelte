@@ -27,7 +27,8 @@
 <style>
   main {
     width: 100%;
-    background: url(/images/Polka_Background.svg);
+    animation: changepatterns linear;
+    animation-timeline: --page-scroll;
   }
 
   ul {
@@ -40,6 +41,18 @@
 
   li {
     max-width: var(--card-max-width);
+  }
+
+  @keyframes changepatterns {
+    0% {
+      background: red;
+    }
+    50% {
+      background: url(/images/Polka_Background.svg);
+    }
+    100% {
+      background: blue;
+    }
   }
 
   @media only screen and (min-width: 600px) {

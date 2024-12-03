@@ -52,6 +52,7 @@
 
 html {
   height: 100vh;
+  scroll-timeline: --page-scroll block;
 }
 
 body {

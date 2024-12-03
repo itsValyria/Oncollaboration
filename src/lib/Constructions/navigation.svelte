@@ -37,6 +37,8 @@
       z-index: 1000;
       box-shadow: 0px -4px 17px 0px rgba(0,0,0,0.3);
       background-color: var(--background-color-alt);
+      animation: changepatterns linear;
+      animation-timeline: --page-scroll;
     }
   
     ul {
@@ -65,6 +67,18 @@
       height: 24px;
     }
   
+    @keyframes changepatterns {
+      0% {
+        background: url(/images/Polka_Background.svg);
+      }
+      50% {
+        background: blue;
+      }
+      100% {
+        background: red;
+      }
+    }
+
     @media screen and (min-width: 600px) {
       li a {
         font-size: var(--font-size-md);
