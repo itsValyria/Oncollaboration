@@ -26,7 +26,8 @@
 
 <style>
   main {
-    width: 100vw;
+    width: 100%;
+    background: url(/images/Polka_Background.svg);
   }
 
   ul {
