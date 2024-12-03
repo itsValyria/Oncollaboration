@@ -22,7 +22,7 @@
 
 <style>
   main {
-    width: 100vw;
+    width: 100%;
   }
 
   h2 {
