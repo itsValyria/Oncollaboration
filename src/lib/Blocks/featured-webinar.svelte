@@ -84,7 +84,7 @@
     padding: var(--padding-label);
     border-radius: var(--border-radius-sm);
     font-size: var(--font-size-md);
-    z-index: 1000;
+    z-index: 1;
   }
 
   .featured-webinar-info {
