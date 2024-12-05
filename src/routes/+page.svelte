@@ -69,6 +69,13 @@
     gap: 10px;
   }
 
+  @supports (animation-timeline: scroll()) {
+    .carrousel {
+      animation: bg linear;
+      animation-timeline: scroll(self inline);
+    }
+  }
+
   .kaart:focus-within {
     outline: var(--focus);
     border-radius: var(--border-radius-sm);

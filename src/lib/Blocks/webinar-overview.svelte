@@ -37,6 +37,7 @@
     width: 100%;
     max-width: var(--card-max-width);
     height: 100%;
+    background-color: var(--animation-background-color);
   }
 
   article a {

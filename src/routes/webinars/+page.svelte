@@ -16,8 +16,8 @@
 
   <h2>All webinars</h2>
   <ul>
-    {#each data.webinars as webinar}
-    <li>
+    {#each data.webinars as webinar, index}
+    <li style="--index: {index};">
       <WebinarOverview {...webinar}/>
     </li>
     {/each}
@@ -39,6 +39,37 @@
 
   li {
     max-width: var(--card-max-width);
+  }
+
+  @supports (animation-timeline: scroll()) {
+    main {
+      animation: bg linear;
+      animation-timeline: scroll(nearest);
+    }
+    
+    li {
+      animation: shake 1s linear;
+      animation-timeline: scroll(nearest);
+      animation-delay: calc(var(--index) * 0.3s);
+    }
+  }
+  
+  @keyframes shake {
+    0%{
+      rotate: 0deg;
+    }
+    25%{
+      rotate: -5deg;
+    }
+    50%{
+      rotate: 0deg;
+    }
+    75%{
+      rotate: 5deg;
+    }
+    100%{
+      rotate: 0deg;
+    }
   }
 
   @media only screen and (min-width: 600px) {
