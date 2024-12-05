@@ -36,8 +36,7 @@
       padding: 0 1em .5em;
       z-index: 1000;
       box-shadow: 0px -4px 17px 0px rgba(0,0,0,0.3);
-      background-color: var(--background-color-alt);
-      animation: changepatterns linear;
+      animation: changepatterns1 linear;
       animation-timeline: --page-scroll;
     }
   
@@ -67,15 +66,47 @@
       height: 24px;
     }
   
-    @keyframes changepatterns {
+    @keyframes changepatterns1 {
       0% {
-        background: url(/images/Polka_Background.svg);
+        background-image: radial-gradient(var(--animation-color) 7px, transparent 7px), radial-gradient(var(--animation-color) 7px, transparent 7px);
+        background-size: 32px 32px;
+        background-position: 0 0, 16px 16px;
+        background-color: var(--background-color-alt);
       }
-      50% {
-        background: blue;
+      55% {
+        background-image: repeating-linear-gradient(45deg, transparent, transparent 23px, var(--animation-color) 23px, var(--animation-color) 46px);
+        background-color: var(--background-color-alt);
+        background-size: 80px 80px;
+      }
+      80% {
+        background: linear-gradient(135deg, var(--animation-color) 25%, transparent 25%) -68px 0, linear-gradient(225deg, var(--animation-color) 25%, transparent 25%) -68px 0, linear-gradient(315deg, var(--animation-color) 25%, transparent 25%), linear-gradient(45deg, var(--animation-color) 25%, transparent 25%);
+        background-size: 43px 43px;
+        background-color: var(--background-color-alt);
       }
       100% {
-        background: red;
+        background-image: radial-gradient(var(--animation-color) 7px, transparent 7px), radial-gradient(var(--animation-color) 7px, transparent 7px);
+        background-size: 32px 32px;
+        background-position: 0 0, 16px 16px;
+        background-color: var(--background-color-alt);
+      }
+    }
+
+    @keyframes changepatterns2 {
+      30% {
+        background-image: radial-gradient(var(--animation-color) 7px, transparent 7px), radial-gradient(var(--animation-color) 7px, transparent 7px);
+        background-size: 32px 32px;
+        background-position: 0 0, 16px 16px;
+        background-color: var(--background-color-alt);
+      }
+      60% {
+        background-image: repeating-linear-gradient(45deg, transparent, transparent 23px, var(--animation-color) 23px, var(--animation-color) 46px);
+        background-color: var(--background-color-alt);
+        background-size: 80px 80px;
+      }
+      100% {
+        background: linear-gradient(135deg, var(--animation-color) 25%, transparent 25%) -68px 0, linear-gradient(225deg, var(--animation-color) 25%, transparent 25%) -68px 0, linear-gradient(315deg, var(--animation-color) 25%, transparent 25%), linear-gradient(45deg, var(--animation-color) 25%, transparent 25%);
+        background-size: 43px 43px;
+        background-color: var(--background-color-alt);
       }
     }
 
@@ -91,12 +122,13 @@
     }
   
     @media screen and (min-width: 1080px) {
-  
       nav {
         bottom: auto;
         top: 0;
         box-shadow: 0px 4px 17px 0px rgba(0,0,0,0.3);
         padding: 0;
+        animation: changepatterns2 linear;
+        animation-timeline: --page-scroll;
       }
   
       ul {
