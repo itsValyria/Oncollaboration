@@ -36,8 +36,13 @@
       padding: 0 1em .5em;
       z-index: 1000;
       box-shadow: 0px -4px 17px 0px rgba(0,0,0,0.3);
-      animation: changepatterns1 linear;
-      animation-timeline: --page-scroll;
+    }
+
+    @supports (animation-timeline: scroll()) {
+      nav {
+        animation: changepatterns1 linear;
+        animation-timeline: scroll(nearest);
+      }
     }
   
     ul {
@@ -127,8 +132,13 @@
         top: 0;
         box-shadow: 0px 4px 17px 0px rgba(0,0,0,0.3);
         padding: 0;
-        animation: changepatterns2 linear;
-        animation-timeline: --page-scroll;
+      }
+
+      @supports (animation-timeline: scroll()) {
+        nav {
+          animation: changepatterns2 linear;
+          animation-timeline: scroll(nearest);
+        }
       }
   
       ul {

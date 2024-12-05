@@ -35,6 +35,7 @@
   --background-color-alt: #fff;
   --background-category-color: #d2b2bd;
   --animation-color: #F1F32E;
+  --animation-background-color: #F49F13;
 
   /* ---------- Paddings ---------- */
   --padding-button: 8px 16px;
@@ -53,7 +54,6 @@
 
 html {
   height: 100vh;
-  scroll-timeline: --page-scroll block;
 }
 
 body {
@@ -85,4 +85,28 @@ h1, h2, h3, h4, h5, h6 {
 
 ::placeholder {
   color: var(--text-color);
+}
+
+@property --animation-background-color {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ffd400;
+}
+
+@keyframes bg {
+  0% {
+    --animation-background-color: #ffd400;
+  }
+  25% {
+    --animation-background-color: #68c1c9;
+  }
+  50% {
+    --animation-background-color: #9697c0;
+  }
+  75% {
+    --animation-background-color: #d60f84;
+  }
+  100% {
+    --animation-background-color: #fb1d36;
+  }
 }

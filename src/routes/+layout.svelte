@@ -27,10 +27,15 @@
     flex: 1;
     margin-right: 1em;
     margin-left: 1em;
-    animation: changepatterns linear;
-    animation-timeline: --page-scroll;
   }
 
+  @supports (animation-timeline: scroll()) {
+    .content {
+      animation: changepatterns linear;
+      animation-timeline: scroll(nearest);
+    }
+  }
+  
   footer {
     height: 115px;
     background-color: #f0f0f0;

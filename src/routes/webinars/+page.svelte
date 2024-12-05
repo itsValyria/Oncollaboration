@@ -29,6 +29,13 @@
     width: 100%;
   }
 
+  @supports (animation-timeline: scroll()) {
+    main {
+      animation: bg linear;
+      animation-timeline: scroll(nearest);
+    }
+  }
+
   ul {
     display: flex;
     flex-wrap: wrap;
