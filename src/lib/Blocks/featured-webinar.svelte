@@ -8,7 +8,25 @@
 </script>
 
 <section>
-  <h2>Featured Webinar</h2>
+  <svg xmlns="http://www.w3.org/2000/svg" xml:lang="en" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 500 500">
+    <title>Circular Text Path</title>
+    <defs>
+      <path id="textcircle" d="M250,400
+                   a150,150 0 0,1 0,-300a150,150 0 0,1 0,300Z" transform="rotate(12,250,250)" />
+    </defs>
+    <g class="textcircle">
+      <text textLength="940">
+        <textPath 
+                  xlink:href="#textcircle" 
+                  aria-label="CSS & SVG are awesome"
+                  textLength="940"
+                  fill="blue">
+          FEATURED WEBINAR | FEATURED WEBINAR | 
+        </textPath>
+      </text>
+    </g>
+  </svg>
+
   <article>
     <div class="container-image">
       <a href="/webinars/{slug}">
@@ -46,7 +64,59 @@
     container-type: inline-size;
     container-name: main-container;
     padding-block: 1em;
-    width: 90vw;
+    width: 100vw;
+  }
+
+  svg:nth-of-type(1){
+    width: 100dvw;
+    height: 100dvh;
+    font-size: 3vw;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+      letter-spacing: 6px;
+      font-weight: 700;
+      animation: spin linear;
+      animation-timeline: scroll();   
+  }
+
+
+  @keyframes spin{
+    0%{
+      rotate: 0deg;
+      text-shadow: red 0px 0px,
+      yellow 0px 5px;
+      font-size: 3vw;
+    }
+    25%{
+      text-shadow: red 0px 5px,
+      yellow 0px -10px;
+    }
+    50%{
+      text-shadow: red 0px 10px,
+      yellow 0px 15px;
+    }
+    75%{
+      text-shadow: red 0px -5px,
+      yellow 0px 0px;
+    }
+    100%{
+      rotate: 360deg;
+      text-shadow: red 0px 0px,
+      yellow 0px 5px;
+    }
+  }
+
+  @keyframes spin2{
+    0%{
+    opacity: 0;
+    scale: .7;
+    }
+
+    100%{
+      opacity: 1;
+      scale: 1;
+    }
   }
 
   article {
@@ -57,11 +127,17 @@
       "c";
     gap: .5em;
     grid-template-columns: 1fr;
+    animation: spin2 linear;
+      animation-timeline: view();
+      animation-range: entry;
   }
 
-  a {
+  a, p, h3 {
     color: var(--text-color);
     text-decoration: none;
+    text-shadow: red 0px 0px,
+      yellow 0px 5px,
+      purple 0px 10px;
   }
 
   .container-image {

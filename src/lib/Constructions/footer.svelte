@@ -30,7 +30,11 @@
       bottom: 0;
       align-items: center;
       justify-content: space-between;
-      background-color: var(--primary-color);
+      background: 
+    repeating-conic-gradient( rgb(69, 16, 228) 0 0.00001%, var(--primary-color) 0 0.0001%) 
+    50%,
+    repeating-conic-gradient(rgb(60, 23, 244) 0 0.00001%,var(--primary-color) 0 0.0001%) 
+    50%;
       padding: 2rem 4rem;
       color: var(--alt-text-color);
     }
@@ -48,10 +52,17 @@
       height: 3.2rem;
     }
 
+    footer p{
+      text-shadow: red 0px 5px,
+      yellow 0px -5px;
+    }
+
     footer a {
       font-weight: normal;
       color: var(--alt-text-color);
       text-decoration: none;
+      text-shadow: red 0px 5px,
+       yellow 0px -5px;
     }
 
     footer a:hover {

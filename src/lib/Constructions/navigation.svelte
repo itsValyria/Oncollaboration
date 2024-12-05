@@ -30,13 +30,18 @@
   <style>
     nav {
       position: fixed;
-      background-color: var(--background-color-alt);
+      background: 
+    repeating-conic-gradient( rgb(69, 16, 228) 0 0.00001%, var(--primary-color) 0 0.0001%) 
+    50%,
+    repeating-conic-gradient(rgb(60, 23, 244) 0 0.00001%,var(--primary-color) 0 0.0001%) 
+    50%;
       bottom: 0;
       width: 100%;
       padding: 0 1em .5em;
       z-index: 1000;
-      box-shadow: 0px -4px 17px 0px rgba(0,0,0,0.3);
-      background-color: var(--background-color-alt);
+      box-shadow:
+    0 0 0 10px rgba(0, 0, 0, 0.8),
+    0 0 0 15px rgba(0, 0, 0, 0.9);
     }
   
     ul {
@@ -52,10 +57,12 @@
       color: rgba(116, 116, 116, 1);
       padding: .7em .5em 0; 
       text-decoration: none;
+      text-shadow: red 0px 5px,
+      yellow 0px -5px;
     }
   
     li a.active {
-      color: var(--primary-color);
+      color: green;
       border-top: var(--border-nav);
       padding-top: calc(.7em - 2px);
     }
@@ -81,7 +88,9 @@
       nav {
         bottom: auto;
         top: 0;
-        box-shadow: 0px 4px 17px 0px rgba(0,0,0,0.3);
+        box-shadow:
+    0 0 0 10px rgba(17, 215, 47, 0.8),
+    0 0 0 15px rgba(255, 0, 0, 0.9);
         padding: 0;
       }
   
