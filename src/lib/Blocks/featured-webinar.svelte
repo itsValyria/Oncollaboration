@@ -47,6 +47,7 @@
     container-name: main-container;
     padding-block: 1em;
     width: 90%;
+    background-color: var(--background-color);
   }
 
   article {
