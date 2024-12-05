@@ -29,13 +29,6 @@
     width: 100%;
   }
 
-  @supports (animation-timeline: scroll()) {
-    main {
-      animation: bg linear;
-      animation-timeline: scroll(nearest);
-    }
-  }
-
   ul {
     display: flex;
     flex-wrap: wrap;
@@ -46,11 +39,21 @@
 
   li {
     max-width: var(--card-max-width);
-    animation: shake 1s linear;
-    animation-timeline: scroll(nearest);
-    animation-delay: calc(var(--index) * 0.3s);
   }
 
+  @supports (animation-timeline: scroll()) {
+    main {
+      animation: bg linear;
+      animation-timeline: scroll(nearest);
+    }
+    
+    li {
+      animation: shake 1s linear;
+      animation-timeline: scroll(nearest);
+      animation-delay: calc(var(--index) * 0.3s);
+    }
+  }
+  
   @keyframes shake {
     0%{
       rotate: 0deg;
