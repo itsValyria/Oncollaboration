@@ -46,6 +46,26 @@
 
   li {
     max-width: var(--card-max-width);
+    animation: shake linear;
+    animation-timeline: scroll(nearest);
+  }
+
+  @keyframes shake {
+    0%{
+      rotate: 0deg;
+    }
+    25%{
+      rotate: -5deg;
+    }
+    50%{
+      rotate: 0deg;
+    }
+    75%{
+      rotate: 5deg;
+    }
+    100%{
+      rotate: 0deg;
+    }
   }
 
   @media only screen and (min-width: 600px) {
