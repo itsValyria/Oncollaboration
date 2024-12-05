@@ -47,7 +47,7 @@
     container-name: main-container;
     padding-block: 1em;
     width: 90%;
-    background-color: var(--background-color);
+    background-color: var(--animation-background-color);
   }
 
   article {
@@ -85,7 +85,7 @@
     padding: var(--padding-label);
     border-radius: var(--border-radius-sm);
     font-size: var(--font-size-md);
-    z-index: 1000;
+    z-index: 1;
   }
 
   .featured-webinar-info {

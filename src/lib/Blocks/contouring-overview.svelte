@@ -22,7 +22,7 @@
 <style>
   article {
     max-width: var(--card-max-width);
-    background-color: var(--background-color);
+    background-color: var(--animation-background-color);
   }
 
   div {
