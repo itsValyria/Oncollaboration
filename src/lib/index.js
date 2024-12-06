@@ -12,5 +12,6 @@ import LoaderDots from "./Bricks/loader-dots.svelte";
 import LoaderSpin from "./Bricks/loader-spin.svelte";
 import Like from "./Bricks/like.svelte";
 import Liked from "./Bricks/liked.svelte";
+import FadeIn from "./Blocks/fade-in.svelte";
 
-export {ContouringOverview, Search, Filter, WebinarOverview, Navigation, FeaturedWebinar, Footer, SearchResults, QandA, Comment, LoaderDots, LoaderSpin, Like, Liked}
+export {ContouringOverview, Search, Filter, WebinarOverview, Navigation, FeaturedWebinar, Footer, SearchResults, QandA, Comment, LoaderDots, LoaderSpin, Like, Liked, FadeIn}
