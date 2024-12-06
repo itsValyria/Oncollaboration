@@ -69,11 +69,6 @@
     gap: 10px;
   }
 
-  .kaart:focus-within {
-    outline: var(--focus);
-    border-radius: var(--border-radius-sm);
-  }
-
   .kaart {
     flex: 0 0 calc(100% - 20%);
     scroll-snap-align: start;
@@ -86,11 +81,6 @@
     scroll-snap-align: start;
     border-radius: 10px;
     box-sizing: border-box;
-  }
-
-  .contouringkaart:focus-within {
-    outline: var(--focus);
-    border-radius: var(--border-radius-sm);
   }
 
   .carrousel::-webkit-scrollbar {
