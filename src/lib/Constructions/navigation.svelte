@@ -39,9 +39,6 @@
       width: 100%;
       padding: 0 1em .5em;
       z-index: 1000;
-      box-shadow:
-    0 0 0 10px rgba(0, 0, 0, 0.8),
-    0 0 0 15px rgba(0, 0, 0, 0.9);
     }
   
     ul {
@@ -88,9 +85,6 @@
       nav {
         bottom: auto;
         top: 0;
-        box-shadow:
-    0 0 0 10px rgba(17, 215, 47, 0.8),
-    0 0 0 15px rgba(255, 0, 0, 0.9);
         padding: 0;
       }
   

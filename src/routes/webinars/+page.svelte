@@ -45,16 +45,18 @@
     width: 100vw;
   }
 
-  svg:nth-of-type(1){
+  svg{
     width: 100dvw;
     height: 100dvh;
     display: flex;
     align-content: center;
     justify-content: center;
-      letter-spacing: 6px;
-      font-weight: 700;
-      animation: spin-article linear;
-      animation-timeline: scroll();   
+    font-size: 3vw;
+    letter-spacing: 6px;
+    font-weight: 700;
+    z-index: 1;
+    animation: spin-article linear;
+    animation-timeline: scroll();
   }
 
 
@@ -62,38 +64,28 @@
     0%{
       rotate: 360deg;
       text-shadow: red 0px 0px,
-      yellow 0px 5px,
-      purple 0px 10px;
-      font-size: 3vw;
+      yellow 0px 5px;
     }
     25%{
       text-shadow: red 0px 5px,
-      yellow 0px -10px,
-      purple 0px -15px;
-      font-size: 3vw;
+      yellow 0px -10px;
     }
     50%{
       text-shadow: red 0px 10px,
-      yellow 0px 15px,
-      purple 0px 20px;
-      font-size: 3vw;
+      yellow 0px 15px;
     }
     75%{
       text-shadow: red 0px -5px,
-      yellow 0px 0px,
-      purple 0px 5px;
-      font-size: 3vw;
+      yellow 0px 0px;
     }
     100%{
       rotate: 0deg;
       text-shadow: red 0px 0px,
-      yellow 0px 5px,
-      purple 0px 10px;
-      font-size: 3vw;
+      yellow 0px 5px;
     }
   }
 
-    ul {
+  ul {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
@@ -103,6 +95,15 @@
 
   li {
     max-width: var(--card-max-width);
+  }
+
+  @keyframes article-fade{
+    50%{
+      translate: -100%;
+    }
+    100%{
+      translate: 0;
+    }
   }
 
   @media only screen and (min-width: 600px) {

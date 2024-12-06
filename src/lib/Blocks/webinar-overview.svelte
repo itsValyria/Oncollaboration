@@ -32,18 +32,38 @@
 </article>
 
 <style>
+article{
+  animation: article-fade linear;
+  animation-timeline: view();
+  animation-range: entry;
+}
+
+  @keyframes article-fade{
+    0%{
+      opacity: .5;
+      scale: .5;
+      rotate: 0deg;
+    }
+
+    50%{
+      rotate: 180deg;
+    }
+
+    100%{
+      opacity: 1;
+      scale: 1;
+      rotate: 360deg
+    }
+  }
+
   article {
     margin-inline: .5rem;
-    width: 100%;
     max-width: var(--card-max-width);
-    height: 100%;
   }
 
   article a {
     color: var(--text-color);
     text-decoration: none;
-    display: grid;
-    grid-template-rows: max-content max-content 1fr max-content;
     height: 100%;
   }
 
