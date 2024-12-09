@@ -9,10 +9,11 @@
 <article>
   <a href="/contourings/{slug}">
     <div>
-      <img src="https://fdnd-agency.directus.app/assets/{image_scan.id}?width=384&fit=cover&format=avif" alt="{title}" width="384px" height="384px"/>
+      <img src="https://fdnd-agency.directus.app/assets/{image_scan.id}?width=384&fit=cover&format=avif" alt="{title}" width="384px" height="384px" />
+
       {#each categories as category}
         <span>{category.avl_categories_id.name}</span>
-      {/each} 
+      {/each}
     </div>
     <h3>{title}</h3>
     <p>{user_id.fullname}</p>
@@ -22,6 +23,12 @@
 <style>
   article {
     max-width: var(--card-max-width);
+  }
+
+  article a {
+    color: var(--text-color);
+    text-decoration: none;
+    display: grid;
   }
 
   div {
@@ -52,8 +59,7 @@
   }
 
   h3,
-  p,
-  a {
+  p {
     margin: 0;
     padding: 0;
     color: var(--text-color);
