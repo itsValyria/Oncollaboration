@@ -1,6 +1,18 @@
 <script>
   import { Navigation, Footer } from "$lib/index.js";
   import { navigating } from '$app/stores';
+  import { onNavigate } from '$app/navigation';
+
+  onNavigate((navigation) => {
+    if (!document.startViewTransition) return
+
+    return new Promise(resolve => {
+      document.startViewTransition(async () => {
+        resolve()
+        await navigation.complete
+      })
+    })
+  })
 </script>
 
 {#if $navigating}
