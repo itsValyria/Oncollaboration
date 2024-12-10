@@ -1,6 +1,21 @@
 <script>
-    import { page } from '$app/stores';
+  import { page } from '$app/stores';
+  import { onNavigate } from '$app/navigation';
+
+    onNavigate((navigation) => {
+      // Fallback voor niet ondersteunde browsers
+      if (!document.startViewTransition) return
+
+      return new Promise((resolve) => {
+        document.startViewTransition(async () => {
+          resolve ()
+          await navigation.complete
+        })
+      })
+    })
 </script>
+
+
 
 <nav>
     <ul>
@@ -116,4 +131,7 @@
         font-size: var(--font-size-xl);
       }
     }
+
+   
+
   </style>

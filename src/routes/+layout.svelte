@@ -1,19 +1,13 @@
 <script>
   import { Navigation, Footer } from "$lib/index.js";
   import { navigating } from '$app/stores';
+
 </script>
 
-{#if $navigating}
-  <Navigation />
-  <main>
-    <span>Loading...</span>
-  </main>
-{:else}
   <Navigation />
   <div class="content">
     <slot />
   </div>
-{/if}
 <footer>
   <Footer />
 </footer>
