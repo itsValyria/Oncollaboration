@@ -37,8 +37,8 @@
         const randomIndex = Math.floor(helpers.randomBetween(0, ornamentImg.length));
         ornamentEl.style.backgroundImage = `url(${ornamentImg[randomIndex]})`;
         ornamentEl.style.backgroundSize = 'cover';
-        ornamentEl.style.width = '48px';
-        ornamentEl.style.height = '48px';
+        ornamentEl.style.width = '64px';
+        ornamentEl.style.height = '64px';
         ornamentEl.style.position = 'absolute';
 
         // Random horizontal position across the entire viewport width
@@ -130,6 +130,15 @@
     margin-left: 1em;
   }
 
+  .ornament-container {
+    position: absolute; /* Ensures it spans the entire viewport */
+    width: 100%;
+    height: 100vh; /* Ensure the container takes full height */
+    top: 0;
+    left: 0;
+    overflow: visible; /* Make sure ornaments aren't clipped */
+  }
+
   .ornament {
     position: absolute;
     width: 64px;
@@ -141,11 +150,6 @@
     position: fixed;
     bottom: 0;
     left: 50%;
-  }
-
-  .ornament-container {
-    width: 100%;
-    height: 100%;
   }
 
   footer {
