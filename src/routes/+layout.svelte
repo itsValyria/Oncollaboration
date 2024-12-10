@@ -34,17 +34,17 @@
       document.body.appendChild(ornamentCenter);
 
       // Initialize ornaments
-      for (let i = 0; i < 20; i++) {
+      for (let i = 0; i < 20; i++) { // Increased number of ornaments
         const ornamentEl = helpers.createDiv('ornament');
         const randomIndex = Math.floor(helpers.randomBetween(0, ornamentImg.length));
         ornamentEl.style.backgroundImage = `url(${ornamentImg[randomIndex]})`;
         ornamentEl.style.backgroundSize = 'cover';
-        ornamentEl.style.width = '30px';  // Fixed width and height for consistency
+        ornamentEl.style.width = '30px';
         ornamentEl.style.height = '30px';
         ornamentEl.style.position = 'absolute';
 
-        // Random initial horizontal position
-        ornamentEl.style.left = `${-200 + Math.random() * 400}px`;
+        // Random horizontal position across the entire viewport width
+        ornamentEl.style.left = `${-200 + Math.random() * window.innerWidth}px`;
 
         // Random speed and rotation
         const speed = helpers.randomBetween(2, 5);
@@ -59,27 +59,32 @@
         ornamentCenter.style.display = 'block';
 
         ornaments.forEach((ornament, index) => {
-          const startY = window.innerHeight + Math.random() * 100; // Random starting position off the screen
+          const screenHeight = window.innerHeight;
+          const screenWidth = window.innerWidth;
+          const startY = -(screenHeight / 2) + Math.random() * screenHeight; // Random starting Y position
+          const startRotation = -10 * Math.random() * 20; // Random rotation
 
-          // Set initial styles for transition
-          ornament.el.style.transition = 'transform 2s ease-out, opacity 2s ease-out';
-          ornament.el.style.transform = `translateY(${startY}px) rotate(${ornament.rotation}deg)`; // Initial position and rotation
+          // Initial styles for the ornament
+          ornament.el.style.transition = 'transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.4s ease-out';
+          ornament.el.style.transform = `translateY(${startY}px) rotate(${startRotation}deg)`;
           ornament.el.style.opacity = '1';
 
-          // Apply final animation after a slight delay
+          // Apply animation
           setTimeout(() => {
-            // Animate flying up and rotating
-            ornament.el.style.transform = `translateY(-500px) rotate(${ornament.rotation + 30}deg)`;  // Move upward with rotation
-            ornament.el.style.opacity = '0';  // Fade out
-          }, index * 50);  // Stagger animation for each ornament
+            const finalY = screenHeight / 2 + 50; // Move off-screen
+            const finalRotation = startRotation + 30; // Apply final rotation
 
+            ornament.el.style.transition = 'transform 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55), opacity 0.6s ease-in';
+            ornament.el.style.transform = `translateY(${finalY}px) rotate(${finalRotation}deg)`;
+            ornament.el.style.opacity = '0'; // Fade out
+          }, index * 50); // Stagger the animations for each ornament
         });
 
         // Hide the ornament center after the animation is complete
         setTimeout(() => {
           ornamentCenter.style.display = 'none';
           scrolling = false;
-        }, 2500);  // Allow animation to complete before hiding
+        }, 1000); // Allow animation to complete before hiding
       };
     }
 
