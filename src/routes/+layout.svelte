@@ -1,12 +1,12 @@
 <script>
-  import { Navigation, Footer } from "$lib/index.js";
+  import { Navigation, Footer, LoadingState } from "$lib/index.js";
   import { navigating } from '$app/stores';
 </script>
 
 {#if $navigating}
   <Navigation />
   <main>
-    <span>Loading...</span>
+    <LoadingState />
   </main>
 {:else}
   <Navigation />
