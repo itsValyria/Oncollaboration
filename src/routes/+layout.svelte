@@ -1,7 +1,22 @@
 <script>
   import { Navigation, Footer, LoadingState } from "$lib/index.js";
   import { navigating } from '$app/stores';
-  import { onNavigate } from '$app/navigation'
+  import { onNavigate } from '$app/navigation';
+
+  let showLoading = false;
+  let navigatingTimeout;
+
+  // Watch the `navigating` store
+  $: if ($navigating) {
+    // Delay showing the loading state
+    clearTimeout(navigatingTimeout);
+    navigatingTimeout = setTimeout(() => {
+      showLoading = true;
+    }, 300); // Adjust delay for view-transition capture
+  } else {
+    clearTimeout(navigatingTimeout);
+    showLoading = false; // Hide loading when navigation completes
+  }
 
   onNavigate((navigation) => {
     if (!document.startViewTransition) return
@@ -15,7 +30,7 @@
   })
 </script>
 
-{#if $navigating}
+{#if showLoading}
   <Navigation />
   <main>
     <LoadingState />
