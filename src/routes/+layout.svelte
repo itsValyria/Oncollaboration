@@ -54,6 +54,7 @@
     flex: 1;
     margin-right: 1em;
     margin-left: 1em;
+    view-transition-name: content;
   }
 
   footer {

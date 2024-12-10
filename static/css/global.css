@@ -55,9 +55,52 @@
   --focus: solid 2px blue;
 }
 
-::view-transition-old(root),
-::view-transition-new(root) {
-  animation-duration: 2s;
+@keyframes sunup {
+  from {
+    margin: 50%;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+  }
+  to {
+    opacity: 1;
+    margin: unset;
+    margin-right: 1em;
+    margin-left: 1em;
+    border-radius: 0%;
+    height: fit-content;
+  }
+}
+
+@keyframes sundown {
+  from {
+    margin: unset;
+    margin-right: 1em;
+    margin-left: 1em;
+    border-radius: 0%;
+    height: fit-content;
+  }
+
+  to {
+    margin: 50%;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    opacity: 0;
+  }
+}
+
+::view-transition-old(content){
+  overflow: hidden;
+  opacity: 1;
+  animation: sundown 1s forwards;
+}
+
+::view-transition-new(content){
+  overflow: hidden;
+  opacity: 0;
+  animation: sunup 1s;
+  animation-delay: 1s;
 }
 
 html {
