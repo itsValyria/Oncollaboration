@@ -27,9 +27,9 @@
       const ornamentContainer = helpers.createDiv('ornament-container');
       ornamentContainer.style.position = 'absolute'; // Ensure full-width
       ornamentContainer.style.width = '100%'; // Ensure it spans the whole width
-      ornamentContainer.style.top = '0'; // Make it span the full viewport height
+      ornamentContainer.style.top = '0'; // Ensure it spans the full viewport height
       ornamentContainer.style.left = '0';
-      ornamentContainer.style.zIndex = '9999'; // Make sure it stays above other content
+      ornamentContainer.style.zIndex = '9999'; // Ensure it stays above other content
       document.body.appendChild(ornamentContainer);
 
       // Initialize ornaments
@@ -60,7 +60,7 @@
         ornaments.forEach((ornament, index) => {
           const screenHeight = window.innerHeight;
           const screenWidth = window.innerWidth;
-          const startY = -(screenHeight / 2) + Math.random() * screenHeight; // Random starting Y position
+          const startY = screenHeight + Math.random() * 200; // Start just below the viewport
           const startRotation = -10 * Math.random() * 20; // Random rotation
 
           // Initial styles for the ornament
@@ -70,7 +70,7 @@
 
           // Apply animation
           setTimeout(() => {
-            const finalY = screenHeight / 2 + 50; // Move off-screen
+            const finalY = -(screenHeight / 2) - 50; // Move upwards off-screen (top)
             const finalRotation = startRotation + 30; // Apply final rotation
 
             ornament.el.style.transition = 'transform 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55), opacity 0.6s ease-in';
@@ -140,10 +140,6 @@
   .ornament-container {
     width: 100%;
     height: 100%;
-    position: fixed; /* Make sure it's fixed and spans the viewport */
-    top: 0;
-    left: 0;
-    z-index: 9999; /* Ensure it stays above other content */
   }
 
   footer {
