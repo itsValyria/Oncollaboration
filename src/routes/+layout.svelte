@@ -127,16 +127,20 @@
 
   .ornament {
     position: absolute;
-    width: 30px;
-    height: 30px;
-    background-size: cover !important;
+    width: 64px;
+    height: 64px;
+    background-size: cover
   }
 
   .ornament-center {
     position: fixed;
     bottom: 0;
     left: 50%;
-    z-index: 9999;  /* Ensure it stays above other content */
+  }
+
+  .ornament-container {
+    width: 100%;
+    margin: 0 auto;
   }
 
   footer {
