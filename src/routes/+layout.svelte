@@ -25,11 +25,10 @@
     function Ornaments() {
       const ornaments = [];
       const ornamentContainer = helpers.createDiv('ornament-container');
-      ornamentContainer.style.position = 'absolute'; // Ensure full-width
-      ornamentContainer.style.width = '100%'; // Ensure it spans the whole width
-      ornamentContainer.style.top = '0'; // Ensure it spans the full viewport height
+      ornamentContainer.style.position = 'absolute';
+      ornamentContainer.style.width = '100%';
+      ornamentContainer.style.top = '0';
       ornamentContainer.style.left = '0';
-      ornamentContainer.style.zIndex = '9999'; // Ensure it stays above other content
       document.body.appendChild(ornamentContainer);
 
       // Initialize ornaments
@@ -63,19 +62,26 @@
           const startY = screenHeight + Math.random() * 200; // Start just below the viewport
           const startRotation = -10 * Math.random() * 20; // Random rotation
 
-          // Initial styles for the ornament
-          ornament.el.style.transition = 'transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.4s ease-out';
+          // Initial styles for the ornament (opacity starts at 0)
+          ornament.el.style.transition = 'transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.5s ease-in';
           ornament.el.style.transform = `translateY(${startY}px) rotate(${startRotation}deg)`;
-          ornament.el.style.opacity = '1';
+          ornament.el.style.opacity = '0'; // Start hidden
 
-          // Apply animation
+          // Apply fade-in effect and then move upwards
           setTimeout(() => {
-            const finalY = -(screenHeight / 2) - 50; // Move upwards off-screen (top)
-            const finalRotation = startRotation + 30; // Apply final rotation
+            ornament.el.style.opacity = '1'; // Fade in
+            ornament.el.style.transition = 'transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.8s ease-out'; // Change to the move animation
+            ornament.el.style.transform = `translateY(${startY}px) rotate(${startRotation}deg)`;
 
-            ornament.el.style.transition = 'transform 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55), opacity 0.6s ease-in';
-            ornament.el.style.transform = `translateY(${finalY}px) rotate(${finalRotation}deg)`;
-            ornament.el.style.opacity = '0'; // Fade out
+            // Apply movement upwards
+            setTimeout(() => {
+              const finalY = -(screenHeight / 2) - 50; // Move upwards off-screen (top)
+              const finalRotation = startRotation + 30; // Apply final rotation
+
+              ornament.el.style.transition = 'transform 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55), opacity 0.6s ease-in';
+              ornament.el.style.transform = `translateY(${finalY}px) rotate(${finalRotation}deg)`;
+              ornament.el.style.opacity = '0'; // Fade out
+            }, 500); // Start the upwards movement after fade-in (500ms)
           }, index * 50); // Stagger the animations for each ornament
         });
 
@@ -83,7 +89,7 @@
         setTimeout(() => {
           ornamentContainer.style.display = 'none';
           scrolling = false;
-        }, 1000); // Allow animation to complete before hiding
+        }, 1500); // Allow animation to complete before hiding
       };
     }
 
