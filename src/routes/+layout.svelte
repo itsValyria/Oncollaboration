@@ -1,12 +1,24 @@
 <script>
-  import { Navigation, Footer } from "$lib/index.js";
+  import { Navigation, Footer, LoadingState } from "$lib/index.js";
   import { navigating } from '$app/stores';
+  import { onNavigate } from '$app/navigation'
+
+  onNavigate((navigation) => {
+    if (!document.startViewTransition) return
+
+    return new Promise((resolve) => {
+      document.startViewTransition(async () => {
+        resolve()
+        await navigation.complete
+      })
+    })
+  })
 </script>
 
 {#if $navigating}
   <Navigation />
   <main>
-    <span>Loading...</span>
+    <LoadingState />
   </main>
 {:else}
   <Navigation />
@@ -32,13 +44,6 @@
   footer {
     height: 115px;
     background-color: #f0f0f0;
-  }
-
-  span {
-    display: block;
-    font-size: var(--font-size-4xl);
-    font-weight: bold;
-    margin: auto;
   }
 
   @media (min-width: 600px) {

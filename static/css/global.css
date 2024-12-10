@@ -9,6 +9,11 @@
   src: url(/fonts/vag_rundschrift_d.woff2) format("woff2");
 }
 
+@font-face {
+  font-family: "augusta";
+  src: url(/fonts/The_Augusta.otf);
+}
+
 :root {
   --font: sans-serif;
   --heading-font: "rundschrift", sans-serif;
@@ -48,6 +53,11 @@
   --gap: .5rem;
   --card-max-width: 384px;
   --focus: solid 2px blue;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 2s;
 }
 
 html {

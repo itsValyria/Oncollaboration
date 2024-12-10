@@ -1,5 +1,5 @@
 <script>
-    import { page } from '$app/stores';
+  import { page } from '$app/stores';
 </script>
 
 <nav>
@@ -37,6 +37,7 @@
       z-index: 1000;
       box-shadow: 0px -4px 17px 0px rgba(0,0,0,0.3);
       background-color: var(--background-color-alt);
+      view-transition-name: nav;
     }
   
     ul {
