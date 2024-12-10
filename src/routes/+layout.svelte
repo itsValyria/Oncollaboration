@@ -1,18 +1,18 @@
 <script>
   import { Navigation, Footer } from "$lib/index.js";
   // import { navigating } from '$app/stores';
-  import { onNavigate } from '$app/navigation';
+  import { onNavigate } from "$app/navigation";
 
   onNavigate((navigation) => {
-    if (!document.startViewTransition) return
+    if (!document.startViewTransition) return;
 
-    return new Promise(resolve => {
+    return new Promise((resolve) => {
       document.startViewTransition(async () => {
-        resolve()
-        await navigation.complete
-      })
-    })
-  })
+        resolve();
+        await navigation.complete;
+      });
+    });
+  });
 </script>
 
 <!-- {#if $navigating}
@@ -21,20 +21,44 @@
     <span>Loading...</span>
   </main>
 {:else} -->
-  <Navigation />
-  <div class="content">
-    <slot />
-  </div>
+<Navigation />
+<div class="content">
+  <slot />
+</div>
 <!-- {/if} -->
 <footer>
   <Footer />
 </footer>
 
 <style>
+  @keyframes combined-hue-fade {
+    0% {
+      filter: hue-rotate(0deg);
+      opacity: 1; /* Start fully visible */
+    }
+    50% {
+      filter: hue-rotate(180deg);
+      opacity: 0.5; /* Midpoint partially faded */
+    }
+    100% {
+      filter: hue-rotate(360deg);
+      opacity: 0; /* End fully faded */
+    }
+  }
+
+  :root::view-transition-old(root) {
+    animation: combined-hue-fade 1000ms cubic-bezier(0.4, 0, 0.2, 1) both;
+  }
+
+  :root::view-transition-new(root) {
+    animation: combined-hue-fade 1000ms cubic-bezier(0.4, 0, 0.2, 1) reverse
+      both;
+  }
+
   /* main {
     margin: auto;
   } */
-  
+
   .content {
     flex: 1;
     margin-right: 1em;
