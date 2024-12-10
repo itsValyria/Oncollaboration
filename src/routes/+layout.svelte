@@ -24,14 +24,13 @@
 
     function Ornaments() {
       const ornaments = [];
-      const ornamentCenter = helpers.createDiv('ornament-center');
-      ornamentCenter.style.position = 'fixed';
-      ornamentCenter.style.width = '10px';
-      ornamentCenter.style.height = '10px';
-      ornamentCenter.style.bottom = '0';
-      ornamentCenter.style.left = 'calc(50% - 5px)';
-      ornamentCenter.style.display = 'none';
-      document.body.appendChild(ornamentCenter);
+      const ornamentContainer = helpers.createDiv('ornament-container');
+      ornamentContainer.style.position = 'absolute'; // Ensure full-width
+      ornamentContainer.style.width = '100%'; // Ensure it spans the whole width
+      ornamentContainer.style.top = '0'; // Make it span the full viewport height
+      ornamentContainer.style.left = '0';
+      ornamentContainer.style.zIndex = '9999'; // Make sure it stays above other content
+      document.body.appendChild(ornamentContainer);
 
       // Initialize ornaments
       for (let i = 0; i < 20; i++) { // Increased number of ornaments
@@ -52,11 +51,11 @@
 
         // Store the ornament properties for later use
         ornaments.push({ el: ornamentEl, speed, rotation });
-        ornamentCenter.appendChild(ornamentEl);
+        ornamentContainer.appendChild(ornamentEl);
       }
 
       this.startAnimation = function () {
-        ornamentCenter.style.display = 'block';
+        ornamentContainer.style.display = 'block';
 
         ornaments.forEach((ornament, index) => {
           const screenHeight = window.innerHeight;
@@ -80,9 +79,9 @@
           }, index * 50); // Stagger the animations for each ornament
         });
 
-        // Hide the ornament center after the animation is complete
+        // Hide the ornament container after the animation is complete
         setTimeout(() => {
-          ornamentCenter.style.display = 'none';
+          ornamentContainer.style.display = 'none';
           scrolling = false;
         }, 1000); // Allow animation to complete before hiding
       };
@@ -129,7 +128,7 @@
     position: absolute;
     width: 64px;
     height: 64px;
-    background-size: cover
+    background-size: cover;
   }
 
   .ornament-center {
@@ -140,7 +139,11 @@
 
   .ornament-container {
     width: 100%;
-    margin: 0 auto;
+    height: 100%;
+    position: fixed; /* Make sure it's fixed and spans the viewport */
+    top: 0;
+    left: 0;
+    z-index: 9999; /* Ensure it stays above other content */
   }
 
   footer {
