@@ -1,6 +1,6 @@
 <script>
   import { Navigation, Footer } from "$lib/index.js";
-  import { navigating } from '$app/stores';
+  // import { navigating } from '$app/stores';
   import { onNavigate } from '$app/navigation';
 
   onNavigate((navigation) => {
@@ -15,17 +15,17 @@
   })
 </script>
 
-{#if $navigating}
+<!-- {#if $navigating}
   <Navigation />
   <main>
     <span>Loading...</span>
   </main>
-{:else}
+{:else} -->
   <Navigation />
   <div class="content">
     <slot />
   </div>
-{/if}
+<!-- {/if} -->
 <footer>
   <Footer />
 </footer>
