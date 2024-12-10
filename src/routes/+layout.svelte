@@ -38,8 +38,8 @@
         const randomIndex = Math.floor(helpers.randomBetween(0, ornamentImg.length));
         ornamentEl.style.backgroundImage = `url(${ornamentImg[randomIndex]})`;
         ornamentEl.style.backgroundSize = 'cover';
-        ornamentEl.style.width = '30px';
-        ornamentEl.style.height = '30px';
+        ornamentEl.style.width = '48px';
+        ornamentEl.style.height = '48px';
         ornamentEl.style.position = 'absolute';
 
         // Random horizontal position across the entire viewport width
