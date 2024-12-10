@@ -31,9 +31,9 @@
 </footer>
 
 <style>
-  main {
+  /* main {
     margin: auto;
-  }
+  } */
   
   .content {
     flex: 1;
@@ -46,12 +46,12 @@
     background-color: #f0f0f0;
   }
 
-  span {
+  /* span {
     display: block;
     font-size: var(--font-size-4xl);
     font-weight: bold;
     margin: auto;
-  }
+  } */
 
   @media (min-width: 600px) {
     .content {
