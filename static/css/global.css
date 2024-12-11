@@ -53,40 +53,62 @@
   --gap: .5rem;
   --card-max-width: 384px;
   --focus: solid 2px blue;
+
+  /* -------- Sun animation --------- */
+  --sun: rgb(255, 213, 0);
 }
 
 @keyframes sunup {
-  from {
+  0% {
     margin: 50%;
     border-radius: 50%;
-    width: 70px;
-    height: 70px;
+    width: 10vh;
+    height: 10vh;
+    background-color: var(--sun);
   }
-  to {
+  75%{
+    margin: 0 50%;
+    border-radius: 50%;
+    width: 10vh;
+    height: 10vh;
+    background-color: var(--sun);
+  }
+  95% {
+    background-color: var(--sun);
+  }
+  100%{
     opacity: 1;
     margin: unset;
     margin-right: 1em;
     margin-left: 1em;
     border-radius: 0%;
     height: fit-content;
+    background-color: unset;
   }
 }
 
 @keyframes sundown {
-  from {
+  0% {
     margin: unset;
     margin-right: 1em;
     margin-left: 1em;
     border-radius: 0%;
-    height: fit-content;
+    height: 100vh;
   }
-
-  to {
+  25%{
+    margin: 0 50%;
+    border-radius: 50%;
+    width: 10vh;
+    height: 10vh;
+    background-color: var(--sun);
+  }
+  100% {
     margin: 50%;
     border-radius: 50%;
-    width: 70px;
-    height: 70px;
+    width: 10vh;
+    height: 10vh;
     opacity: 0;
+    background-color: var(--sun);
   }
 }
 
@@ -114,6 +136,14 @@ body {
   flex-direction: column;
   min-height: 100vh;
   margin: 0;
+}
+
+body {
+  background-image: linear-gradient(0deg, transparent 50%, chocolate 50%), linear-gradient(12deg, transparent 50%, darkorange 50%), linear-gradient(24deg, transparent 50%, chocolate 50%), linear-gradient(36deg, transparent 50%, darkorange 50%), linear-gradient(48deg, transparent 50%, chocolate 50%), linear-gradient(60deg, transparent 50%, darkorange 50%), linear-gradient(72deg, transparent 50%, chocolate 50%), linear-gradient(84deg, transparent 50%, darkorange 50%), linear-gradient(96deg, transparent 50%, chocolate 50%), linear-gradient(108deg, transparent 50%, darkorange 50%), linear-gradient(120deg, transparent 50%, chocolate 50%), linear-gradient(132deg, transparent 50%, darkorange 50%), linear-gradient(144deg, transparent 50%, chocolate 50%), linear-gradient(156deg, transparent 50%, darkorange 50%), linear-gradient(168deg, transparent 50%, chocolate 50%), linear-gradient(180deg, transparent 50%, darkorange 50%);
+  position: relative;
+  background-repeat: no-repeat;
+  background-color: chocolate;
+  border-radius: initial;
 }
 
 ul li {
