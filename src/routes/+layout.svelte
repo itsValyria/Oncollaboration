@@ -1,6 +1,5 @@
 <script>
   import { Navigation, Footer } from "$lib/index.js";
-  import { navigating } from '$app/stores';
 
 </script>
 
@@ -13,6 +12,7 @@
 </footer>
 
 <style>
+
   main {
     margin: auto;
   }

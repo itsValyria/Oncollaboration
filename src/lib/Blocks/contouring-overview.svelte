@@ -21,6 +21,7 @@
 </article>
 
 <style>
+  
   article {
     max-width: var(--card-max-width);
   }
