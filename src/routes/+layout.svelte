@@ -1,12 +1,31 @@
 <script>
   import { Navigation, Footer } from "$lib/index.js";
+  // import { navigating } from '$app/stores';
+  import { onNavigate } from "$app/navigation";
 
+  onNavigate((navigation) => {
+    if (!document.startViewTransition) return;
+
+    return new Promise((resolve) => {
+      document.startViewTransition(async () => {
+        resolve();
+        await navigation.complete;
+      });
+    });
+  });
 </script>
 
+<!-- {#if $navigating}
   <Navigation />
-  <div class="content">
-    <slot />
-  </div>
+  <main>
+    <span>Loading...</span>
+  </main>
+{:else} -->
+<Navigation />
+<div class="content">
+  <slot />
+</div>
+<!-- {/if} -->
 <footer>
   <Footer />
 </footer>
