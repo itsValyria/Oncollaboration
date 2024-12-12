@@ -16,6 +16,7 @@
   details {
     display: inline-flex;
     align-items: center;
+    align-content: center; /*For safari and Firefox*/
     justify-content: center;
     background-color: var(--primary-color);
     border-radius: 50%;
@@ -35,7 +36,9 @@
 
   summary {
     list-style: none;
+    text-align: center; /*For safari and Firefox*/
     height: 16px;
+    cursor: pointer;
   }
 
   summary::-webkit-details-marker {
