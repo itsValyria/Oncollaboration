@@ -30,15 +30,7 @@
   }
 
   footer {
-    height: 115px;
-    background-color: #f0f0f0;
-  }
-
-  span {
-    display: block;
-    font-size: var(--font-size-4xl);
-    font-weight: bold;
-    margin: auto;
+    height: 70px;
   }
 
   @media (min-width: 600px) {
@@ -51,6 +43,11 @@
     .content {
       margin-top: 74px;
       padding-bottom: 0;
+    }
+
+    footer {
+      height: 115px;
+      background-color: #f0f0f0;
     }
   }
 
