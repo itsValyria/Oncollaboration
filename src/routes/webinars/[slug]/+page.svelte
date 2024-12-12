@@ -1,5 +1,5 @@
 <script>
-  import { QandA } from "$lib/index.js";
+  import { QandA, Resources } from "$lib/index.js";
   export let data; 
 </script>
 
@@ -15,6 +15,10 @@
     {@html data.webinar.description}
   </div>
   
+  <Resources 
+    heading = "Resources"
+    resources = {data.webinar.resources}
+  />
   <div class='q-a'>
     <QandA 
       comments = {data.comments} />
