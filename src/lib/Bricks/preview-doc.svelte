@@ -46,19 +46,21 @@
   }
 
   iframe {
-    z-index: 2;
+    z-index: 1;
     position: fixed;
     top: 1rem;
     left: 1rem;
-    width: 80vw;
-    max-width: 500px;
+    width: 70vw;
+    max-width: 420px;
     height: 50vh;
-    border: 2px solid var(--alt-text-color);
+    max-height: 420px;
+    border: 2px solid var(--background-category-color);
+    background-color: var(--background-category-color);
   }
 
-  @media only screen and (min-width: 600px){
+  @media only screen and (min-width: 1080px){
     iframe {
-      top: 4rem;
+      top: 5rem;
     }
   }
 </style>
