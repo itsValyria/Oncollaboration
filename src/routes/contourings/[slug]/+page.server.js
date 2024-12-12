@@ -5,7 +5,7 @@ import formatBytes from "$lib/format-bytes"
 const baseURL = 'https://fdnd-agency.directus.app/items/'
 
 export async function load({params}) {
-  const contouringURL = `${baseURL}avl_contourings?fields=image_scan,title,id,user_id.profile_picture.id,user_id.profile_picture.title,user_id.fullname,user_id.entitle,used_literature.directus_files_id.id,used_literature.directus_files_id.title,used_literature.directus_files_id.filesize,categories.avl_categories_id.name&filter[slug][_eq]=${params.slug}`
+  const contouringURL = `${baseURL}avl_contourings?fields=image_scan,title,id,user_id.profile_picture.id,user_id.profile_picture.title,user_id.fullname,user_id.entitle,used_literature.directus_files_id.id,used_literature.directus_files_id.title,used_literature.directus_files_id.type,used_literature.directus_files_id.filesize,categories.avl_categories_id.name&filter[slug][_eq]=${params.slug}`
   const contouring = await fetchJson(contouringURL)
   
   const commentsURL = `${baseURL}avl_comments?fields=time_posted,content,parent_id,likes,id,user_id.profile_picture.id,user_id.profile_picture.title,user_id.fullname,replies&filter[contouring_id][_eq]=${contouring.data[0].id}&filter[parent_id][_null]=true`
