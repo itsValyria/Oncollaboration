@@ -55,7 +55,8 @@
   --focus: solid 2px blue;
 
   /* -------- Sun animation --------- */
-  --sun: rgb(255 213 0);
+  --sun: rgb(255, 255, 0);
+  --sun2: rgb(255, 208, 0);
   --y: 60%;
 }
 
@@ -81,7 +82,7 @@
     background-color: var(--sun);
   }
   95% {
-    background-color: var(--sun);
+    background-color: var(--sun2);
   }
   100%{
     opacity: 1;
