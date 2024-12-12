@@ -36,7 +36,7 @@
 
   /* ---------- Colors: General ---------- */
   --primary-color: #6a0025;
-  --background-color: #f0e5e9;
+  --background-color: #f88521;
   --background-color-alt: #fff;
   --background-category-color: #d2b2bd;
 
@@ -55,19 +55,26 @@
   --focus: solid 2px blue;
 
   /* -------- Sun animation --------- */
-  --sun: rgb(255, 213, 0);
+  --sun: rgb(255 213 0);
+  --y: 60%;
+}
+
+@property --y {
+  syntax: "<percentage>";
+  inherits: true;
+  initial-value: 100%;
 }
 
 @keyframes sunup {
   0% {
-    margin: 50%;
+    margin: 50% 47%;
     border-radius: 50%;
     width: 10vh;
     height: 10vh;
     background-color: var(--sun);
   }
   75%{
-    margin: 0 50%;
+    margin: 0 47%;
     border-radius: 50%;
     width: 10vh;
     height: 10vh;
@@ -96,19 +103,57 @@
     height: 100vh;
   }
   25%{
-    margin: 0 50%;
+    margin: 0 47%;
     border-radius: 50%;
     width: 10vh;
     height: 10vh;
     background-color: var(--sun);
   }
   100% {
-    margin: 50%;
+    margin: 50% 47%;
     border-radius: 50%;
     width: 10vh;
     height: 10vh;
     opacity: 0;
     background-color: var(--sun);
+  }
+}
+
+@keyframes rays-up {
+  0% {
+    --y: 83%; 
+    background-image: repeating-conic-gradient(
+      from 0 at 50% var(--y),
+      rgba(254, 224, 72, 0.813) 0% 5deg,
+      transparent 0 9deg
+    );
+  }
+  100% {
+    --y: 0%; 
+    background-image: repeating-conic-gradient(
+      from 0 at 50% var(--y),
+      rgba(254, 224, 72, 0.813) 0% 5deg,
+      transparent 0 9deg
+    );
+  }
+}
+
+@keyframes rays-down {
+  20% {
+    --y: 0%; 
+    background-image: repeating-conic-gradient(
+      from 0 at 50% var(--y),
+      rgba(254, 224, 72, 0.813) 0% 5deg,
+      transparent 0 9deg
+    );
+  }
+  100% {
+    --y: 90%; 
+    background-image: repeating-conic-gradient(
+      from 0 at 50% var(--y),
+      rgba(254, 224, 72, 0.813) 0% 5deg,
+      transparent 0 9deg
+    );
   }
 }
 
@@ -125,6 +170,15 @@
   animation-delay: 1s;
 }
 
+::view-transition-old(rays){
+  animation: rays-down 1s;
+}
+
+::view-transition-new(rays){
+  animation: rays-up 1s;
+  animation-delay: 1s;
+}
+
 html {
   height: 100vh;
 }
@@ -138,12 +192,18 @@ body {
   margin: 0;
 }
 
-body {
-  background-image: linear-gradient(0deg, transparent 50%, chocolate 50%), linear-gradient(12deg, transparent 50%, darkorange 50%), linear-gradient(24deg, transparent 50%, chocolate 50%), linear-gradient(36deg, transparent 50%, darkorange 50%), linear-gradient(48deg, transparent 50%, chocolate 50%), linear-gradient(60deg, transparent 50%, darkorange 50%), linear-gradient(72deg, transparent 50%, chocolate 50%), linear-gradient(84deg, transparent 50%, darkorange 50%), linear-gradient(96deg, transparent 50%, chocolate 50%), linear-gradient(108deg, transparent 50%, darkorange 50%), linear-gradient(120deg, transparent 50%, chocolate 50%), linear-gradient(132deg, transparent 50%, darkorange 50%), linear-gradient(144deg, transparent 50%, chocolate 50%), linear-gradient(156deg, transparent 50%, darkorange 50%), linear-gradient(168deg, transparent 50%, chocolate 50%), linear-gradient(180deg, transparent 50%, darkorange 50%);
-  position: relative;
+body:after {
+  content: "";
+  position: fixed;
+  z-index: -1;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-position: 100% 100%;
+  background-size: cover;
   background-repeat: no-repeat;
-  background-color: chocolate;
-  border-radius: initial;
+  view-transition-name: rays;
 }
 
 ul li {
