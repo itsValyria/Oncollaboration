@@ -48,7 +48,14 @@
     top: 1rem;
     left: 1rem;
     width: 80vw;
+    max-width: 500px;
     height: 50vh;
     border: 2px solid var(--alt-text-color);
+  }
+
+  @media only screen and (min-width: 600px){
+    iframe {
+      top: 4rem;
+    }
   }
 </style>

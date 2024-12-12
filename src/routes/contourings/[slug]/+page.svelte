@@ -22,23 +22,38 @@
 </main>
 
 <style>
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: fit-content;
+    margin: 0 auto;
+  }
+
   h1 {
     margin-block: 1rem 1.5rem;
   }
 
   img {
     width: 100%;
-    height: 90vw;
+    max-width: var(--card-max-width);
     border-radius: var(--border-radius-sm);
   }
 
   .used-literature {
     margin-block: 1rem 2rem;
+    width: 100%;
   }
 
   .q-a {
     width: 90vw;
     max-width: 500px;
     margin: 0 auto;
+  }
+
+  @media only screen and (min-width: 418px) {
+    .used-literature {
+      width: var(--card-max-width);
+    }
   }
 </style>
