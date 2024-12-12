@@ -84,3 +84,15 @@ h1, h2, h3, h4, h5, h6 {
 ::placeholder {
   color: var(--text-color);
 }
+
+.ornament {
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  background-size: cover !important;
+}
+
+.ornament-center {
+  position: fixed;
+  bottom: 0;
+}
