@@ -33,25 +33,26 @@
 <style>
   @keyframes combined-hue-fade {
     0% {
-      filter: hue-rotate(0deg);
-      opacity: 1; /* Start fully visible */
+      filter: hue-rotate(0deg) blur(0px);
+      opacity: 1;
     }
     50% {
-      filter: hue-rotate(180deg);
-      opacity: 0.5; /* Midpoint partially faded */
+      filter: hue-rotate(180deg) blur(5px);
+      /* opacity: 0.5; Take this out for smooth transition */
+      
     }
     100% {
-      filter: hue-rotate(360deg);
-      opacity: 0; /* End fully faded */
+      filter: hue-rotate(360deg) blur(0px);
+      opacity: 0;
     }
   }
 
   :root::view-transition-old(root) {
-    animation: combined-hue-fade 1000ms cubic-bezier(0.4, 0, 0.2, 1) both;
+    animation: combined-hue-fade 2000ms cubic-bezier(0.4, 0, 0.2, 1) both;
   }
 
   :root::view-transition-new(root) {
-    animation: combined-hue-fade 1000ms cubic-bezier(0.4, 0, 0.2, 1) reverse
+    animation: combined-hue-fade 2000ms cubic-bezier(0.4, 0, 0.2, 1) reverse
       both;
   }
 
