@@ -125,16 +125,20 @@
     --y: 83%; 
     background-image: repeating-conic-gradient(
       from 0 at 50% var(--y),
-      rgba(254, 224, 72, 0.813) 0% 5deg,
-      transparent 0 9deg
+      rgba(254, 224, 72, 0.813) 0 2deg,
+      transparent 0 7deg,
+      rgba(254, 102, 72, 0.813) 0 9deg,
+      transparent 0 15deg
     );
   }
   100% {
     --y: 0%; 
     background-image: repeating-conic-gradient(
       from 0 at 50% var(--y),
-      rgba(254, 224, 72, 0.813) 0% 5deg,
-      transparent 0 9deg
+      rgba(254, 224, 72, 0.813) 0% 2deg,
+      transparent 0 7deg,
+      rgba(254, 102, 72, 0.813) 0 9deg,
+      transparent 0 15deg
     );
   }
 }
@@ -144,16 +148,20 @@
     --y: 0%; 
     background-image: repeating-conic-gradient(
       from 0 at 50% var(--y),
-      rgba(254, 224, 72, 0.813) 0% 5deg,
-      transparent 0 9deg
+      rgba(254, 224, 72, 0.813) 0% 2deg,
+      transparent 0 7deg,
+      rgba(254, 102, 72, 0.813) 0 9deg,
+      transparent 0 15deg
     );
   }
   100% {
     --y: 90%; 
     background-image: repeating-conic-gradient(
       from 0 at 50% var(--y),
-      rgba(254, 224, 72, 0.813) 0% 5deg,
-      transparent 0 9deg
+      rgba(254, 224, 72, 0.813) 0% 2deg,
+      transparent 0 7deg,
+      rgba(254, 102, 72, 0.813) 0 9deg,
+      transparent 0 15deg
     );
   }
 }
