@@ -1,17 +1,16 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Eagle+Lake&display=swap');
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-}
-
-@font-face {
-  font-family: "rundschrift";
-  src: url(/fonts/vag_rundschrift_d.woff2) format("woff2");
+  font-family: "Eagle Lake", sans-serif;
 }
 
 :root {
   --font: sans-serif;
-  --heading-font: "rundschrift", sans-serif;
+  --heading-font: "Eagle Lake", sans-serif;
 
   /* ---------- Font sizes ---------- */
   --font-size-xs: 0.5rem;
@@ -48,23 +47,64 @@
   --gap: .5rem;
   --card-max-width: 384px;
   --focus: solid 2px blue;
+
+
+  /* back */
+
+  --c1: #d9bf77;
+  --c2: white;
+  --s: 220px;
+  --_g:radial-gradient(#0000 60%,var(--c1) 61% 63%,#0000 64% 77%,var(--c1) 78% 80%,#0000 81%);
+  --_c:,#0000 75%,var(--c2) 0;
+}
+
+html[data-theme='light'] {
+  --c1: #d9bf77;
+  --c2: white;
+  --s: 220px;
+  --_g:radial-gradient(#0000 60%,var(--c1) 61% 63%,#0000 64% 77%,var(--c1) 78% 80%,#0000 81%);
+  --_c:,#0000 75%,var(--c2) 0;
+}
+
+html[data-theme='dark'] {
+  --c1: #d9bf77;
+  --c2: #0d3b66;  
+  --s: 220px;
+  --_g:radial-gradient(#0000 60%,var(--c1) 61% 63%,#0000 64% 77%,var(--c1) 78% 80%,#0000 81%);
+  --_c:,#0000 75%,var(--c2) 0;
 }
 
 html {
   height: 100vh;
 }
 
+
 body {
   font-family: var(--font);
-  background-color: var(--background-color);
+  cursor: url('/images/wand.svg'), auto;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
   margin: 0;
-}
+    background:
+      conic-gradient(at 12% 20% var(--_c)) calc(var(--s)* .44) calc(.9*var(--s)),
+      conic-gradient(at 12% 20% var(--_c)) calc(var(--s)*-.06) calc(.4*var(--s)),
+      conic-gradient(at 20% 12% var(--_c)) calc(.9*var(--s)) calc(var(--s)* .44),
+      conic-gradient(at 20% 12% var(--_c)) calc(.4*var(--s)) calc(var(--s)*-.06),
+      var(--_g),var(--_g) calc(var(--s)/2) calc(var(--s)/2) var(--c2);
+    background-size: var(--s) var(--s);
+  }
+
+background-position: 0 calc(37px * 0.35);
+background-size: calc(37px + 1.5px) calc(37px + 1.5px);
+
 
 ul li {
   list-style: none;
+}
+
+a{
+  cursor: url('/images/wand.svg'), pointer;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -83,4 +123,41 @@ h1, h2, h3, h4, h5, h6 {
 
 ::placeholder {
   color: var(--text-color);
+}
+
+::view-transition-new(root) {
+  mask: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><defs><filter id="blur"><feGaussianBlur stdDeviation="2"/></filter></defs><circle cx="20" cy="20" r="18" fill="white" filter="url(%23blur)"/></svg>') center / 0 no-repeat;
+  animation: scale 1s;
+}
+
+::view-transition-old(root),
+html[data-theme='dark']::view-transition-old(root) {
+  animation: none;
+  z-index: -1;
+}
+html[data-theme='dark']::view-transition-new(root) {
+  animation: scale 2s;
+}
+
+html[data-theme='light']::view-transition-new(root) {
+  animation: scaleREVERSE 1s;
+}
+
+::view-transition-old(root),
+html[data-theme='dark']::view-transition-old(root) {
+  animation: none;
+  z-index: -1;
+}
+
+@keyframes scale {
+  to {
+    rotate: 360deg;
+    mask-size: 200vmax;
+  }
+}
+
+@keyframes scaleREVERSE {
+  to{
+    mask-size: 200vmax;
+  }
 }

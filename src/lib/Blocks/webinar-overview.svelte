@@ -1,10 +1,34 @@
 <script>
+  import { onMount } from 'svelte';
+  import JSConfetti from 'js-confetti';
+
   export let slug = "";
   export let thumbnail = "";
   export let duration = "";
   export let title = "";
   export let speakers = [];
   export let categories = [];
+
+  let jsConfetti;
+
+  onMount(() => {
+    jsConfetti = new JSConfetti();
+
+    const links = document.querySelectorAll('a');
+    links.forEach(link => {
+      link.addEventListener('mouseover', handleConfetti);
+    });
+  });
+
+  function handleConfetti() {
+    jsConfetti.addConfetti({
+      emojis: ['⭐️', '🎩', '🌟', '🐰'],
+      emojiSize: 80,
+      confettiNumber: 10,
+    });
+  }
+
+  
 </script>
 
 <svelte:head>
@@ -45,6 +69,9 @@
     display: grid;
     grid-template-rows: max-content max-content 1fr max-content;
     height: 100%;
+    padding: 1em;
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
   }
 
   article p {
@@ -116,6 +143,7 @@
   article:first-of-type {
     margin-left: 0;
   }
+  
   
   @media screen and (min-width: 600px) {
     article {

@@ -1,5 +1,31 @@
 <script>
     import { page } from '$app/stores';
+
+    import { onMount } from 'svelte';
+
+    function enableDarkMode() {
+        document.startViewTransition(() => {
+            document.documentElement.setAttribute('data-theme', 'dark');
+        });
+    }
+
+    function enableLightMode() {
+        document.startViewTransition(() => {
+            document.documentElement.setAttribute('data-theme', 'light');
+        });
+    }
+
+    onMount(() => {
+        const lightmodeButton = document.getElementById('lightmode');
+        const darkmodeButton = document.getElementById('darkmode');
+
+        if (lightmodeButton) {
+            lightmodeButton.addEventListener('click', enableLightMode);
+        }
+        if (darkmodeButton) {
+            darkmodeButton.addEventListener('click', enableDarkMode);
+        }
+    });
 </script>
 
 <nav>
@@ -24,24 +50,33 @@
           <svg class='icon'xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M480-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM160-160v-112q0-34 17.5-62.5T224-378q62-31 126-46.5T480-440q66 0 130 15.5T736-378q29 15 46.5 43.5T800-272v112H160Zm80-80h480v-32q0-11-5.5-20T700-306q-54-27-109-40.5T480-360q-56 0-111 13.5T260-306q-9 5-14.5 14t-5.5 20v32Zm240-320q33 0 56.5-23.5T560-640q0-33-23.5-56.5T480-720q-33 0-56.5 23.5T400-640q0 33 23.5 56.5T480-560Zm0-80Zm0 400Z"/></svg>Profile
         </a>
       </li>
+      <li><a id="lightmode">Light Theme</a>
+      </li>
+      <li><a id="darkmode"> Dark Theme</a >
+      </li>
     </ul>
   </nav>
 
   <style>
     nav {
       position: fixed;
-      background-color: var(--background-color-alt);
+      background-color: #d9bf77;
       bottom: 0;
       width: 100%;
       padding: 0 1em .5em;
       z-index: 1000;
       box-shadow: 0px -4px 17px 0px rgba(0,0,0,0.3);
-      background-color: var(--background-color-alt);
     }
   
     ul {
       display: flex;
       justify-content: space-around;
+      list-style: none;
+      align-items: center;
+    }
+
+    li{
+      padding: 0 10px;
     }
   
     li a {
@@ -49,7 +84,7 @@
       flex-direction: column;
       align-items: center;
       font-size: var(--font-size-xs);
-      color: rgba(116, 116, 116, 1);
+      color: white;
       padding: .7em .5em 0; 
       text-decoration: none;
     }
