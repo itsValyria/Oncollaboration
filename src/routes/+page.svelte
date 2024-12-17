@@ -18,24 +18,42 @@
     }
   }
 
-  // Watch for changes in theme and update the SVG
+  // Function to update SVG when the theme changes
+  function updateSvgOnThemeChange() {
+    const theme = document.documentElement.getAttribute('data-theme');
+    if (theme === 'christmas') {
+      const svgs = [
+        '/images/snowwall-02.svg',
+        '/images/snowwall-03.svg',
+        '/images/snowwall-06.svg',
+        '/images/snowwall-07.svg',
+        '/images/snowwall-11.svg',
+      ];
+      svgUrl = svgs[Math.floor(Math.random() * svgs.length)];
+    } else {
+      svgUrl = ''; // No Christmas SVG when not in Christmas theme
+    }
+  }
+
+  // Use MutationObserver to detect changes to the data-theme attribute
   onMount(() => {
     if (typeof window !== 'undefined') {
+      // Set initial theme
       currentTheme.set(document.documentElement.getAttribute('data-theme') || 'default');
-      currentTheme.subscribe((theme) => {
-        if (theme === 'christmas') {
-          const svgs = [
-            '/images/snowwall-02.svg',
-            '/images/snowwall-03.svg',
-            '/images/snowwall-06.svg',
-            '/images/snowwall-07.svg',
-            '/images/snowwall-11.svg',
-          ];
-          svgUrl = svgs[Math.floor(Math.random() * svgs.length)];
-        } else {
-          svgUrl = '';
-        }
+      
+      // Create MutationObserver to listen for changes to the data-theme attribute
+      const observer = new MutationObserver(() => {
+        updateSvgOnThemeChange();
       });
+
+      // Observe changes to the data-theme attribute
+      observer.observe(document.documentElement, {
+        attributes: true,
+        attributeFilter: ['data-theme'],
+      });
+
+      // Set initial SVG when the component is mounted
+      updateSvgOnThemeChange();
     }
   });
 </script>
@@ -108,6 +126,8 @@
     left: 0;
     height: auto;
     width: 100%;
+    opacity: 0;
+    animation: fadeIn 7s ease-in forwards;
   }
 
   .carrousel {
@@ -138,6 +158,15 @@
   .carrousel::-webkit-scrollbar {
     display: none;
   }
+
+  @keyframes fadeIn {
+  0% {
+    opacity: 0; /* Start with 0 opacity */
+  }
+  100% {
+    opacity: 1; /* End with full opacity */
+  }
+}
 
   @media screen and (min-width: 500px) {
     .kaart {
