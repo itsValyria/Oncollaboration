@@ -196,5 +196,9 @@
     .carrousel {
       margin: 0;
     }
+
+    .christmas-decoration {
+      top: -1em;
+    }
   }
 </style>
