@@ -1,9 +1,43 @@
 <script>
+  import { onMount } from 'svelte';
+  import { writable } from 'svelte/store';
   import { ContouringOverview, Search, WebinarOverview } from "$lib/index.js";
   export let data;
 
-  let newestWebinars = data.webinars.slice(0,4);
-  let newestContourings = data.contourings.slice(0,4);
+  let newestWebinars = data.webinars.slice(0, 4);
+  let newestContourings = data.contourings.slice(0, 4);
+  let svgUrl = '';
+  let currentTheme = writable('default');
+
+  // Function to toggle the theme
+  function toggleChristmasTheme() {
+    if (typeof window !== 'undefined') { // Check if window is defined (browser)
+      const theme = document.documentElement.getAttribute('data-theme') === 'christmas' ? 'default' : 'christmas';
+      document.documentElement.setAttribute('data-theme', theme);
+      currentTheme.set(theme); // Update the store with the new theme
+    }
+  }
+
+  // Watch for changes in theme and update the SVG
+  onMount(() => {
+    if (typeof window !== 'undefined') {
+      currentTheme.set(document.documentElement.getAttribute('data-theme') || 'default');
+      currentTheme.subscribe((theme) => {
+        if (theme === 'christmas') {
+          const svgs = [
+            '/images/snowwall-02.svg',
+            '/images/snowwall-03.svg',
+            '/images/snowwall-06.svg',
+            '/images/snowwall-07.svg',
+            '/images/snowwall-11.svg',
+          ];
+          svgUrl = svgs[Math.floor(Math.random() * svgs.length)];
+        } else {
+          svgUrl = '';
+        }
+      });
+    }
+  });
 </script>
 
 <main>
@@ -18,7 +52,12 @@
         </div>
       {/each}
     </div>
-    <a href="/webinars">SEE ALL WEBINARS</a>
+    <a href="/webinars" class="see-all">
+      SEE ALL WEBINARS
+      {#if svgUrl}
+        <img src={svgUrl} alt="Christmas decoration" class="christmas-deco" />
+      {/if}
+    </a>
   </section>
 
   <section>
@@ -30,12 +69,16 @@
         </div>
       {/each}
     </div>
-    <a href="/contourings">SEE ALL CONTOURINGS</a>
+    <a href="/contourings" class="see-all">
+      SEE ALL CONTOURINGS
+      {#if svgUrl}
+        <img src={svgUrl} alt="Christmas decoration" class="christmas-deco" />
+      {/if}
+    </a>
   </section>
 </main>
 
 <style>
-  
   h1 {
     font-size: var(--font-size-2xl);
   }
@@ -56,6 +99,15 @@
     padding: var(--padding-button);
     border-radius: var(--border-radius-sm);
     margin: 1em 0;
+    position: relative;
+  }
+
+  .christmas-deco {
+    position: absolute;
+    top: -0.8em;
+    left: 0;
+    height: auto;
+    width: 100%;
   }
 
   .carrousel {
