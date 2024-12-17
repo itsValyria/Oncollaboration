@@ -116,6 +116,10 @@
   article:first-of-type {
     margin-left: 0;
   }
+
+  html[data-theme="christmas"] .container-image img {
+    opacity: 0.9;
+}
   
   @media screen and (min-width: 600px) {
     article {
