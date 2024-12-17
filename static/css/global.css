@@ -50,6 +50,20 @@
   --focus: solid 2px blue;
 }
 
+/* ---------- Christmas Theme Styling ---------- */
+
+:root[data-theme="christmas"] {
+/* ---------- Colors: Text ---------- */
+  --text-color: #4a4a4a;
+  --alt-text-color: #ffffff;
+
+  /* ---------- Colors: General ---------- */
+  --primary-color: #d88aa6;
+  --background-color: #f8f3f6;
+  --background-color-alt: #ffffff;
+  --background-category-color: #e6d6de;
+}
+
 html {
   height: 100vh;
 }

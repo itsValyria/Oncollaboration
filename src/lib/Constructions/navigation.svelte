@@ -3,53 +3,41 @@
 
   let isProcessing = false;
 
-function toggleChristmasTheme() {
-  if (isProcessing) return;
-  isProcessing = true;
+  function toggleChristmasTheme() {
+    if (isProcessing) return;
+    isProcessing = true;
 
-  // Get the current theme
-  const currentTheme = document.documentElement.getAttribute('data-theme') || 'default';
-  console.log('Current theme:', currentTheme); // Log the current theme
+    // Get the current theme
+    const currentTheme = document.documentElement.getAttribute('data-theme') || 'default';
 
-  // Toggle the theme between 'default' and 'christmas'
-  const newTheme = currentTheme === 'christmas' ? 'default' : 'christmas';
+    // Toggle the theme between 'default' and 'christmas'
+    const newTheme = currentTheme === 'christmas' ? 'default' : 'christmas';
 
-  // Log the new theme
-  console.log('New theme:', newTheme);
+    // Set the new theme
+    document.documentElement.setAttribute('data-theme', newTheme);
 
-  // Set the new theme
-  document.documentElement.setAttribute('data-theme', newTheme);
+    // Get the Christmas button SVG elements
+    const christmasButtonSvg = document.querySelector('.christmas-button-svg');
+    const christmasButtonSvgFilled = document.querySelector('.christmas-button-svg-filled');
 
-  // Get the Christmas button SVG elements
-  const christmasButtonSvg = document.querySelector('.christmas-button-svg');
-  const christmasButtonSvgFilled = document.querySelector('.christmas-button-svg-filled');
-
-  // Check if the elements exist
-  if (christmasButtonSvg && christmasButtonSvgFilled) {
-    // Check if the new theme is Christmas
-    if (newTheme === 'christmas') {
-      // Change the SVG to the filled version
-      christmasButtonSvgFilled.style.display = 'block';  // Show the filled SVG
-      christmasButtonSvg.style.display = 'none';         // Hide the outlined SVG
+    // Check if the elements exist and toggle the SVG visibility
+    if (christmasButtonSvg && christmasButtonSvgFilled) {
+      if (newTheme === 'christmas') {
+        christmasButtonSvgFilled.style.display = 'block';
+        christmasButtonSvg.style.display = 'none';
+      } else {
+        christmasButtonSvgFilled.style.display = 'none';
+        christmasButtonSvg.style.display = 'block';
+      }
     } else {
-      // Revert to the original outlined SVG
-      christmasButtonSvgFilled.style.display = 'none';   // Hide the filled SVG
-      christmasButtonSvg.style.display = 'block';        // Show the outlined SVG
+      console.error('SVG elements not found in the DOM');
     }
-  } else {
-    console.error('SVG elements not found in the DOM');
+
+    // Reset flag after a short delay to allow time for the theme change
+    setTimeout(() => {
+      isProcessing = false;
+    }, 300);
   }
-
-  // Log the change in SVG
-  console.log('SVG changed to:', newTheme === 'christmas' ? 'filled' : 'outlined');
-
-  // Reset flag after a short delay to allow time for the theme change
-  setTimeout(() => {
-    isProcessing = false;
-  }, 300);
-}
-
-
 </script>
 
 <nav>
@@ -142,15 +130,6 @@ function toggleChristmasTheme() {
     .christmas-button-svg-filled {
       display: none;
     }
-
-    [data-theme="christmas"] {
-    --background-color-alt: #e63946; /* Festive red background */
-    --primary-color: #ffba08; /* Bright yellow for active links */
-    --font-size-xs: 14px;
-    --font-size-md: 18px;
-    --font-size-xl: 22px;
-    --border-nav: 2px solid #ffba08;
-  }
   
     @media screen and (min-width: 600px) {
       li a {
