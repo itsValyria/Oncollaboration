@@ -1,19 +1,23 @@
 <script>
   import { Navigation, Footer, LoadingState } from "$lib/index.js";
   import { navigating } from '$app/stores';
+  import { onMount } from 'svelte';
 </script>
 
-{#if $navigating}
+<header>
   <Navigation />
+</header>
+
+{#if $navigating}
   <main>
     <LoadingState />
   </main>
 {:else}
-  <Navigation />
   <div class="content">
     <slot />
   </div>
 {/if}
+
 <footer>
   <Footer />
 </footer>
@@ -22,7 +26,7 @@
   main {
     margin: auto;
   }
-  
+
   .content {
     flex: 1;
     margin-right: 1em;

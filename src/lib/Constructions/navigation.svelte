@@ -1,5 +1,5 @@
 <script>
-    import { page } from '$app/stores';
+  import { page } from '$app/stores';
 </script>
 
 <nav>
@@ -23,6 +23,11 @@
         <a href="/profile" class:active={$page.url.pathname.startsWith('/profile')}>
           <svg class='icon'xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M480-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM160-160v-112q0-34 17.5-62.5T224-378q62-31 126-46.5T480-440q66 0 130 15.5T736-378q29 15 46.5 43.5T800-272v112H160Zm80-80h480v-32q0-11-5.5-20T700-306q-54-27-109-40.5T480-360q-56 0-111 13.5T260-306q-9 5-14.5 14t-5.5 20v32Zm240-320q33 0 56.5-23.5T560-640q0-33-23.5-56.5T480-720q-33 0-56.5 23.5T400-640q0 33 23.5 56.5T480-560Zm0-80Zm0 400Z"/></svg>Profile
         </a>
+      </li>
+      <li>
+        <button on:click={toggleChristmasTheme} class="christmas-button" aria-label="Toggle Christmas Theme">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8.25v-1.5m0 1.5c-1.355 0-2.697.056-4.024.166C6.845 8.51 6 9.473 6 10.608v2.513m6-4.871c1.355 0 2.697.056 4.024.166C17.155 8.51 18 9.473 18 10.608v2.513M15 8.25v-1.5m-6 1.5v-1.5m12 9.75-1.5.75a3.354 3.354 0 0 1-3 0 3.354 3.354 0 0 0-3 0 3.354 3.354 0 0 1-3 0 3.354 3.354 0 0 0-3 0 3.354 3.354 0 0 1-3 0L3 16.5m15-3.379a48.474 48.474 0 0 0-6-.371c-2.032 0-4.034.126-6 .371m12 0c.39.049.777.102 1.163.16 1.07.16 1.837 1.094 1.837 2.175v5.169c0 .621-.504 1.125-1.125 1.125H4.125A1.125 1.125 0 0 1 3 20.625v-5.17c0-1.08.768-2.014 1.837-2.174A47.78 47.78 0 0 1 6 13.12M12.265 3.11a.375.375 0 1 1-.53 0L12 2.845l.265.265Zm-3 0a.375.375 0 1 1-.53 0L9 2.845l.265.265Zm6 0a.375.375 0 1 1-.53 0L15 2.845l.265.265Z" /></svg><span>Chirstmas</span>     
+        </button>
       </li>
     </ul>
   </nav>
@@ -64,6 +69,24 @@
       width: 24px;
       height: 24px;
     }
+
+    .christmas-button {
+      border: none;
+      background-color: transparent;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: var(--font-size-xs);
+      color: rgba(116, 116, 116, 1);
+      padding: .7em .5em 0; 
+      text-decoration: none;
+    }
+
+    .christmas-button svg {
+      width: 24px;
+      height: 24px;
+      color: rgba(116, 116, 116, 1);
+    }
   
     @media screen and (min-width: 600px) {
       li a {
@@ -71,6 +94,15 @@
       }
   
       .icon {
+        width: 28px;
+        height: 28px;
+      }
+
+      .christmas-button {
+        font-size: var(--font-size-md);
+      }
+
+      .christmas-button svg {
         width: 28px;
         height: 28px;
       }
@@ -95,6 +127,13 @@
         margin-right: 1.5em;
         font-weight: 700;
       }
+
+      .christmas-button {
+        flex-direction: row-reverse;
+        padding: 1em .5em;
+        margin-right: 1.5em;
+        font-weight: 700;
+      }
   
       li a.active {
         padding-top: 1em;
@@ -107,6 +146,20 @@
         width: 32px;
         height: 32px;
         margin-left: .4em;
+      }
+
+      .christmas-button svg {
+        width: 32px;
+        height: 32px;
+        margin: .2em;
+      }
+
+      .christmas-button span {
+        display: none;
+      }
+
+      .christmas-button:hover {
+        cursor: pointer;
       }
     }
   
