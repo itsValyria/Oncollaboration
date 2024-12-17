@@ -1,7 +1,18 @@
 <script>
   import { page } from '$app/stores';
+  import { onMount } from 'svelte';
 
   let isProcessing = false;
+  let audio;
+
+  onMount(() => {
+    try {
+      audio = new Audio('/audio/intro.mp3');
+      console.log('Audio object created');
+    } catch (e) {
+      console.error('Error initializing audio:', e);
+    }
+  });
 
   function toggleChristmasTheme() {
     if (isProcessing) return;
@@ -25,9 +36,17 @@
       if (newTheme === 'christmas') {
         christmasButtonSvgFilled.style.display = 'block';
         christmasButtonSvg.style.display = 'none';
+
+        // Play the Christmas audio
+        audio.volume = 0.4;
+        audio.play();
       } else {
         christmasButtonSvgFilled.style.display = 'none';
         christmasButtonSvg.style.display = 'block';
+
+        // Stop the audio if theme is not Christmas
+        audio.pause();
+        audio.currentTime = 0;
       }
     } else {
       console.error('SVG elements not found in the DOM');
@@ -129,6 +148,18 @@
 
     .christmas-button-svg-filled {
       display: none;
+    }
+
+    .christmas-button-svg {
+      display: block;
+    }
+
+    .christmas-button svg {
+      transition: fill 0.3s ease;
+    }
+
+    .christmas-button-svg-filled {
+      transition: display 0.3s ease;
     }
   
     @media screen and (min-width: 600px) {
