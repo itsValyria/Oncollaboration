@@ -4,12 +4,19 @@
   export let title = "";
   export let user_id = "";
   export let categories = [];  
+  export let vt = false;
+
 </script>
 
 <article>
   <a href="/contourings/{slug}">
     <div>
-      <img src="https://fdnd-agency.directus.app/assets/{image_scan.id}?width=384&fit=cover&format=avif" alt="{title}" width="384px" height="384px" style:--contouring="image-{image_scan.id}" />
+      <img 
+      src="https://fdnd-agency.directus.app/assets/{image_scan.id}?width=384&fit=cover&format=avif" 
+      alt="{title}" 
+      width="384px" 
+      height="384px" 
+      style={vt ? `--contouring: image-${image_scan.id}` : ''} />    
 
       {#each categories as category}
         <span>{category.avl_categories_id.name}</span>
