@@ -47,6 +47,7 @@
     container-name: main-container;
     padding-block: 1em;
     width: 90%;
+    backdrop-filter: blur(20px);
   }
 
   article {
@@ -57,6 +58,7 @@
       "c";
     gap: .5em;
     grid-template-columns: 1fr;
+    
   }
 
   a {

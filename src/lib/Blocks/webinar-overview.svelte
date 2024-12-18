@@ -37,6 +37,9 @@
     width: 100%;
     max-width: var(--card-max-width);
     height: 100%;
+    backdrop-filter: blur(20px);
+    padding: 20px;
+    border-radius: 10px;
   }
 
   article a {

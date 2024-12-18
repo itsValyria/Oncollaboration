@@ -1,5 +1,5 @@
 <script>
-  import { Navigation, Footer, LoadingState } from "$lib/index.js";
+  import { Navigation, Footer, LoadingState, SnowFlakes } from "$lib/index.js";
   import { navigating } from '$app/stores';
 
   let showLoading = false;
@@ -17,6 +17,8 @@
     showLoading = false; // Hide loading when navigation completes
   }
 </script>
+
+<SnowFlakes />
 
 {#if showLoading}
   <Navigation />

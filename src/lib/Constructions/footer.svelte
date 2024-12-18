@@ -30,7 +30,7 @@
       bottom: 0;
       align-items: center;
       justify-content: space-between;
-      background-color: var(--primary-color);
+      background-color: #3a0000;
       padding: 2rem 4rem;
       color: var(--alt-text-color);
     }
