@@ -27,7 +27,6 @@
         '/images/snowwall-03.svg',
         '/images/snowwall-06.svg',
         '/images/snowwall-07.svg',
-        '/images/snowwall-11.svg',
       ];
       svgUrl = svgs[Math.floor(Math.random() * svgs.length)];
     } else {
