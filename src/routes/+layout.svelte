@@ -16,19 +16,19 @@
   function playRandomSound(event) {
     // Check if the hovered element is not the christmas button
     if (event.target.closest('.christmas-button')) {
-      return; // Do nothing if it's the christmas button
+      return;
     }
 
     // Stop the current audio if it's playing
     if (currentAudio && !currentAudio.paused) {
-      currentAudio.pause();  // Stop the current audio
-      currentAudio.currentTime = 0;  // Reset the playback to start
+      currentAudio.pause();
+      currentAudio.currentTime = 0; 
     }
 
     // Select a random sound from the list
     const randomSound = sounds[Math.floor(Math.random() * sounds.length)];
-    currentAudio = new Audio(randomSound);  // Set the new audio as the current one
-    currentAudio.play();  // Play the selected sound
+    currentAudio = new Audio(randomSound);
+    currentAudio.play();
   }
 
   // Add event listener to all <a> elements after the component is mounted
