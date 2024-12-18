@@ -1,7 +1,46 @@
 <script>
+  import { onMount } from 'svelte';
   import { Navigation, Footer, LoadingState } from "$lib/index.js";
   import { navigating } from '$app/stores';
-  import { onMount } from 'svelte';
+
+  // List of sound files to play on hover
+  const sounds = [
+    '/audio/jingle-bells.mp3',
+    '/audio/we-wish-you.mp3',
+  ];
+
+  // Reference to the currently playing audio
+  let currentAudio = null;
+
+  // Function to play a random sound on hover
+  function playRandomSound(event) {
+    // Check if the hovered element is not the christmas button
+    if (event.target.closest('.christmas-button')) {
+      return; // Do nothing if it's the christmas button
+    }
+
+    // Stop the current audio if it's playing
+    if (currentAudio && !currentAudio.paused) {
+      currentAudio.pause();  // Stop the current audio
+      currentAudio.currentTime = 0;  // Reset the playback to start
+    }
+
+    // Select a random sound from the list
+    const randomSound = sounds[Math.floor(Math.random() * sounds.length)];
+    currentAudio = new Audio(randomSound);  // Set the new audio as the current one
+    currentAudio.play();  // Play the selected sound
+  }
+
+  // Add event listener to all <a> elements after the component is mounted
+  onMount(() => {
+    // Select all <a> elements on the page
+    const links = document.querySelectorAll('a');
+    
+    // Attach the hover event to each <a> element
+    links.forEach(link => {
+      link.addEventListener('mouseover', playRandomSound);
+    });
+  });
 </script>
 
 <header>
