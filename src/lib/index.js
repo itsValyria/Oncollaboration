@@ -13,5 +13,6 @@ import LoaderSpin from "./Bricks/loader-spin.svelte";
 import Like from "./Bricks/like.svelte";
 import Liked from "./Bricks/liked.svelte";
 import LoadingState from "./Bricks/loading-state.svelte";
+import Toggle from "./Blocks/toggle.svelte";
 
-export {ContouringOverview, Search, Filter, WebinarOverview, Navigation, FeaturedWebinar, Footer, SearchResults, QandA, Comment, LoaderDots, LoaderSpin, Like, Liked, LoadingState}
+export {ContouringOverview, Search, Filter, WebinarOverview, Navigation, FeaturedWebinar, Footer, SearchResults, QandA, Comment, LoaderDots, LoaderSpin, Like, Liked, LoadingState, Toggle}

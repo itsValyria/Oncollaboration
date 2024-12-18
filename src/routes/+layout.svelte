@@ -1,5 +1,5 @@
 <script>
-  import { Navigation, Footer, LoadingState } from "$lib/index.js";
+  import { Navigation, Footer, LoadingState, Toggle } from "$lib/index.js";
   import { navigating } from '$app/stores';
 
   let showLoading = false;
@@ -26,6 +26,7 @@
 {:else}
   <Navigation />
   <div class="content">
+    <Toggle />
     <slot />
   </div>
 {/if}
