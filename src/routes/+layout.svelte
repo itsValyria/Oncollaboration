@@ -1,5 +1,5 @@
 <script>
-  import { Navigation, Footer, LoadingState, SnowFlakes } from "$lib/index.js";
+  import { Navigation, Footer, LoadingState, FlyYouSanta } from "$lib/index.js";
   import { navigating } from '$app/stores';
 
   let showLoading = false;
@@ -18,22 +18,26 @@
   }
 </script>
 
-<SnowFlakes />
 
 {#if showLoading}
   <Navigation />
+
   <main>
     <LoadingState />
   </main>
 {:else}
   <Navigation />
   <div class="content">
+    <FlyYouSanta />
+  <div class="snow"></div>
     <slot />
   </div>
 {/if}
 <footer>
   <Footer />
 </footer>
+
+
 
 <style>
   main {

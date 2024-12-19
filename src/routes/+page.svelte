@@ -35,7 +35,6 @@
 </main>
 
 <style>
-  
   h1 {
     font-size: var(--font-size-2xl);
   }
