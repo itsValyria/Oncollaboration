@@ -2,6 +2,7 @@ import fetchJson from "$lib/fetch-json"
 import fetchReplies from "$lib/fetch-replies"
 import formatBytes from "$lib/format-bytes"
 
+
 const baseURL = 'https://fdnd-agency.directus.app/items/'
 
 export async function load({params}) {
