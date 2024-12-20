@@ -75,6 +75,7 @@
     font-weight: bold;
     margin-bottom: .5rem;
     width: 100%;
+    
   }
 
   input {
