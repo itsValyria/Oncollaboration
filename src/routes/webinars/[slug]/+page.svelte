@@ -85,7 +85,7 @@
       font-weight: 300;
       font-size: var(--font-size-sm);
     }
-    
+
     & a {
       width: fit-content;
       text-decoration: none;
@@ -119,8 +119,8 @@
     }
 
     .speaker-info img {
-      width: 90px;
-      height: 90px;
+      width: 70px;
+      height: 70px;
     }
 
     .speaker-info div{
