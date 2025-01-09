@@ -22,7 +22,7 @@ Je kunt op dit platform webinars bekijken en vragen daarover stellen. Ook kun je
 <img width="300" alt="OnCollaboration Webinars iPhone SE" src="https://github.com/user-attachments/assets/6dda7889-13e1-405d-821e-cbbbbdc824fa">
 <img width="600" alt="OnCollaboration Webinars MacBook Pro" src="https://github.com/user-attachments/assets/ebf2c9b6-2710-47c3-9b0a-525e72bf9a72">
 
-De website kun je live bekijken op 🌐 https://oncollaboration-sprint-14.vercel.app/ 
+De website kun je live bekijken op 🌐 [oncollaboration.vercel.app](https://oncollaboration.vercel.app/) 
 
 ## Kenmerken
 Bij het bouwen van deze website hebben we gebruik gemaakt van SvelteKit. We hebben gebruik gemaakt van componenten en we hebben de website dynamisch gemaakt met data uit Directus.
