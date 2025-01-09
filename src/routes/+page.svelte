@@ -86,7 +86,7 @@
   .carrousel::-webkit-scrollbar {
     display: none;
   }
-
+  
   @media screen and (min-width: 500px) {
     .kaart {
       flex: 0 0 auto;

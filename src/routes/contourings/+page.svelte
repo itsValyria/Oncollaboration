@@ -1,6 +1,7 @@
 <script>
   import {Search, Filter, ContouringOverview} from "$lib/index.js";
   export let data;
+  let vt = true
 </script>
 
 <main>
@@ -14,7 +15,7 @@
   <ul>
     {#each data.contourings as contouring}
     <li>
-      <ContouringOverview {...contouring}/>
+      <ContouringOverview {...contouring} {vt}/>
     </li>
     {/each}
   </ul>
