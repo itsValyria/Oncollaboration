@@ -4,10 +4,11 @@
 </script>
 
 <main>
-  <h1>{data.contouring.title}</h1>
-
-  <img src="https://fdnd-agency.directus.app/assets/{data.contouring.image_scan}?width=384&fit=cover&format=avif" alt="CT-Scans" width="384" height="384" />
-  
+  <section class="container">
+    <h1>{data.contouring.title}</h1>
+    <img src="https://fdnd-agency.directus.app/assets/{data.contouring.image_scan}?width=384&fit=cover&format=avif" alt="CT-Scans" width="384" height="384" style:--contouring="image-{data.contouring.image_scan}"/>
+  </section>
+ 
   <div class="used-literature">
     <Resources 
       heading = "Used Literature"
@@ -22,7 +23,7 @@
 </main>
 
 <style>
-  main {
+/*   main {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -32,19 +33,27 @@
 
   h1 {
     margin-block: 1rem 1.5rem;
+  } */
+  
+  .container {
+    display: grid;
+    margin: 30px auto;
+    grid-template-rows: auto 1fr;
+    gap: 20px;
   }
 
   img {
     width: 100%;
-    max-width: var(--card-max-width);
-    border-radius: var(--border-radius-sm);
+    height: auto;
+    border-radius: var(--border-radius-md);
+    view-transition-name: var(--contouring);
   }
 
   .used-literature {
     margin-block: 1rem 2rem;
     width: 100%;
   }
-
+  
   .q-a {
     width: 90vw;
     max-width: 500px;
