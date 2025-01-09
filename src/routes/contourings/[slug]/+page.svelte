@@ -23,17 +23,10 @@
 </main>
 
 <style>
-/*   main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  main {
     width: fit-content;
     margin: 0 auto;
   }
-
-  h1 {
-    margin-block: 1rem 1.5rem;
-  } */
   
   .container {
     display: grid;
@@ -58,11 +51,5 @@
     width: 90vw;
     max-width: 500px;
     margin: 0 auto;
-  }
-
-  @media only screen and (min-width: 418px) {
-    .used-literature {
-      width: var(--card-max-width);
-    }
   }
 </style>
