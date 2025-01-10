@@ -53,8 +53,8 @@
   }
 
   img {
-    height: 16rem;
-    width: 100%;
+    max-height: 16rem;
+    max-width: 100%;
     border-radius: var(--border-radius-md);
   }
 

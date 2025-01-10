@@ -6,7 +6,7 @@
 <main>
   <h1>Category Results</h1>
     <Search />
-
+    
     <Filter activeCategory={data.category}></Filter>
     <SearchResults {data} />
 </main>

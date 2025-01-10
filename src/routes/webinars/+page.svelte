@@ -4,11 +4,9 @@
 </script>
 
 <main>
-  <h1>Webinars</h1>
-
   <Search />
 
-  <Filter />
+  <Filter activeCategory={data.category} currentPage="webinars" />
 
   {#each data.FeaturedWebinars as featuredWebinar}
     <FeaturedWebinar {...featuredWebinar}/>

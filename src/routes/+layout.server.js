@@ -30,18 +30,18 @@ export async function load({ url }) {
   );
 
   // Filter data based on selected category
-  if (category !== 'all') {
-    filteredWebinars = filteredWebinars.filter((webinar) =>
-      webinar.categories?.some((cat) =>
-        cat.avl_categories_id?.name?.toLowerCase() === category
-      )
-    );
-    filteredContourings = filteredContourings.filter((contouring) =>
-      contouring.categories?.some((cat) =>
-        cat.avl_categories_id?.name?.toLowerCase() === category
-      )
-    );
-  }
+  // if (category !== 'all') {
+  //   filteredWebinars = filteredWebinars.filter((webinar) =>
+  //     webinar.categories?.some((cat) =>
+  //       cat.avl_categories_id?.name?.toLowerCase() === category
+  //     )
+  //   );
+  //   filteredContourings = filteredContourings.filter((contouring) =>
+  //     contouring.categories?.some((cat) =>
+  //       cat.avl_categories_id?.name?.toLowerCase() === category
+  //     )
+  //   );
+  // }
 
   return {
     webinars: filteredWebinars,

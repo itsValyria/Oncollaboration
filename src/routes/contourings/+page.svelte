@@ -4,11 +4,9 @@
 </script>
 
 <main>
-  <h1>Contourings</h1>
-
   <Search />
 
-  <Filter />
+  <Filter currentPage="contourings"/>
 
   <h2>All contourings</h2>
   <ul>
