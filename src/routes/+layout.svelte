@@ -1,21 +1,33 @@
 <script>
   import { Navigation, Footer, LoadingState } from "$lib/index.js";
   import { navigating } from '$app/stores';
+  import { onNavigate } from "$app/navigation";
 
   let showLoading = false;
   let navigatingTimeout;
-
+  
   // Watch the `navigating` store
   $: if ($navigating) {
     // Delay showing the loading state
     clearTimeout(navigatingTimeout);
     navigatingTimeout = setTimeout(() => {
       showLoading = true;
-    }, 300); // Adjust delay for view-transition capture
+    }, 400); // Adjust delay for view-transition capture
   } else {
     clearTimeout(navigatingTimeout);
     showLoading = false; // Hide loading when navigation completes
   }
+  
+  onNavigate((navigation) => {
+    if (!document.startViewTransition) return;
+
+    return new Promise((resolve) => {
+      document.startViewTransition(async () => {
+        resolve();
+        await navigation.complete;
+      });
+    });
+  });
 </script>
 
 {#if showLoading}
@@ -23,12 +35,13 @@
   <main>
     <LoadingState />
   </main>
-{:else}
+{:else} 
   <Navigation />
   <div class="content">
     <slot />
   </div>
 {/if}
+
 <footer>
   <Footer />
 </footer>
@@ -45,7 +58,8 @@
   }
 
   footer {
-    height: 70px;
+    height: 115px;
+    background-color: #f0f0f0;
   }
 
   @media (min-width: 600px) {

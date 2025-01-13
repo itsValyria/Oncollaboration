@@ -7,7 +7,10 @@
 </script>
 
 <main>
+  <h1>Home</h1>
+
   <Search />
+
   <section>
     <h2>Webinars</h2>
     <div class="carrousel">
@@ -34,7 +37,6 @@
 </main>
 
 <style>
-  
   h1 {
     font-size: var(--font-size-2xl);
   }
@@ -85,7 +87,7 @@
   .carrousel::-webkit-scrollbar {
     display: none;
   }
-
+  
   @media screen and (min-width: 500px) {
     .kaart {
       flex: 0 0 auto;

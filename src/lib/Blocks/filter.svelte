@@ -5,16 +5,41 @@
 </script>
 
 <form method="get" action="/{currentPage}" id="filter" name="filter">
-  <input type="hidden" name="page" value={currentPage} />
-  <button type="button" on:click={() => goto('/currentPage')} class:selected={!activeCategory || activeCategory === 'all'}>All</button>
-  <button type="submit" name="category" value="breast" aria-label="Filter on breast category" class:selected={activeCategory === 'breast'}>Breast</button>
-  <button type="submit" name="category" value="gastrointestinal" class:selected={activeCategory === 'gastrointestinal'}>Gastrointestinal</button>
-  <button type="submit" name="category" value="gynaecology" class:selected={activeCategory === 'gynaecology'}>Gynaecology</button>
-  <button type="submit" name="category" value="head&neck" class:selected={activeCategory === 'head&neck'}>Head & neck</button>
-  <button type="submit" name="category" value="lung" class:selected={activeCategory === 'lung'}>Lung</button>
-  <button type="submit" name="category" value="neuro-oncology" class:selected={activeCategory === 'neuro-oncology'}>Neuro-oncology</button>
-  <button type="submit" name="category" value="prostate" class:selected={activeCategory === 'prostate'}>Prostate</button>
-  <button type="submit" name="category" value="urology" class:selected={activeCategory === 'urology'}>Urology</button>
+  <button type="button" on:click={() => goto('/webinars')} class:selected={!activeCategory || activeCategory === 'all'}>
+    All
+  </button>
+
+  <button type="submit" name="category" value="breast" aria-label="Filter on breast category" class:selected={activeCategory === 'breast'}>
+    Breast
+  </button>
+
+  <button type="submit" name="category" value="gastrointestinal" aria-label="Filter on gastrointestinal category" class:selected={activeCategory === 'gastrointestinal'}>
+    Gastrointestinal
+  </button>
+
+  <button type="submit" name="category" value="gynaecology" aria-label="Filter on gynaecology category" class:selected={activeCategory === 'gynaecology'}>
+    Gynaecology
+  </button>
+
+  <button type="submit" name="category" value="head&neck" aria-label="Filter on head and neck category" class:selected={activeCategory === 'head&neck'}>
+    Head & neck
+  </button>
+
+  <button type="submit" name="category" value="lung" aria-label="Filter on lung category" class:selected={activeCategory === 'lung'}>
+    Lung
+  </button>
+
+  <button type="submit" name="category" value="neuro-oncology" aria-label="Filter on neuro oncology category" class:selected={activeCategory === 'neuro-oncology'}>
+    Neuro-oncology
+  </button>
+
+  <button type="submit" name="category" value="prostate" aria-label="Filter on prostate category" class:selected={activeCategory === 'prostate'}>
+    Prostate
+  </button>
+
+  <button type="submit" name="category" value="urology" aria-label="Filter on urology category" class:selected={activeCategory === 'urology'}>
+    Urology
+  </button>
 </form>
 
 <style>
@@ -42,6 +67,7 @@
     background-color: var(--primary-color);
     color: var(--alt-text-color);
   }
+  
   button:focus {
     outline: var(--focus);
     border-radius: var(--border-radius-sm);

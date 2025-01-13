@@ -1,6 +1,7 @@
 <script>
   import {Search, Filter, ContouringOverview} from "$lib/index.js";
   export let data;
+  let vt = true //What does this mean
 </script>
 
 <main>
@@ -9,10 +10,11 @@
   <Filter currentPage="contourings"/>
 
   <h2>All contourings</h2>
+  
   <ul>
     {#each data.contourings as contouring}
     <li>
-      <ContouringOverview {...contouring}/>
+      <ContouringOverview {...contouring} {vt}/>
     </li>
     {/each}
   </ul>

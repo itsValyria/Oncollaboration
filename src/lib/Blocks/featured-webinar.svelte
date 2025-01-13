@@ -32,7 +32,6 @@
       {:else}
         <p>No categories available</p>
       {/if}
-    
 
       <div class="action-link">
         <a href="/webinars/{slug}">Watch webinar</a>
