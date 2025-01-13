@@ -53,41 +53,4 @@
   button svg path {
     fill: var(--alt-text-color);
   }
-
-  @media screen and (min-width: 400px) {
-    input {
-      width: 90%;
-    }
-
-    button {
-      width: 10%;
-    }
-  }
-
-  @media screen and (min-width: 1080px) {
-    form {
-      flex-direction: row-reverse;
-    }
-
-    input {
-      width: 95%;
-      border-start-start-radius: 0;
-      border-end-start-radius: 0;
-      border-start-end-radius: var(--border-radius-sm);
-      border-end-end-radius: var(--border-radius-sm);
-    }
-
-    button {
-      width: 5%;
-      background-color: var(--background-color-alt);
-      border-start-start-radius: var(--border-radius-sm);
-      border-end-start-radius: var(--border-radius-sm);
-      border-start-end-radius: 0;
-      border-end-end-radius: 0;
-    }
-
-    button svg path {
-      fill:var(--primary-color);
-    }
-  }
 </style>
