@@ -15,16 +15,6 @@
   <button type="submit" name="category" value="urology" aria-label="Filter on urology category" class:selected={activeCategory === 'urogoly'}>Urology</button>
 </form>
 
-<!-- 
-<form method="get" action="/filter" id="filter" name="filter">
-  <button type="button" on:click={() => goto('/webinars')} class:selected={!activeCategory || activeCategory === 'all'}>All</button>
-  {#each categories as category}
-    <button type="submit" name="category" class:selected={activeCategory === 'urogoly'} value={category.name.toLowerCase()}>
-      {category.name}
-    </button>
-  {/each}
-</form> -->
-
 <style>
   form {
     display: flex;
