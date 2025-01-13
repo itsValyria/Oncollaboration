@@ -1,7 +1,7 @@
 <script>
   export let activeCategory; // Ontvang de actieve categorie van de pagina
   import { goto } from '$app/navigation';
-  export let currentPage;
+  export let currentPage; 
 </script>
 
 <form method="get" action="/{currentPage}" id="filter" name="filter">
@@ -14,7 +14,7 @@
   <button type="submit" name="category" value="lung" class:selected={activeCategory === 'lung'}>Lung</button>
   <button type="submit" name="category" value="neuro-oncology" class:selected={activeCategory === 'neuro-oncology'}>Neuro-oncology</button>
   <button type="submit" name="category" value="prostate" class:selected={activeCategory === 'prostate'}>Prostate</button>
-  <button type="submit" name="category" value="urology" class:selected={activeCategory === 'urogoly'}>Urology</button>
+  <button type="submit" name="category" value="urology" class:selected={activeCategory === 'urology'}>Urology</button>
 </form>
 
 <style>
