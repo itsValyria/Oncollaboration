@@ -28,7 +28,6 @@
       });
     });
   });
-  
 </script>
 
 {#if showLoading}
@@ -37,11 +36,12 @@
     <LoadingState />
   </main>
 {:else} 
-<Navigation />
-<div class="content">
-  <slot />
-</div>
+  <Navigation />
+  <div class="content">
+    <slot />
+  </div>
 {/if}
+
 <footer>
   <Footer />
 </footer>

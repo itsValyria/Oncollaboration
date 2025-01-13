@@ -4,7 +4,6 @@
 </script>
 
 <main>
-
   <section class="container">
     <h1>{data.contouring.title}</h1>
     <img src="https://fdnd-agency.directus.app/assets/{data.contouring.image_scan}" alt="CT-Scans" width="384" height="384" style:--contouring="image-{data.contouring.image_scan}"/>

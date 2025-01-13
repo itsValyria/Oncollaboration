@@ -220,7 +220,6 @@
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-
     opacity: 0;
     height: 0;
     z-index: -1;
@@ -252,8 +251,7 @@
     & .loader {
       width: 15px;
       margin: auto;
-    }
-    
+    } 
   }
 
   .form-reply:focus-within {

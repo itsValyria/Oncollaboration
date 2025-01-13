@@ -5,7 +5,7 @@
 
 <main>
   <h1>Search Results</h1>
-  <Search></Search>
+  <Search />
   <p>Results for: <strong>"{data.query}"</strong></p>
   <SearchResults {data} />
 </main>
