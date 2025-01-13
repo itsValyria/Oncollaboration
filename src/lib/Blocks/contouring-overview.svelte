@@ -4,7 +4,7 @@
   export let title = "";
   export let user_id = "";
   export let categories = [];  
-  export let vt = false;
+  export let vt = false; //What is this?
 
 </script>
 
