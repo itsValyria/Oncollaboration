@@ -7,7 +7,7 @@
 <main>
   <Search />
 
-  <Filter currentPage="contourings"/>
+  <Filter activeCategory={data.category} currentPage="contourings"/>
 
   <h2>All contourings</h2>
   
