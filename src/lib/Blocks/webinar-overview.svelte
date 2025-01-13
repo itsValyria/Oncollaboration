@@ -7,10 +7,6 @@
   export let categories = [];
 </script>
 
-<svelte:head>
-  <link rel="preload" as="image" href="https://fdnd-agency.directus.app/assets/{thumbnail}?format=avif" />
-</svelte:head> <!-- Why do we need this the image doesn't get used here -->
-
 <article>
   <a href="/webinars/{slug}">
     <div class="container-image">
