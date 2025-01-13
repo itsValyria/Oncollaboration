@@ -5,7 +5,7 @@
 
   let showLoading = false;
   let navigatingTimeout;
-
+  
   // Watch the `navigating` store
   $: if ($navigating) {
     // Delay showing the loading state

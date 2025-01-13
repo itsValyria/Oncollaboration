@@ -24,15 +24,14 @@ export async function load({params}) {
 export const actions = {
   comment: async ({ request, params }) => {
 		const data = await request.formData();
-    const timestamp = new Date().toISOString();
     const content = data.get('comment');
-
-    const contouringData = await fetchJson(`${baseURL}avl_contourings?fields=id&filter[slug][_eq]=${params.slug}`)
-    
+    const timestamp = new Date().toISOString();
     const user_id = 1;
+    
+    const contouringData = await fetchJson(`${baseURL}avl_contourings?fields=id&filter[slug][_eq]=${params.slug}`);
     const contouring_id = contouringData.data[0].id;
 
-    const response = await fetchJson(`${baseURL}avl_comments`, {
+    await fetchJson(`${baseURL}avl_comments`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -54,7 +53,7 @@ export const actions = {
     const likesData = await fetchJson(`${baseURL}avl_comments/${ID}?fields=likes`);
     const likes = likesData.data.likes;
     
-    const response = await fetchJson(`${baseURL}avl_comments/${ID}`, {
+    await fetchJson(`${baseURL}avl_comments/${ID}`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json'
@@ -69,16 +68,15 @@ export const actions = {
   
   reply: async ({ request, params }) => {
 		const data = await request.formData();
-    const timestamp = new Date().toISOString();
     const content = data.get('reply');
     const ID = data.get('comment-id');
-
-    const contouringData = await fetchJson(`${baseURL}avl_contourings?fields=id&filter[slug][_eq]=${params.slug}`)
-    
+    const timestamp = new Date().toISOString();
     const user_id = 1;
+
+    const contouringData = await fetchJson(`${baseURL}avl_contourings?fields=id&filter[slug][_eq]=${params.slug}`);
     const contouring_id = contouringData.data[0].id;
 
-    const response = await fetchJson(`${baseURL}avl_comments`, {
+    await fetchJson(`${baseURL}avl_comments`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
