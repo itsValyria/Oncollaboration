@@ -1,10 +1,6 @@
-<script>
-
-</script>
-
 <footer>
   <p>&copy; 2024 - Antoni van Leeuwenhoek</p>
-  <ul class="dot__divider">
+  <ul class="dot__divider"> <!-- Change classname -->
     <li>
       <a href="/">Disclaimer</a>
     </li>
