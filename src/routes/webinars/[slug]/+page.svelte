@@ -5,7 +5,7 @@
 
 <main>
   <div class="video-header">
-    <video controls width="250">
+    <video controls width="250" poster="https://fdnd-agency.directus.app/assets/{data.webinar.thumbnail}">
       <source src="https://fdnd-agency.directus.app/assets/{data.webinar.video}">
       <track kind="captions">
     </video>
