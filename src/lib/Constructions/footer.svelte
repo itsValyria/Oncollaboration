@@ -1,6 +1,6 @@
 <footer>
   <p>&copy; 2024 - Antoni van Leeuwenhoek</p>
-  <ul class="dot__divider"> <!-- Change classname -->
+  <ul class="dot-divider">
     <li>
       <a href="/">Disclaimer</a>
     </li>
@@ -54,7 +54,7 @@
       text-decoration: underline;
     }
     
-    .dot__divider li::after {
+    .dot-divider li::after {
       content: '•';
       position: absolute;
       right: -0.2rem;
@@ -62,7 +62,7 @@
       transform: translateY(-50%);
     }
 
-    .dot__divider li:last-child::after {
+    .dot-divider li:last-child::after {
       content: '';
     }
   }
