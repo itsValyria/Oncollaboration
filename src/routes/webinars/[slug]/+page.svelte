@@ -74,38 +74,38 @@
     display: flex;
     align-items: center;
     gap: var(--gap);
-
-    & img {
-      object-fit: cover;
-      border-radius: 50%;
-      width: 50px;
-      height: 50px;
-    }
-
-    & div {
-      width: 70%;
-    }
-
-    & p {
-      font-weight: 300;
-      font-size: var(--font-size-sm);
-    }
-
-    & a {
-      width: fit-content;
-      text-decoration: none;
-      color: var(--primary-color);
-
-      & svg {
-        fill: var(--primary-color);
-      }
-
-      & span {
-        display: none;
-      }
-    }
   }
 
+  .speaker-info img {
+    object-fit: cover;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+  }
+
+  .speaker-info div {
+    width: 70%;
+  }
+
+  .speaker-info p {
+    font-weight: 300;
+    font-size: var(--font-size-sm);
+  }
+
+  .speaker-info a {
+    width: fit-content;
+    text-decoration: none;
+    color: var(--primary-color);
+  }
+
+  .speaker-info a svg {
+    fill: var(--primary-color);
+  }
+
+  .speaker-info a span {
+    display: none;
+  }
+  
   .q-a {
     width: 90vw;
     max-width: 500px;
