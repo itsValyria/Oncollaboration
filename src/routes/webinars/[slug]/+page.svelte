@@ -80,6 +80,10 @@
 </main>
 
 <style>
+  main {
+    margin-block: 1rem;
+  }
+
   .description :global(p) {
     padding-block: .2rem;
   }
