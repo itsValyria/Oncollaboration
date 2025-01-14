@@ -84,9 +84,42 @@
     padding-block: .2rem;
   }
 
+  .video-header {
+    width: 90vw
+  }
+
   video {
     width: 100%;
     margin: 0 auto;
+  }
+
+  h1 {
+    margin-block: 1rem;
+  }
+
+  .metadata-container,
+  .categories {
+    display: flex;
+    margin-bottom: .7rem;
+    gap: 1rem;
+  }
+
+  .metadata-container .views,
+  .metadata-container .date {
+    display: flex;
+    align-items: center;
+    gap: .3rem;
+    color: var(--primary-color);
+    fill: var(--primary-color);
+    font-weight: 300;
+  }
+
+  .categories .category {
+    padding: var(--padding-label);
+    width: fit-content;
+    background-color: var(--background-category-color);
+    border-radius: var(--border-radius-sm);
+    text-transform: capitalize;
   }
 
   .speakers {
