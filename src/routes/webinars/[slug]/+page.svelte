@@ -19,6 +19,7 @@
     heading = "Resources"
     resources = {data.webinar.resources}
   />
+  
   <div class='q-a'>
     <QandA 
       comments = {data.comments} />
