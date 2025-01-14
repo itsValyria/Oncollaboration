@@ -1,7 +1,7 @@
 <script>
   import {Search, Filter, ContouringOverview} from "$lib/index.js";
   export let data;
-  let vt = true //What does this mean
+  let viewtransition = true
 </script>
 
 <main>
@@ -16,7 +16,7 @@
   <ul>
     {#each data.contourings as contouring}
     <li>
-      <ContouringOverview {...contouring} {vt}/>
+      <ContouringOverview {...contouring} {viewtransition}/>
     </li>
     {/each}
   </ul>
