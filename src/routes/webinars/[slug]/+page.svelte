@@ -95,6 +95,8 @@
 
   h1 {
     margin-block: 1rem;
+    font-size: var(--font-size-xl);
+    line-height: 1.2;
   }
 
   .metadata-container,
@@ -178,6 +180,11 @@
   }
 
   @media screen and (min-width: 900px){
+    h1 {
+      font-size: var(--font-size-2xl);
+      line-height: 1;
+    }
+
     .speaker-info {
       gap: 1rem;
     }
