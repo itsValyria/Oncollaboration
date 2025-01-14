@@ -1,5 +1,5 @@
 <script>
-  export let activeCategory; // Ontvang de actieve categorie van de pagina
+  export let activeCategory; // Get active category from the webinar/contouring page
   import { goto } from '$app/navigation';
 </script>
 
@@ -36,7 +36,7 @@
     Prostate
   </button>
 
-  <button type="submit" name="category" value="urology" aria-label="Filter on urology category" class:selected={activeCategory === 'urogoly'}>
+  <button type="submit" name="category" value="urology" aria-label="Filter on urology category" class:selected={activeCategory === 'urology'}>
     Urology
   </button>
 </form>
