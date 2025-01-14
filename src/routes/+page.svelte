@@ -88,7 +88,7 @@
     display: none;
   }
   
-  @media screen and (min-width: 500px) {
+  @media only screen and (min-width: 500px) {
     .card {
       flex: 0 0 auto;
     }
@@ -98,7 +98,7 @@
     }
   }
 
-  @media screen and (min-width: 600px) {
+  @media only screen and (min-width: 600px) {
     h1 {
       font-size: var(--font-size-4xl);
     }
@@ -112,7 +112,7 @@
     }
   }
 
-  @media screen and (min-width: 1000px) {
+  @media only screen and (min-width: 1000px) {
     .carrousel {
       margin: 0;
     }

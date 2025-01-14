@@ -62,13 +62,13 @@
     background-color: #f0f0f0;
   }
 
-  @media (min-width: 600px) {
+  @media only screen and (min-width: 600px) {
     .content {
       margin-bottom: 77px;
     }
   }
 
-  @media (min-width: 1080px) {
+  @media only screen and (min-width: 1080px) {
     .content {
       margin-top: 74px;
       padding-bottom: 0;
@@ -80,7 +80,7 @@
     }
   }
 
-  @media (min-width: 1920px) {
+  @media only screen and (min-width: 1920px) {
     .content {
       margin-top: 82px;
     }

@@ -19,7 +19,7 @@
     display: none;
   }
 
-  @media screen and (min-width: 1080px) {
+  @media only screen and (min-width: 1080px) {
     footer {
       display: flex;
       position: sticky;

@@ -52,13 +52,13 @@
     scroll-snap-align: start;
   }
 
-  @media screen and (min-width: 500px) {
+  @media only screen and (min-width: 500px) {
     .carrousel > div {
       flex: 0 0 auto;
     }
   }
 
-  @media screen and (min-width: 1098px) {
+  @media only screen and (min-width: 1098px) {
     .carrousel {
       display: grid;
       grid-template-columns: repeat(4, 1fr);

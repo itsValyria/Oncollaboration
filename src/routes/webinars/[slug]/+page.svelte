@@ -42,7 +42,7 @@
     margin: 0 auto;
   }
 
-  @media screen and (min-width: 600px){
+  @media only screen and (min-width: 600px){
     video {
       width: 50vw;
     }

@@ -82,7 +82,7 @@
     font-size: var(--font-size-xs);
   }
 
-  @media screen and (min-width: 600px) {
+  @media only screen and (min-width: 600px) {
     span {
       opacity: 1;
       visibility: visible;
@@ -97,7 +97,7 @@
     }
   }
   
-  @media screen and (min-width: 1599px) {
+  @media only screen and (min-width: 1599px) {
     img {
       height: 100%;    
     }

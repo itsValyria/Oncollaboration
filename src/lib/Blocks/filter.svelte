@@ -72,7 +72,7 @@
     border-radius: var(--border-radius-sm);
   }
 
-  @media screen and (min-width:600px) {
+  @media only screen and (min-width:600px) {
     form {
       flex-wrap: wrap;
       justify-content: center;
