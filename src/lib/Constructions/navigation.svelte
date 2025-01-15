@@ -52,6 +52,11 @@
     color: rgba(116, 116, 116, 1);
     padding: .7em .5em 0; 
     text-decoration: none;
+    transition: .2s;
+  }
+
+  li a:hover {
+    color: var(--hover-state-color);
   }
 
   li a.active {

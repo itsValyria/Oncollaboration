@@ -22,16 +22,21 @@
     border-radius: 50%;
     width: 25px;
     height: 25px;
+    transition: .2s;
   }
 
   details svg {
     fill: var(--alt-text-color);
   }
 
-  details[open] svg{
-    fill: hotpink;
+  details[open] {
+    background-color: var(--accent-color-1);
   }
 
+  details:hover {
+    background-color: var(--hover-state-color);
+  }
+  
   summary {
     list-style: none;
     text-align: center; /*For safari and Firefox*/

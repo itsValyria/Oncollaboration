@@ -50,6 +50,11 @@
     border-start-end-radius: var(--border-radius-sm);
     border-end-end-radius: var(--border-radius-sm);
     cursor: pointer;
+    transition: .2s;
+  }
+  
+  button:hover {
+    background-color: var(--hover-state-color);
   }
 
   button svg path {

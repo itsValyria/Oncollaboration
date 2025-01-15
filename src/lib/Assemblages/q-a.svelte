@@ -98,8 +98,13 @@
     width: 100%;
     border-radius: var(--border-radius-sm);
     text-transform: capitalize;
+    transition: .2s;
   }
 
+  button:hover{
+    background-color: var(--hover-state-color);
+  }
+  
   .loader {
     width: 15px;
     margin: auto;

@@ -135,10 +135,11 @@
     text-transform: capitalize;
     transition: 0.2s;
     grid-area: d;
+    transition: .2s;
   }
 
   .action-link a:hover {
-    transform: scale(1.1);
+    background-color: var(--hover-state-color);
   }
 
   @container main-container (min-width: 821px) {

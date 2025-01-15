@@ -73,7 +73,7 @@
     width: 100px;
     height: 50px;
     border-radius: var(--border-radius-sm);
-    background-color: var(--primary-color);
+    background-color: var(--accent-color-1);
   }
 
   .resource-svg svg {
@@ -108,8 +108,13 @@
     background-color: var(--primary-color);
     margin-left: .3rem;
     margin-right: .1rem;
+    transition: .2s;
   }
 
+  .resource-links a:hover {
+    background-color: var(--hover-state-color);
+  }
+  
   .resource-links a path {
     fill: var(--alt-text-color);
   }

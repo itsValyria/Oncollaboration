@@ -194,7 +194,12 @@
   }
 
   .form-like svg {
-    fill: var(--primary-color)
+    fill: var(--primary-color);
+    transition: .2s;
+  }
+
+  .form-like button:hover svg{
+    fill: var(--hover-state-color);
   }
 
   .form-like span {
@@ -202,7 +207,7 @@
     font-weight: bold;
   }
 
-  label.reply{
+  label.reply {
     display: flex;
     gap: var(--gap);
     align-items: center;
@@ -246,9 +251,14 @@
     height: 34px;
     width: 100%;
     border-radius: var(--border-radius-sm);
-    text-transform: uppercase;
+    text-transform: capitalize;
+    transition: .2s;
   }
 
+  .form-reply button:hover {
+    background-color: var(--hover-state-color);
+  }
+  
   .form-reply .loader {
     width: 15px;
     margin: auto;

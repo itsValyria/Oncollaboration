@@ -58,6 +58,11 @@
     border-radius: var(--border-radius-sm);
     margin: 1em 0;
     text-transform: capitalize;
+    transition: .2s;
+  }
+
+  a:hover {
+    background-color: var(--hover-state-color);
   }
 
   .carrousel {

@@ -61,8 +61,14 @@
     flex-shrink: 0;
     cursor: pointer;
     color: inherit;
+    transition: .2s;
   }
-
+  
+  button:hover {
+    background-color: var(--hover-state-color);
+    color: var(--alt-text-color);
+  }
+  
   .selected {
     background-color: var(--primary-color);
     color: var(--alt-text-color);

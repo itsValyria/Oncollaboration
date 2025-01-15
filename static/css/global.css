@@ -35,10 +35,12 @@
   --alt-text-color: #fff;
 
   /* ---------- Colors: General ---------- */
-  --primary-color: #6a0025;
-  --background-color: #f0e5e9;
-  --background-color-alt: #fff;
-  --background-category-color: #d2b2bd;
+  --primary-color: hsl(217, 44%, 23%);
+  --background-color: hsl(34, 41%, 93%);
+  --background-color-alt: hsl(0, 0%, 100%);
+  --background-category-color: hsl(170, 23%, 79%);
+  --hover-state-color: hsl(216, 37%, 38%);
+  --accent-color-1: hsl(161, 48%, 24%);
 
   /* ---------- Paddings ---------- */
   --padding-button: 8px 16px;
@@ -89,3 +91,4 @@ h1, h2, h3, h4, h5, h6 {
 ::placeholder {
   color: var(--text-color);
 }
+
