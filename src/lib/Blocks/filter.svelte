@@ -54,7 +54,7 @@
   button {
     margin: .2rem;
     padding: var(--padding-button);
-    text-transform: uppercase;
+    text-transform: capitalize;
     background-color: var(--background-category-color);
     border: none;
     border-radius: var(--border-radius-sm);

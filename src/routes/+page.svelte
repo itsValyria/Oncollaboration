@@ -20,7 +20,7 @@
         </div>
       {/each}
     </div>
-    <a href="/webinars">SEE ALL WEBINARS</a>
+    <a href="/webinars">See All Webinars</a>
   </section>
 
   <section>
@@ -32,7 +32,7 @@
         </div>
       {/each}
     </div>
-    <a href="/contourings">SEE ALL CONTOURINGS</a>
+    <a href="/contourings">See all contourings</a>
   </section>
 </main>
 
@@ -57,6 +57,7 @@
     padding: var(--padding-button);
     border-radius: var(--border-radius-sm);
     margin: 1em 0;
+    text-transform: capitalize;
   }
 
   .carrousel {

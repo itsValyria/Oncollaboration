@@ -97,7 +97,7 @@
     height: 34px;
     width: 100%;
     border-radius: var(--border-radius-sm);
-    text-transform: uppercase;
+    text-transform: capitalize;
   }
 
   .loader {

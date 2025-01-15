@@ -123,7 +123,7 @@
     background-color: var(--background-category-color);
     border-radius: var(--border-radius-sm);
     padding: 5px;
-    text-transform: uppercase;
+    text-transform: capitalize;
     font-weight: bold;
   }
 
@@ -132,7 +132,7 @@
     color: white;
     padding: 5px;
     border-radius: var(--border-radius-sm);
-    text-transform: uppercase;
+    text-transform: capitalize;
     transition: 0.2s;
     grid-area: d;
   }
