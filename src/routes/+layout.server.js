@@ -15,6 +15,7 @@ export async function load({ url }) {
 
   // Converts the query string retrieved from the URL to lowercase
   const query = url.searchParams.get('query')?.toLowerCase() || '';
+  const category = url.searchParams.get('category')?.toLowerCase() || 'all';
   
   // Filter webinars based on the query input
   let filteredWebinars = webinars.data.filter((webinar) =>
@@ -25,21 +26,6 @@ export async function load({ url }) {
   let filteredContourings = contourings.data.filter((contouring) =>
     contouring.title.toLowerCase().includes(query)
   );
-
-  // Filter data based on selected category
-  const category = url.searchParams.get('category')?.toLowerCase() || 'all';
-  if (category !== 'all') {
-    filteredWebinars = filteredWebinars.filter((webinar) =>
-      webinar.categories?.some((cat) =>
-        cat.avl_categories_id?.name?.toLowerCase() === category
-      )
-    );
-    filteredContourings = filteredContourings.filter((contouring) =>
-      contouring.categories?.some((cat) =>
-        cat.avl_categories_id?.name?.toLowerCase() === category
-      )
-    );
-  }
 
   return {
     webinars: filteredWebinars,

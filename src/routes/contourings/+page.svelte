@@ -5,11 +5,9 @@
 </script>
 
 <main>
-  <h1>Contourings</h1>
-
   <Search />
 
-  <Filter />
+  <Filter activeCategory={data.category} currentPage="contourings"/>
 
   <h2>All contourings</h2>
   

@@ -119,6 +119,7 @@
     }
 
     article p {
+      margin-top: 10px;
       font-size: var(--font-size-lg);
     }
 
