@@ -59,7 +59,7 @@
 
   footer {
     height: 115px;
-    background-color: #f0f0f0;
+    background-color: var(--background-color);
   }
 
   @media only screen and (min-width: 600px) {
