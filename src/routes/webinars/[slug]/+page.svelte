@@ -56,7 +56,7 @@
     {/if}
   </div>
 
-  <button on:click={() => {showFullDescription = !showFullDescription;}}>
+  <button on:click={() => {showFullDescription = !showFullDescription;}} class="button-expand-text">
     {showFullDescription ? "Read Less" : "Read More"}
   </button>
   
@@ -87,10 +87,12 @@
     {/each}
   </article>
 
-  <Resources 
-    heading = "Resources"
-    resources = {data.webinar.resources}
-  />
+  <div class="resources">
+    <Resources 
+      heading = "Resources"
+      resources = {data.webinar.resources}
+    />
+  </div>
 
   <div class='q-a'>
     <QandA 
@@ -204,16 +206,11 @@
     border: transparent;
     cursor: pointer;
     font-size: var(--font-size-md);
+    width: fit-content;
     height: 34px;
     padding: 0.4rem 0.8em;
     border-radius: var(--border-radius-sm);
     text-transform: uppercase;
-  }
-
-  @media only screen and (min-width: 600px){
-    .video-header {
-      width: 50vw;
-    }
   }
 
   @media only screen and (min-width: 900px){
@@ -250,6 +247,31 @@
     .speaker-info a span::after {
       content: '>';
       padding-inline-start: 10px;
+    }
+  }
+
+  @media only screen and (min-width: 1080px) {
+    main {
+      display: grid;
+      grid-template-columns: 55% 40%;
+      column-gap: 3rem;
+    }
+
+    .video-header {
+      width: 100%;
+    }
+    
+    .video-header,
+    .description,
+    .button-expand-text,
+    .speakers,
+    .resources {
+      grid-column: 1;
+    }
+
+    .q-a {
+      grid-column: 2;
+      grid-row: 1/ 111;
     }
   }
 </style>
