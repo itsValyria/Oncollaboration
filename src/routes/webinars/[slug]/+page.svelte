@@ -1,34 +1,49 @@
 <script>
-  import { QandA, Resources } from "$lib/index.js";
-  export let data; 
+  import { QandA } from "$lib/index.js";
+  export let data;
+
+  let showFullDescription = false;
+
+  // Assuming `data.webinar.description` contains the description text
+  const description = data.webinar.description;
+
+  // Function to truncate text
+  function truncateText(text, limit = 199) {
+    return text.length > limit ? text.slice(0, limit) + "..." : text;
+  }
 </script>
 
 <main>
   <video controls width="250">
-    <source src="https://fdnd-agency.directus.app/assets/{data.webinar.video}">
-    <track kind="captions">
+    <source
+      src="https://fdnd-agency.directus.app/assets/{data.webinar.video}"
+    />
+    <track kind="captions" />
   </video>
-  
+
   <h1>{data.webinar.title}</h1>
-  
-  <div class='description'>
-    {@html data.webinar.description}
+
+  <div class="description">
+    <!-- Dynamically update the content based on `showFullDescription` -->
+    {#if showFullDescription}
+      {@html description}
+    {:else}
+      {@html truncateText(description)}
+    {/if}
   </div>
-  
-  <Resources 
-    heading = "Resources"
-    resources = {data.webinar.resources}
-  />
-  
-  <div class='q-a'>
-    <QandA 
-      comments = {data.comments} />
+
+  <button on:click={() => {showFullDescription = !showFullDescription;}}>
+    {showFullDescription ? "Read Less" : "Read More"}
+  </button>
+
+  <div class="q-a">
+    <QandA comments={data.comments} />
   </div>
 </main>
 
 <style>
   .description :global(p) {
-    padding-block: .2rem;
+    padding-block: 0.2rem;
   }
 
   video {
@@ -42,7 +57,21 @@
     margin: 0 auto;
   }
 
-  @media only screen and (min-width: 600px){
+  button {
+    margin-top: 1rem;
+    padding: var(--padding-label);
+    background-color: var(--primary-color);
+    color: var(--alt-text-color);
+    border: transparent;
+    cursor: pointer;
+    font-size: var(--font-size-md);
+    height: 34px;
+    padding: 0.4rem 0.8em;
+    border-radius: var(--border-radius-sm);
+    text-transform: uppercase;
+  }
+
+  @media screen and (min-width: 600px) {
     video {
       width: 50vw;
     }
