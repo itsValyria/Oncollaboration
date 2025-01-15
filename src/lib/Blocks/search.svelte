@@ -27,7 +27,7 @@
 
 <style>
   form {
-    margin: 1rem 0;
+    margin: 1rem auto;
     display: flex;
     width: 80vw;
   }
@@ -36,6 +36,8 @@
     padding: var(--padding-label);
     width: 85%;
     border: none;
+    padding-inline-start: 20px;
+    font-size: var(--font-size-xl);
     border-start-start-radius: var(--border-radius-sm);
     border-end-start-radius: var(--border-radius-sm);
   }
