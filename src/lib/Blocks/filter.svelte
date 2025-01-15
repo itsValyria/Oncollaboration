@@ -5,7 +5,7 @@
 </script>
 
 <form method="get" action="/{currentPage}" id="filter" name="filter">
-  <button type="button" on:click={() => goto('/webinars')} class:selected={!activeCategory || activeCategory === 'all'}>
+  <button type="button" on:click={() => goto(`/${currentPage}`)} class:selected={!activeCategory || activeCategory === 'all'}>
     All
   </button>
 
