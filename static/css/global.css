@@ -5,13 +5,18 @@
 }
 
 @font-face {
-  font-family: "rundschrift";
-  src: url(/fonts/vag_rundschrift_d.woff2) format("woff2");
+  font-family: "Poppins";
+  src: url(/fonts/Poppins-Bold.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Lato";
+  src: url(/fonts/Lato-Regular.ttf) format("truetype");
 }
 
 :root {
-  --font: sans-serif;
-  --heading-font: "rundschrift", sans-serif;
+  --font: "Lato", sans-serif;
+  --heading-font: "Poppins", sans-serif;
 
   /* ---------- Font sizes ---------- */
   --font-size-xs: 0.5rem;
