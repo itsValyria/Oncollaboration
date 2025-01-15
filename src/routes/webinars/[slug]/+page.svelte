@@ -1,5 +1,5 @@
 <script>
-  import { QandA } from "$lib/index.js";
+  import { QandA, Resources } from "$lib/index.js";
   export let data;
 
   let showFullDescription = false;
