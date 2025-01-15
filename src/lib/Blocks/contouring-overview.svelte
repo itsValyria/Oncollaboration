@@ -4,7 +4,7 @@
   export let title = "";
   export let user_id = "";
   export let categories = [];  
-  export let vt = false; //What is this?
+  export let viewtransition = false;
 
 </script>
 
@@ -16,7 +16,7 @@
       alt="{title}" 
       width="384px" 
       height="384px" 
-      style={vt ? `--contouring: image-${image_scan.id}` : ''} />    
+      style={viewtransition ? `--contouring: image-${image_scan.id}` : ''} />    
 
       {#each categories as category}
         <span>{category.avl_categories_id.name}</span>
@@ -82,7 +82,7 @@
     font-size: var(--font-size-xs);
   }
 
-  @media screen and (min-width: 600px) {
+  @media only screen and (min-width: 600px) {
     span {
       opacity: 1;
       visibility: visible;
@@ -97,7 +97,7 @@
     }
   }
   
-  @media screen and (min-width: 1599px) {
+  @media only screen and (min-width: 1599px) {
     img {
       height: 100%;    
     }

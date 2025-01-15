@@ -22,16 +22,14 @@
     border-radius: 50%;
     width: 25px;
     height: 25px;
-
-    & svg {
-      fill: var(--alt-text-color);
-    }
   }
 
-  details[open] {
-    & svg {
-      fill: hotpink;
-    }
+  details svg {
+    fill: var(--alt-text-color);
+  }
+
+  details[open] svg{
+    fill: hotpink;
   }
 
   summary {

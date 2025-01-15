@@ -1,5 +1,5 @@
 <script>
-  export let activeCategory; // Ontvang de actieve categorie van de pagina
+  export let activeCategory; // Get active category from the webinar/contouring page
   import { goto } from '$app/navigation';
   export let currentPage; 
 </script>
@@ -73,7 +73,7 @@
     border-radius: var(--border-radius-sm);
   }
 
-  @media screen and (min-width:600px) {
+  @media only screen and (min-width:600px) {
     form {
       flex-wrap: wrap;
       justify-content: center;

@@ -58,7 +58,7 @@
     text-transform: capitalize;
   }
 
-  .container-resource{
+  .container-resource {
     display: flex;
     justify-content: space-between;
     gap: 1rem;
@@ -74,45 +74,43 @@
     height: 50px;
     border-radius: var(--border-radius-sm);
     background-color: var(--primary-color);
+  }
 
-    & svg {
-      fill: var(--alt-text-color);
-    }
+  .resource-svg svg {
+    fill: var(--alt-text-color);
   }
 
   .resource-text {
     width: 40%;
-
-    & p {
-      display: -webkit-box;
-      -webkit-box-orient: vertical;
-      -webkit-line-clamp: 1;
-      line-clamp: 1;
-      word-break: break-all;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-
-    & span {
-      font-weight: 100;
-    }
   }
 
-  .resource-links {
-    & a {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 25px;
-      height: 25px;
-      border-radius: 50%;
-      background-color: var(--primary-color);
-      margin-left: .3rem;
-      margin-right: .1rem;
+  .resource-text p {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+    word-break: break-all;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 
-      & path {
-        fill: var(--alt-text-color);
-      }
-    }
+  .resource-text span {
+    font-weight: 100;
+  }
+
+  .resource-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    margin-left: .3rem;
+    margin-right: .1rem;
+  }
+
+  .resource-links a path {
+    fill: var(--alt-text-color);
   }
 </style>

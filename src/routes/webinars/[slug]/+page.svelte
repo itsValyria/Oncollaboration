@@ -19,6 +19,7 @@
     heading = "Resources"
     resources = {data.webinar.resources}
   />
+  
   <div class='q-a'>
     <QandA 
       comments = {data.comments} />
@@ -41,7 +42,7 @@
     margin: 0 auto;
   }
 
-  @media screen and (min-width: 600px){
+  @media only screen and (min-width: 600px){
     video {
       width: 50vw;
     }
