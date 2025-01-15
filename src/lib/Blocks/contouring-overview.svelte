@@ -38,6 +38,10 @@
     display: grid;
   }
 
+  article div {
+    position: relative;
+  }
+  
   span {
     position: absolute;
     color: var(--text-color);
@@ -91,11 +95,5 @@
     p {
       font-size: var( --font-size-lg);
     }
-  }
-  
-  @media only screen and (min-width: 1099px) {
-    /* article {
-      scale: .7;
-    } */
   }
 </style>
