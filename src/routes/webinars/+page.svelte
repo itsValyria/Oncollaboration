@@ -8,11 +8,15 @@
 
   <Filter activeCategory={data.category} currentPage="webinars" />
 
+  {#if data.category != 'all'}
+  <h2>Webinar results for {data.category}</h2>
+  {:else}
   {#each data.FeaturedWebinars as featuredWebinar}
     <FeaturedWebinar {...featuredWebinar}/>
   {/each}
-
   <h2>All webinars</h2>
+  {/if}
+  
   <ul>
     {#each data.webinars as webinar}
     <li>
