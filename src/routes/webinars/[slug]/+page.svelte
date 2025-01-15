@@ -1,6 +1,16 @@
 <script>
   import { QandA, Resources } from "$lib/index.js";
-  export let data; 
+  export let data;
+
+  let showFullDescription = false;
+
+  // Assuming `data.webinar.description` contains the description text
+  const description = data.webinar.description;
+
+  // Function to truncate text
+  function truncateText(text, limit = 199) {
+    return text.length > limit ? text.slice(0, limit) + "..." : text;
+  }
 </script>
 
 <main>
@@ -37,9 +47,18 @@
     </div>
   </div>
 
-  <div class='description'>
-    {@html data.webinar.description}
+  <div class="description">
+    <!-- Dynamically update the content based on `showFullDescription` -->
+    {#if showFullDescription}
+      {@html description}
+    {:else}
+      {@html truncateText(description)}
+    {/if}
   </div>
+
+  <button on:click={() => {showFullDescription = !showFullDescription;}}>
+    {showFullDescription ? "Read Less" : "Read More"}
+  </button>
   
   <article class='speakers'>
     {#if data.webinar.speakers.length > 1}
@@ -85,7 +104,7 @@
   }
 
   .description :global(p) {
-    padding-block: .2rem;
+    padding-block: 0.2rem;
   }
 
   .video-header {
@@ -177,13 +196,27 @@
     margin: 0 auto;
   }
 
-  @media screen and (min-width: 600px){
+  button {
+    margin-top: 1rem;
+    padding: var(--padding-label);
+    background-color: var(--primary-color);
+    color: var(--alt-text-color);
+    border: transparent;
+    cursor: pointer;
+    font-size: var(--font-size-md);
+    height: 34px;
+    padding: 0.4rem 0.8em;
+    border-radius: var(--border-radius-sm);
+    text-transform: uppercase;
+  }
+
+  @media only screen and (min-width: 600px){
     .video-header {
       width: 50vw;
     }
   }
 
-  @media screen and (min-width: 900px){
+  @media only screen and (min-width: 900px){
     h1 {
       font-size: var(--font-size-2xl);
       line-height: 1;
@@ -219,5 +252,4 @@
       padding-inline-start: 10px;
     }
   }
-
 </style>

@@ -1,22 +1,20 @@
 <script>
   import {Search, Filter, ContouringOverview} from "$lib/index.js";
   export let data;
-  let vt = true //What does this mean
+  let viewtransition = true
 </script>
 
 <main>
-  <h1>Contourings</h1>
-
   <Search />
 
-  <Filter />
+  <Filter activeCategory={data.category} currentPage="contourings"/>
 
   <h2>All contourings</h2>
   
   <ul>
     {#each data.contourings as contouring}
     <li>
-      <ContouringOverview {...contouring} {vt}/>
+      <ContouringOverview {...contouring} {viewtransition}/>
     </li>
     {/each}
   </ul>

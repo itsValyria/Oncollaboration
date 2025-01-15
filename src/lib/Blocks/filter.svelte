@@ -1,9 +1,10 @@
 <script>
-  export let activeCategory; // Ontvang de actieve categorie van de pagina
+  export let activeCategory; // Get active category from the webinar/contouring page
   import { goto } from '$app/navigation';
+  export let currentPage; 
 </script>
 
-<form method="get" action="/filter" id="filter" name="filter">
+<form method="get" action="/{currentPage}" id="filter" name="filter">
   <button type="button" on:click={() => goto('/webinars')} class:selected={!activeCategory || activeCategory === 'all'}>
     All
   </button>
@@ -36,7 +37,7 @@
     Prostate
   </button>
 
-  <button type="submit" name="category" value="urology" aria-label="Filter on urology category" class:selected={activeCategory === 'urogoly'}>
+  <button type="submit" name="category" value="urology" aria-label="Filter on urology category" class:selected={activeCategory === 'urology'}>
     Urology
   </button>
 </form>
@@ -72,7 +73,7 @@
     border-radius: var(--border-radius-sm);
   }
 
-  @media screen and (min-width:600px) {
+  @media only screen and (min-width:600px) {
     form {
       flex-wrap: wrap;
       justify-content: center;

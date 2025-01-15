@@ -45,7 +45,7 @@
     text-transform: uppercase;
   }
 
-  @media screen and (min-width: 767px) {
+  @media only screen and (min-width: 767px) {
     section h2 {
       font-size: var(--font-size-2xl);
     }
@@ -59,7 +59,7 @@
     }
   }
 
-  @media screen and (min-width: 1080px) {
+  @media only screen and (min-width: 1080px) {
     section h2 {
       font-size: var(--font-size-4xl);
     }

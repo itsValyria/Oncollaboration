@@ -132,31 +132,31 @@
     grid: auto-flow / 40px 80%;
     column-gap: var(--gap);
     align-items: center;
+  }
 
-    & img {
-      width: 40px;
-      height: 40px;
-      border-radius: 50px;
-      object-fit: cover;
-      grid-column: 1;
-      grid-row: 1/3;
-    }
+  .comment-head img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    object-fit: cover;
+    grid-column: 1;
+    grid-row: 1/3;
+  }
 
-    & h4 {
-      font-family: var(--font);
-      font-weight: bold;
-      font-size: var(--font-size-md);
-      grid-column: 2;
-      grid-row: 1;
-    }
+  .comment-head h4 {
+    font-family: var(--font);
+    font-weight: bold;
+    font-size: var(--font-size-md);
+    grid-column: 2;
+    grid-row: 1;
+  }
 
-    & time {
-      font-weight: 300;
-      font-size: var(--font-size-sm);
-      color: #4b4141;
-      grid-column: 2;
-      grid-row: 2;
-    }
+  .comment-head time {
+    font-weight: 300;
+    font-size: var(--font-size-sm);
+    color: #4b4141;
+    grid-column: 2;
+    grid-row: 2;
   }
 
   .comment-content, .comment-response {
@@ -179,27 +179,27 @@
     display: flex;
     gap: var(--gap);
     align-items: center;
+  }
 
-    & button {
-      border: transparent;
-      background: none;
-      cursor: pointer;
-      height: 18px;
-    }
+  .form-like button {
+    border: transparent;
+    background: none;
+    cursor: pointer;
+    height: 18px;
+  }
 
-    & .loader {
-      width: 20px;
-      height: 20px;
-    }
+  .form-like .loader {
+    width: 20px;
+    height: 20px;
+  }
 
-    & svg {
-      fill: var(--primary-color)
-    }
+  .form-like svg {
+    fill: var(--primary-color)
+  }
 
-    & span {
-      font-size: var(--font-size-md);
-      font-weight: bold;
-    }
+  .form-like span {
+    font-size: var(--font-size-md);
+    font-weight: bold;
   }
 
   label.reply{
@@ -207,11 +207,11 @@
     gap: var(--gap);
     align-items: center;
     cursor: pointer;
+  }
 
-    & svg {
-      display: block;
-      margin-bottom: -7px;
-    }
+  label.reply svg {
+    display: block;
+    margin-bottom: -7px;
   }
 
   .form-reply {
@@ -224,35 +224,35 @@
     height: 0;
     z-index: -1;
     transition-duration: .5s;
-
-    & input {
-      padding: var(--padding-label);
-      font-size: var(--font-size-md);
-      height: 34px;
-      border: transparent;
-      width: 100%;
-      border-radius: var(--border-radius-sm);
-    }
-
-    & button {
-      margin-top: 1rem;
-      padding: var(--padding-label);
-      background-color: var(--primary-color);
-      color: var(--alt-text-color);
-      border: transparent;
-      cursor: pointer;
-      font-size: var(--font-size-md);
-      height: 34px;
-      width: 100%;
-      border-radius: var(--border-radius-sm);
-      text-transform: uppercase;
-    }
-
-    & .loader {
-      width: 15px;
-      margin: auto;
-    } 
   }
+
+  .form-reply input {
+    padding: var(--padding-label);
+    font-size: var(--font-size-md);
+    height: 34px;
+    border: transparent;
+    width: 100%;
+    border-radius: var(--border-radius-sm);
+  }
+
+  .form-reply button {
+    margin-top: 1rem;
+    padding: var(--padding-label);
+    background-color: var(--primary-color);
+    color: var(--alt-text-color);
+    border: transparent;
+    cursor: pointer;
+    font-size: var(--font-size-md);
+    height: 34px;
+    width: 100%;
+    border-radius: var(--border-radius-sm);
+    text-transform: uppercase;
+  }
+
+  .form-reply .loader {
+    width: 15px;
+    margin: auto;
+  } 
 
   .form-reply:focus-within {
     opacity: 1;

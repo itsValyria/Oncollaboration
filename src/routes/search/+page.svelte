@@ -16,7 +16,7 @@
     margin-top: 2rem;
   }
 
-  @media screen and (min-width: 1599px) {
+  @media only screen and (min-width: 1599px) {
     main {
       margin: 4rem;
     }

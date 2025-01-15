@@ -15,7 +15,7 @@
     <h2>Webinars</h2>
     <div class="carrousel">
       {#each newestWebinars as webinar}
-        <div class="kaart">
+        <div class="card">
           <WebinarOverview  {...webinar}/>
         </div>
       {/each}
@@ -27,7 +27,7 @@
     <h2>Contourings</h2>
     <div class="carrousel">
       {#each newestContourings as contouring}
-        <div class="contouringkaart">
+        <div class="contouringcard">
           <ContouringOverview {...contouring} />
         </div>
       {/each}
@@ -70,14 +70,14 @@
     gap: 10px;
   }
 
-  .kaart {
+  .card {
     flex: 0 0 calc(100% - 20%);
     scroll-snap-align: start;
     border-radius: 10px;
     box-sizing: border-box;
   }
 
-  .contouringkaart {
+  .contouringcard {
     flex: 0 0 calc(100% - 42%);
     scroll-snap-align: start;
     border-radius: 10px;
@@ -88,17 +88,17 @@
     display: none;
   }
   
-  @media screen and (min-width: 500px) {
-    .kaart {
+  @media only screen and (min-width: 500px) {
+    .card {
       flex: 0 0 auto;
     }
 
-    .contouringkaart {
+    .contouringcard {
       flex: 0 0 auto;
     }
   }
 
-  @media screen and (min-width: 600px) {
+  @media only screen and (min-width: 600px) {
     h1 {
       font-size: var(--font-size-4xl);
     }
@@ -112,7 +112,7 @@
     }
   }
 
-  @media screen and (min-width: 1000px) {
+  @media only screen and (min-width: 1000px) {
     .carrousel {
       margin: 0;
     }
