@@ -38,11 +38,6 @@
     display: grid;
   }
 
-  div {
-    position: relative;
-    width: 100%;
-  }
-
   span {
     position: absolute;
     color: var(--text-color);
@@ -60,8 +55,9 @@
   }
 
   img {
-    max-height: 16rem;
-    max-width: 100%;
+    width: 100%;
+    max-width: 16rem;
+    height: auto;
     border-radius: var(--border-radius-md);
     view-transition-name: var(--contouring);
   }
@@ -97,9 +93,9 @@
     }
   }
   
-  @media only screen and (min-width: 1599px) {
-    img {
-      height: 100%;    
-    }
+  @media only screen and (min-width: 1099px) {
+    /* article {
+      scale: .7;
+    } */
   }
 </style>
