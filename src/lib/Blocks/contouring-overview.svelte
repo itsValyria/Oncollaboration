@@ -40,6 +40,7 @@
 
   article div {
     position: relative;
+    width: fit-content;
   }
   
   span {
