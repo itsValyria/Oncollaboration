@@ -36,7 +36,6 @@
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
-    width: 90%;
   }
 
   li {
@@ -51,6 +50,7 @@
 
     ul {
       margin: 2em 1em 0 1em;
+      gap: 50px;
     }
   }
 </style>
